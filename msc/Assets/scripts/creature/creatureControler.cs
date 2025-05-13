@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class creatureControler : MonoBehaviour
 {
+    [Header("currency control")]
+    public int HowMuchThisCreatureMakes;
+    public bool random;
+    public bool coins;
+    public bool diamonds;
+    public bool food;
+    public float howLongInSecondsTillMoneyAddedToTotal;
     [Header("timestamps")]
     public int TimeInGame;
     public int[] playWhere;
@@ -40,6 +47,26 @@ public class creatureControler : MonoBehaviour
             AS.enabled = false;
             animator.SetBool("z", true);
         }
+        
+    }
+    void Start()
+    {
+        StartCoroutine(CurrencyUpdate());
+    }
+    public void currencyUpdate()
+    {
+        if (!random)
+        {
+            if (coins) { Currency.coins = Currency.coins + HowMuchThisCreatureMakes; }
+            if (diamonds) { Currency.diamonds = Currency.diamonds + HowMuchThisCreatureMakes; }
+            if (food) { Currency.food = Currency.food + HowMuchThisCreatureMakes; }
+        }
+    }
+    IEnumerator CurrencyUpdate()
+    {
+        yield return new WaitForSeconds(howLongInSecondsTillMoneyAddedToTotal);
+        currencyUpdate();
+        StartCoroutine(CurrencyUpdate());
     }
 
     public void soundPlay(int WhichOne){

@@ -20,6 +20,7 @@ public class SD_Island : MonoBehaviour
 
     public void LoadFromJson()
     {
+        ch.creatureInformation.Clear();
         GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
         foreach(GameObject creatureToDestroy in creaturesEXE)
         {

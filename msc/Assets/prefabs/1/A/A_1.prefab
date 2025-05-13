@@ -2234,6 +2234,7 @@ GameObject:
   - component: {fileID: 2088227120682584184}
   - component: {fileID: 3164427593404350399}
   - component: {fileID: 9094607126636801867}
+  - component: {fileID: 747318750471288428}
   m_Layer: 0
   m_Name: A_1
   m_TagString: creature
@@ -2299,6 +2300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34503af62bdc42449dffa85cd63b620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HowMuchThisCreatureMakes: 5
+  random: 0
+  coins: 1
+  diamonds: 0
+  food: 0
+  howLongInSecondsTillMoneyAddedToTotal: 10
   TimeInGame: 0
   playWhere: 000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
   animator: {fileID: 5148658421415350682}
@@ -2417,10 +2424,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Placed: 0
   ID: 1
   area:
     m_Position: {x: -1, y: -1, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
+--- !u!61 &747318750471288428
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048276427707932470}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.28, y: 1.47}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8733259546060790271
 GameObject:
   m_ObjectHideFlags: 0
