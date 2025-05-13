@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SD_Island : MonoBehaviour
+{
+    public string path;
+    public string IslandString;
+    public List<GameObject> creatureObjects;
+    public creatureHandler ch;
+    public sd_Island island;
+
+    public void SaveToJson()
+    {
+        ch.compileCreatures();
+        string islandData = JsonUtility.ToJson(island);
+        string filePath = path + "/island_" + IslandString + ".json";
+        System.IO.File.WriteAllText(filePath, islandData);
+    }
+
+    public void LoadFromJson()
+    {
+        GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
+        foreach(GameObject creatureToDestroy in creaturesEXE)
+        {
+            GameObject.Destroy(creatureToDestroy);
+        }
+        string filePath = path + "/island_" + IslandString + ".json";
+        string islandData = System.IO.File.ReadAllText(filePath);
+
+        island = JsonUtility.FromJson<sd_Island>(islandData);
+        foreach(sd_CreatureHandler sdch in island.CHList)
+        {
+            Vector3 pos = new Vector3(sdch.XPos, sdch.YPos, 1);
+            Vector3 scale = new Vector3(sdch.XScl, 1, 1);
+            GameObject cd = creatureObjects[sdch.CreatureID-1];
+            GameObject clone = Instantiate(cd);
+            clone.transform.position = pos;
+            clone.transform.localScale = scale;
+            clone.GetComponent<Building>().Placed = true;
+            ch.creatureInformation.Add(sdch);
+        }
+    }
+}
+
+[System.Serializable]
+public class sd_Island
+{
+    public List<sd_CreatureHandler> CHList = new List<sd_CreatureHandler>();
+}
+
+[System.Serializable]
+public class sd_CreatureHandler
+{
+    public float XPos;
+    public float YPos;
+    public float XScl;
+    public int CreatureID;
+}
