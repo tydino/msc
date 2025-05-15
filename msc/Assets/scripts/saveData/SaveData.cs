@@ -26,4 +26,9 @@ public class SaveData : MonoBehaviour
         sdc.LoadFromJson();
         sdi.LoadFromJson();
     }
+
+    void Awake()
+    {
+        load();
+    }
 }

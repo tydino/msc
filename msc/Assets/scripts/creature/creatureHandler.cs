@@ -10,6 +10,12 @@ public class creatureHandler : MonoBehaviour
 
     public void compileCreatures()
     {
+        creatureInformation.Clear();
+        GameObject[] creatureList = GameObject.FindGameObjectsWithTag("creature");
+        foreach (GameObject creature in creatureList)
+        {
+            creature.GetComponent<Building>().Save();
+        }
         islandSaveData.island.CHList.Clear();
         for(int i=0; i < creatureInformation.Count;i++)
         {

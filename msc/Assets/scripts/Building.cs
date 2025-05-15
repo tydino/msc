@@ -30,17 +30,6 @@ public class Building : MonoBehaviour
 
     public void Place()
     {
-        if (Placed == false)
-        {
-            sd_CreatureHandler ch = new sd_CreatureHandler();
-            ch.XPos = gameObject.transform.position.x;
-            ch.YPos = gameObject.transform.position.y;
-            ch.XScl = gameObject.transform.localScale.x;
-            ch.CreatureID = ID;
-            creatureHandler CreatureH = GameObject.FindWithTag("CreatureHandler").GetComponent<creatureHandler>();
-            CreatureH.creatureInformation.Add(ch);
-        }
-        //move these lines above to another script when figure out event system.
         Vector3Int positionInt = GridBuildingSystem.current.gridLayout.LocalToCell(transform.position);
         BoundsInt areaTemp = area;
         areaTemp.position = positionInt;
@@ -48,7 +37,17 @@ public class Building : MonoBehaviour
         GridBuildingSystem.current.TakeArea(areaTemp);
     }
 
-
+    public void Save()
+    {
+        sd_CreatureHandler ch = new sd_CreatureHandler();
+        ch.XPos = gameObject.transform.position.x;
+        ch.YPos = gameObject.transform.position.y;
+        ch.XScl = gameObject.transform.localScale.x;
+        ch.CreatureID = ID;
+        ch.asleep = gameObject.GetComponent<creatureControler>().sleep;
+        creatureHandler CreatureH = GameObject.FindWithTag("CreatureHandler").GetComponent<creatureHandler>();
+        CreatureH.creatureInformation.Add(ch);
+    }
 
     #endregion
 }
