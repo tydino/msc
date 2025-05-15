@@ -9,7 +9,7 @@ public class timer : MonoBehaviour
     public static int Timer;
     void Start()
     {
-        Timer = -1;
+        Timer = -2;
     }
 
     void Update()

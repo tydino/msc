@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
-  m_Name: 1_1_A
-  m_EditorClassIdentifier: Assembly-CSharp::creature
-  creatureInIslandID: 1
-  PrefabObj: {fileID: 8048276427707932470, guid: 855a2b826de616a4b90a159fd94d43fe, type: 3}
+  m_Name: 1_1_B
+  m_EditorClassIdentifier: 
+  creatureInIslandID: 2
+  PrefabObj: {fileID: 7759344096495628837, guid: e9eae6a6c0496424495f3bc79b1eb7d3, type: 3}
   BreedScreen: {fileID: 0}
-  StoreFront: {fileID: 6888901894457015782, guid: 7f04f1c6a0f9da74c8538a7466583698, type: 3}
-  worthInCoins: 100
+  StoreFront: {fileID: 6888901894457015782, guid: 0ba87d8ffdaa0a44ba83dae53f458f9d, type: 3}
+  worthInCoins: 250
   coins: 1
   worthInDiamonds: 0
   diamonds: 0
   element:
-  - A
+  - B

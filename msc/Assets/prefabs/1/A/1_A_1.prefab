@@ -2236,7 +2236,7 @@ GameObject:
   - component: {fileID: 9094607126636801867}
   - component: {fileID: 747318750471288428}
   m_Layer: 0
-  m_Name: A_1
+  m_Name: 1_A_1
   m_TagString: creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

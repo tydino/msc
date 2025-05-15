@@ -1613,7 +1613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6893388071540828935}
   m_Layer: 0
-  m_Name: A_0default
+  m_Name: 1_A_0default
   m_TagString: creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

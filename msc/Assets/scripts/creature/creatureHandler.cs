@@ -5,7 +5,7 @@ using UnityEngine;
 public class creatureHandler : MonoBehaviour
 {
     public SD_Island islandSaveData;
-    public List<GameObject> creatureObjects;
+    public List<creatureData> creatureObjects;
     public List<sd_CreatureHandler> creatureInformation;
 
     public void compileCreatures()

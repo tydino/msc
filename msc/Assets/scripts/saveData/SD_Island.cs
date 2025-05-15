@@ -36,6 +36,7 @@ public class SD_Island : MonoBehaviour
             Vector3 scale = new Vector3(sdch.XScl, 1, 1);
             GameObject cd = creatureObjects[sdch.CreatureID-1];
             GameObject clone = Instantiate(cd);
+            clone.GetComponent<creatureControler>().sleep = sdch.asleep;
             clone.transform.position = pos;
             clone.transform.localScale = scale;
             clone.GetComponent<Building>().Placed = true;
@@ -57,4 +58,5 @@ public class sd_CreatureHandler
     public float YPos;
     public float XScl;
     public int CreatureID;
+    public bool asleep;
 }

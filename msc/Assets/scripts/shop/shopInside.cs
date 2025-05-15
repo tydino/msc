@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class shopInside : MonoBehaviour
 {
-    public GameObject[] Icons;
+    public List<GameObject> Icons;
     public Slider slider;
     void Start()
     {
-        slider.maxValue = Icons.Length - 1;
+        slider.maxValue = Icons.Count - 1;
     }
     void Update()
     {
-        for (int i = 0; i < Icons.Length; i++)
+        for (int i = 0; i < Icons.Count; i++)
         {
             if (slider.value == i)
             {
