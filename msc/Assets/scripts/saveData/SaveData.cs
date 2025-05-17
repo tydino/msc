@@ -7,6 +7,7 @@ public class SaveData : MonoBehaviour
     public static SaveData current;
     public SD_Currency sdc;
     public SD_Island sdi;
+    public SD_Path sdp;
     public int coin_editable;
     public int diamond_editable;
     public int food_editable;
@@ -14,6 +15,7 @@ public class SaveData : MonoBehaviour
 
     public void save()
     {
+        sdp.SaveToJson();
         if (coin_editable != 0 || diamond_editable != 0 || food_editable != 0)
         {
             if (coin_editable != 0) { Currency.coins = coin_editable; }
@@ -27,6 +29,8 @@ public class SaveData : MonoBehaviour
     }
     public void load()
     {
+        sdp.LoadFromJson();
+        path = sdp.path.path;
         sdc.path = path;
         sdi.path = path;
         sdc.LoadFromJson();
@@ -37,5 +41,11 @@ public class SaveData : MonoBehaviour
     {
         current = this;
         load();
+        save();
+    }
+    public void pathFinding(string Path)
+    {
+        sdp.path.path = Path;
+        path = sdp.path.path;
     }
 }
