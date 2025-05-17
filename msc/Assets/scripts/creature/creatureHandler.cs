@@ -5,7 +5,7 @@ using UnityEngine;
 public class creatureHandler : MonoBehaviour
 {
     public SD_Island islandSaveData;
-    public List<creatureData> creatureObjects;
+    public List<creatureData> creatureObjects; //have in elemental order: A, B, AB, C, AC, BC, ABC, etc
     public List<sd_CreatureHandler> creatureInformation;
 
     public void compileCreatures()

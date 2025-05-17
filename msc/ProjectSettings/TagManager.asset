@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CreatureHandler
   - creature
+  - EC
   layers:
   - Default
   - TransparentFX

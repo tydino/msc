@@ -20,27 +20,31 @@ public class SD_Island : MonoBehaviour
 
     public void LoadFromJson()
     {
-        ch.creatureInformation.Clear();
-        GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
-        foreach(GameObject creatureToDestroy in creaturesEXE)
+        if (System.IO.File.Exists(path + "/island_" + IslandString + ".json"))
         {
-            GameObject.Destroy(creatureToDestroy);
-        }
-        string filePath = path + "/island_" + IslandString + ".json";
-        string islandData = System.IO.File.ReadAllText(filePath);
+            ch.creatureInformation.Clear();
+            GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
+            foreach (GameObject creatureToDestroy in creaturesEXE)
+            {
+                GameObject.Destroy(creatureToDestroy);
+            }
+            string filePath = path + "/island_" + IslandString + ".json";
+            string islandData = System.IO.File.ReadAllText(filePath);
 
-        island = JsonUtility.FromJson<sd_Island>(islandData);
-        foreach(sd_CreatureHandler sdch in island.CHList)
-        {
-            Vector3 pos = new Vector3(sdch.XPos, sdch.YPos, 1);
-            Vector3 scale = new Vector3(sdch.XScl, 1, 1);
-            GameObject cd = creatureObjects[sdch.CreatureID-1];
-            GameObject clone = Instantiate(cd);
-            clone.GetComponent<creatureControler>().sleep = sdch.asleep;
-            clone.transform.position = pos;
-            clone.transform.localScale = scale;
-            clone.GetComponent<Building>().Placed = true;
-            ch.creatureInformation.Add(sdch);
+            island = JsonUtility.FromJson<sd_Island>(islandData);
+            foreach (sd_CreatureHandler sdch in island.CHList)
+            {
+                Vector3 pos = new Vector3(sdch.XPos, sdch.YPos, 1);
+                Vector3 scale = new Vector3(sdch.XScl, 1, 1);
+                GameObject cd = creatureObjects[sdch.CreatureID - 1];
+                GameObject clone = Instantiate(cd);
+                clone.GetComponent<creatureControler>().sleep = sdch.asleep;
+                clone.transform.position = pos;
+                clone.transform.localScale = scale;
+                clone.GetComponent<Building>().Placed = true;
+                ch.creatureInformation.Add(sdch);
+            }
+            EC_mainWidget.current.setUpEC();
         }
     }
 }

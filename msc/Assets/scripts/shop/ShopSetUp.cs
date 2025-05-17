@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShopSetUp : MonoBehaviour
 {
     public creatureHandler ch;
-    public List<creatureData> creatureObjects;
     public GameObject ShopObj;
     public shopInside si;
 

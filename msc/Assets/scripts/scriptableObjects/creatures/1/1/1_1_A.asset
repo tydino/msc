@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::creature
   creatureInIslandID: 1
   PrefabObj: {fileID: 8048276427707932470, guid: 855a2b826de616a4b90a159fd94d43fe, type: 3}
-  BreedScreen: {fileID: 0}
+  BreedScreen: {fileID: 6888901894457015782, guid: 39fe0f3a89a7de044a3395d3491d1fd7, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: 7f04f1c6a0f9da74c8538a7466583698, type: 3}
   worthInCoins: 100
   coins: 1

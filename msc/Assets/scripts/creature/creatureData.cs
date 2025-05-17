@@ -13,6 +13,7 @@ public class creatureData : ScriptableObject
     public bool coins;
     public int worthInDiamonds;
     public bool diamonds;
+    [Header("must be alphabetical order")]
     public string[] element;
 }
 

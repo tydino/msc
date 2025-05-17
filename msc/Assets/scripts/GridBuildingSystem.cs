@@ -153,6 +153,8 @@ public class GridBuildingSystem : MonoBehaviour
     public void InitializeWithBuilding(GameObject building)
     {
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        interactionHandler.current.Clicked = temp.gameObject;
+        interactionHandler.current.CheckMove();
         FollowBuilding();
     }
 
@@ -209,8 +211,8 @@ public class GridBuildingSystem : MonoBehaviour
 
     public void TakeArea(BoundsInt area)
     {
-        SetTilesBlock(area, TileTypes.Empty, TempTilemap);
-        SetTilesBlock(area, TileTypes.Green, MainTilemap);
+        //SetTilesBlock(area, TileTypes.Empty, TempTilemap);
+        //SetTilesBlock(area, TileTypes.Green, MainTilemap); just removed this functionality as it does break the game a bit.
     }
 
     #endregion

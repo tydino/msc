@@ -19,13 +19,21 @@ public class SD_Currency : MonoBehaviour
 
     public void LoadFromJson()
     {
-        string filePath = path + "/currency.json";
-        string data = System.IO.File.ReadAllText(filePath);
+        if (System.IO.File.Exists(path + "/currency.json"))
+        {
+            string filePath = path + "/currency.json";
+            string data = System.IO.File.ReadAllText(filePath);
 
-        sdc = JsonUtility.FromJson<sd_currency>(data);
-        Currency.coins = sdc.coins;
-        Currency.diamonds = sdc.diamonds;
-        Currency.food = sdc.food;
+            sdc = JsonUtility.FromJson<sd_currency>(data);
+            Currency.coins = sdc.coins;
+            Currency.diamonds = sdc.diamonds;
+            Currency.food = sdc.food;
+        }
+        else
+        {
+            Currency.coins = 500;
+            Currency.diamonds = 50;
+        }
     }
 }
 

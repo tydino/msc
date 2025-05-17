@@ -35,6 +35,7 @@ public class Building : MonoBehaviour
         areaTemp.position = positionInt;
         Placed = true;
         GridBuildingSystem.current.TakeArea(areaTemp);
+        EC_mainWidget.current.setUpEC();
     }
 
     public void Save()

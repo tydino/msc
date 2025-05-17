@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creatureInIslandID: 2
   PrefabObj: {fileID: 7759344096495628837, guid: e9eae6a6c0496424495f3bc79b1eb7d3, type: 3}
-  BreedScreen: {fileID: 0}
+  BreedScreen: {fileID: 6888901894457015782, guid: faf02afceeac2df4a872acc19721160b, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: 0ba87d8ffdaa0a44ba83dae53f458f9d, type: 3}
   worthInCoins: 250
   coins: 1
