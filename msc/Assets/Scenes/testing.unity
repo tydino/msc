@@ -2262,6 +2262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1827849981}
   - component: {fileID: 1827849980}
+  - component: {fileID: 1827849982}
   m_Layer: 0
   m_Name: test
   m_TagString: Untagged
@@ -2309,6 +2310,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827849982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827849979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902a3c62b64da524185472d2cef01e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: C:\Users\tydin\OneDrive\Documents\mscTesting
+  placeID: -1
+  ttt: []
+  timeData:
+    timeStart: []
+    timeEnd: []
+    inProgress: 
 --- !u!1 &1919213657
 GameObject:
   m_ObjectHideFlags: 0
