@@ -2300,6 +2300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34503af62bdc42449dffa85cd63b620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisCreature: {fileID: 11400000, guid: 4f74f8eab23351040a071ba9735d443e, type: 2}
   HowMuchThisCreatureMakes: 5
   random: 0
   coins: 1
@@ -2442,7 +2443,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28, y: 1.47}
+  m_Offset: {x: 0.1, y: 1.12}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2453,7 +2454,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.39, y: 2.22}
   m_EdgeRadius: 0
 --- !u!1 &8733259546060790271
 GameObject:

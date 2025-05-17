@@ -13,6 +13,9 @@ public class GridBuildingSystem : MonoBehaviour
     public GridLayout gridLayout;
     public Tilemap MainTilemap;
     public Tilemap TempTilemap;
+    public TileBase Green;
+    public TileBase Red;
+    public TileBase White;
 
     static Dictionary<TileTypes, TileBase> tileBases = new Dictionary<TileTypes, TileBase>();
 
@@ -46,6 +49,7 @@ public class GridBuildingSystem : MonoBehaviour
         if (temp.CanBePlaced())
         {
             temp.Place();
+            interactionHandler.current.Cancel();
         }
     }
 
@@ -56,11 +60,15 @@ public class GridBuildingSystem : MonoBehaviour
 
     void Start()
     {
-        string TilePath = @"Tiles\";
+        /*string TilePath = @"msc\Assets\scripts\Tiles";
         tileBases.Add(TileTypes.Empty, null);
         tileBases.Add(TileTypes.White, Resources.Load<TileBase>(TilePath + "white"));
         tileBases.Add(TileTypes.Red, Resources.Load<TileBase>(TilePath + "red"));
-        tileBases.Add(TileTypes.Green, Resources.Load<TileBase>(TilePath + "green"));
+        tileBases.Add(TileTypes.Green, Resources.Load<TileBase>(TilePath + "green"));*/
+        tileBases.Add(TileTypes.Empty, null);
+        tileBases.Add(TileTypes.White, White);
+        tileBases.Add(TileTypes.Red, Red);
+        tileBases.Add(TileTypes.Green, Green);
     }
 
     void Update()
@@ -85,6 +93,10 @@ public class GridBuildingSystem : MonoBehaviour
                 }
             }
 
+        }
+        if (!temp.Placed)
+        {
+            interactionHandler.current.Clicked = temp.gameObject;
         }
     }
 

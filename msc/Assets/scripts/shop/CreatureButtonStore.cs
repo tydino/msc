@@ -24,20 +24,20 @@ public class CreatureButtonStore : MonoBehaviour
                 {
                     Currency.diamonds = Currency.diamonds - howMuch;
                     Currency.coins = Currency.coins - howMuch;
-                    Instantiate(ThisCreature);
+                    GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                 }
                 if (diamonds == false && howMuch <= Currency.food && food == true)
                 {
                     Currency.coins = Currency.coins - howMuch;
                     Currency.food = Currency.food - howMuch;
-                    Instantiate(ThisCreature);
+                    GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                 }
                 if (diamonds == true && howMuch <= Currency.diamonds && food == true && howMuch <= Currency.food)
                 {
                     Currency.diamonds = Currency.diamonds - howMuch;
                     Currency.coins = Currency.coins - howMuch;
                     Currency.food = Currency.food - howMuch;
-                    Instantiate(ThisCreature);
+                    GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                 }
             }
         }
@@ -48,7 +48,7 @@ public class CreatureButtonStore : MonoBehaviour
                 if (coins == false && food == false)
                 {
                     Currency.diamonds = Currency.diamonds - howMuch;
-                    Instantiate(ThisCreature);
+                    GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                 }
                 else
                 {
@@ -56,20 +56,20 @@ public class CreatureButtonStore : MonoBehaviour
                     {
                         Currency.diamonds = Currency.diamonds - howMuch;
                         Currency.coins = Currency.coins - howMuch;
-                        Instantiate(ThisCreature);
+                        GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                     }
                     if (coins == false && howMuch <= Currency.food && food == true)
                     {
                         Currency.coins = Currency.coins - howMuch;
                         Currency.food = Currency.food - howMuch;
-                        Instantiate(ThisCreature);
+                        GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                     }
                     if (coins == true && howMuch <= Currency.coins && food == true && howMuch <= Currency.food)
                     {
                         Currency.diamonds = Currency.diamonds - howMuch;
                         Currency.coins = Currency.coins - howMuch;
                         Currency.food = Currency.food - howMuch;
-                        Instantiate(ThisCreature);
+                        GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                     }
                 }
             }
@@ -78,7 +78,7 @@ public class CreatureButtonStore : MonoBehaviour
                 if (howMuch <= Currency.food && food == true)
                 {
                     Currency.food = Currency.food - howMuch;
-                    Instantiate(ThisCreature);
+                    GridBuildingSystem.current.InitializeWithBuilding(ThisCreature);
                 }
             }
         }

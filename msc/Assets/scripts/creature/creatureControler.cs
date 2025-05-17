@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class creatureControler : MonoBehaviour
 {
+    public creatureData thisCreature;
     [Header("currency control")]
     public int HowMuchThisCreatureMakes;
     public bool random;
