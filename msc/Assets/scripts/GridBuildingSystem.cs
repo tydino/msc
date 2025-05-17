@@ -22,6 +22,33 @@ public class GridBuildingSystem : MonoBehaviour
 
     #region Unity Methods
 
+    public void flip()
+    {
+        Vector3 ScaleOne = new Vector3(-1, 1, 1);
+        Vector3 ScaleTwo = new Vector3(1, 1, 1);
+        if (temp.gameObject.transform.localScale == ScaleTwo)
+        {
+            temp.gameObject.transform.localScale = ScaleOne;
+        }
+        else
+        {
+            temp.gameObject.transform.localScale = ScaleTwo;
+        }
+    }
+    public void destroy()
+    {
+        //give back price of creature
+        ClearArea();
+        Destroy(temp.gameObject);
+    }
+    public void place()
+    {
+        if (temp.CanBePlaced())
+        {
+            temp.Place();
+        }
+    }
+
     void Awake()
     {
         current = this;
@@ -29,11 +56,11 @@ public class GridBuildingSystem : MonoBehaviour
 
     void Start()
     {
-        string TilePath = @"Tiles/";
+        string TilePath = @"Tiles\";
         tileBases.Add(TileTypes.Empty, null);
         tileBases.Add(TileTypes.White, Resources.Load<TileBase>(TilePath + "white"));
-        tileBases.Add(TileTypes.Red, Resources.Load<TileBase>(TilePath + "Red"));
-        tileBases.Add(TileTypes.Green, Resources.Load<TileBase>(TilePath + "Green"));
+        tileBases.Add(TileTypes.Red, Resources.Load<TileBase>(TilePath + "red"));
+        tileBases.Add(TileTypes.Green, Resources.Load<TileBase>(TilePath + "green"));
     }
 
     void Update()
@@ -42,38 +69,33 @@ public class GridBuildingSystem : MonoBehaviour
         {
             return;
         }
-
         if (Input.GetMouseButtonDown(0))
         {
-            if (EventSystem.current.IsPointerOverGameObject(0))
+            if (!EventSystem.current.IsPointerOverGameObject(0))
             {
-                return;
-            }
-
-            if (!temp.Placed)
-            {
-                Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3Int cellPos = gridLayout.LocalToCell(touchPos);
-
-                if (prevPos != cellPos)
+                if (!temp.Placed)
                 {
-                    temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos + new Vector3(.5f, .5f, 0f));
-                    prevPos = cellPos;
-                    FollowBuilding();
+                    Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector3Int cellPos = gridLayout.LocalToCell(touchPos);
+
+                    if (prevPos != cellPos)
+                    {
+                        StartCoroutine(fb(cellPos));
+                    }
                 }
             }
+
         }
-        else if (Input.GetKeyDown(KeyCode.P))
+    }
+
+    IEnumerator fb(Vector3Int cellPos)
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (!temp.Placed) 
         {
-            if (temp.CanBePlaced())
-            {
-                temp.Place();
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ClearArea();
-            Destroy(temp.gameObject);
+            temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos + new Vector3(.5f, .5f, 0f));
+            prevPos = cellPos;
+            FollowBuilding();
         }
     }
 
@@ -106,7 +128,7 @@ public class GridBuildingSystem : MonoBehaviour
 
     static void FillTiles(TileBase[] arr, TileTypes type)
     {
-        for(int i = 0; i < arr.Length; i++)
+        for (int i = 0; i < arr.Length; i++)
         {
             arr[i] = tileBases[type];
         }
@@ -141,9 +163,9 @@ public class GridBuildingSystem : MonoBehaviour
         int size = baseArray.Length;
         TileBase[] tileArray = new TileBase[size];
 
-        for(int i = 0; i < baseArray.Length; i++)
+        for (int i = 0; i < baseArray.Length; i++)
         {
-            if(baseArray[i] == tileBases[TileTypes.White])
+            if (baseArray[i] == tileBases[TileTypes.White])
             {
                 tileArray[i] = tileBases[TileTypes.Green];
             }
@@ -161,7 +183,7 @@ public class GridBuildingSystem : MonoBehaviour
     public bool CanTakeArea(BoundsInt area)
     {
         TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
-        foreach(var b in baseArray)
+        foreach (var b in baseArray)
         {
             if (b != tileBases[TileTypes.White])
             {

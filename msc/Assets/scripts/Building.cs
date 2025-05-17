@@ -50,4 +50,13 @@ public class Building : MonoBehaviour
     }
 
     #endregion
+    #region interaction
+    void OnMouseDown()
+    {
+        if (interactionHandler.current.Clicked == null)
+        {
+            interactionHandler.current.Clicked = this.gameObject;
+        }
+    }
+    #endregion
 }
