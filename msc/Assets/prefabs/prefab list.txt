@@ -1,3 +1,5 @@
 the prefabs will be organized by series then creature, 
 for which then the creature will be numbered with 0 being default and upward in 
 release order for place. the information on which place is listed in "song list"
+
+special things like "UI" gets their own in the same folder as this txt file.

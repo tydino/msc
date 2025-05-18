@@ -13,7 +13,6 @@ public class interactionHandler : MonoBehaviour
     public GameObject p_cancelObj;
     public GameObject p_placeObj;
     public GameObject p_flipObj;
-    public GameObject StoreButton;
     public TilemapRenderer tempRend;
     public TilemapRenderer mainRend;
     bool moved;
@@ -35,7 +34,6 @@ public class interactionHandler : MonoBehaviour
     #region voids
     public void OpenUI()
     {
-        StoreButton.SetActive(false);
         cancelObj.SetActive(true);
         moveObj.SetActive(true);
         sleepObj.SetActive(true);
@@ -53,7 +51,6 @@ public class interactionHandler : MonoBehaviour
     {
         tempRend.enabled = false;
         mainRend.enabled = false;
-        StoreButton.SetActive(true);
         cancelObj.SetActive(false);
         moveObj.SetActive(false);
         sleepObj.SetActive(false);
@@ -86,12 +83,13 @@ public class interactionHandler : MonoBehaviour
     }
     public void p_cancel()
     {
-        Currency.coins = Currency.coins + Clicked.GetComponent<creatureControler>().thisCreature.worthInCoins;
+        Currency.coins = Currency.coins + (Clicked.GetComponent<creatureControler>().thisCreature.worthInCoins/4);
         GridBuildingSystem.current.destroy();
         p_cancelObj.SetActive(false);
         p_placeObj.SetActive(false);
         p_flipObj.SetActive(false);
         Cancel();
+        EC_mainWidget.current.setUpEC();
     }
     public void Cancel()
     {

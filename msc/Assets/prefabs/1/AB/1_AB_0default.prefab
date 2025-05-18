@@ -115,7 +115,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160802391591445672}
+  - component: {fileID: 4328349141263435947}
   - component: {fileID: 2425987964119352683}
+  - component: {fileID: 791265289568577238}
+  - component: {fileID: 166992305028294826}
   m_Layer: 0
   m_Name: 1_AB_0default
   m_TagString: creature
@@ -159,6 +162,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4328349141263435947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59644430582299851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34503af62bdc42449dffa85cd63b620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisCreature: {fileID: 0}
+  HowMuchThisCreatureMakes: 0
+  random: 0
+  coins: 0
+  diamonds: 0
+  food: 0
+  howLongInSecondsTillMoneyAddedToTotal: 0
+  TimeInGame: 0
+  playWhere: 
+  animator: {fileID: 0}
+  AnimatorIntName: 
+  TempoBeforeCal: 0
+  samples: 0
+  sleep: 0
+  AS: {fileID: 166992305028294826}
+  Ac: []
 --- !u!61 &2425987964119352683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,6 +216,119 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &791265289568577238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59644430582299851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Placed: 0
+  ID: 0
+  area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 2, y: 2, z: 1}
+--- !u!82 &166992305028294826
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59644430582299851}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &175395746024527028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,8 +1460,8 @@ MonoBehaviour:
   - {fileID: 5431152830998497203}
   - {fileID: 8516640000128435155}
   m_Bounds:
-    m_Center: {x: -0.009879947, y: 0.008525133, z: 0}
-    m_Extent: {x: 0.59613997, y: 1.1585252, z: 0}
+    m_Center: {x: -0.009879947, y: 0.008525372, z: 0}
+    m_Extent: {x: 0.59613997, y: 1.158525, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1636,8 +1780,8 @@ MonoBehaviour:
   - {fileID: 7687236944484391246}
   - {fileID: 8920298758638672674}
   m_Bounds:
-    m_Center: {x: -1.493813, y: -0.21502411, z: 0}
-    m_Extent: {x: 0.38357496, y: 0.88644004, z: 0}
+    m_Center: {x: -1.493813, y: -0.21502423, z: 0}
+    m_Extent: {x: 0.38357472, y: 0.88644016, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

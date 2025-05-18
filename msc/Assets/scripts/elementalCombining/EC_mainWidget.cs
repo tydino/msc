@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EC_mainWidget : MonoBehaviour
 {
     public static EC_mainWidget current;
+    public GameObject ECInterface;
     [Header("UI set up")]
     public creatureHandler ch;
     public List<GameObject> creaturePrefabs;
@@ -122,6 +123,7 @@ public class EC_mainWidget : MonoBehaviour
         {
             //once sound is made have the audio sourcer play the bad sound
         }
+        ECInterface.SetActive(false);
     }
 
     void findElement()
