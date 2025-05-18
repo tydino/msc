@@ -6,6 +6,12 @@ public class SD_Path : MonoBehaviour
 {
     public sd_Path path;
 
+    public void PathVoid(string PathStr)
+    {
+        path.path = PathStr;
+        SaveToJson();
+    }
+
     public void SaveToJson()
     {
         string data = JsonUtility.ToJson(path);
