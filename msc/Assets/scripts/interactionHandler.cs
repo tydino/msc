@@ -2,48 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class interactionHandler : MonoBehaviour
 {
     public static interactionHandler current;
     public GameObject Clicked;
-    public GameObject cancelObj;
-    public GameObject moveObj;
-    public GameObject sleepObj;
-    public GameObject p_cancelObj;
-    public GameObject p_placeObj;
-    public GameObject p_flipObj;
-    public TilemapRenderer tempRend;
-    public TilemapRenderer mainRend;
-    bool moved;
+    public GameObject main;
+    public GameObject placement;
+    public bool moved;
+    TilemapRenderer tempRend;
+    TilemapRenderer mainRend;
     GameObject movedObj;
 
     void Start()
     {
+        tempRend = GridBuildingSystem.current.TempTilemap.GetComponent<TilemapRenderer>();
+        mainRend = GridBuildingSystem.current.MainTilemap.GetComponent<TilemapRenderer>();
+        this.gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
         current = this;
         CloseUI();
     }
-    void Update()
+
+    public void moveUI()
     {
-        if (Clicked != null)
-        {
-            OpenUI();
-        }
+        Vector3 screenPos = Clicked.transform.position * 80;
+        Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+        main.GetComponent<RectTransform>().anchoredPosition = new Vector2(screenPos.x, screenPos.y);
     }
 
     #region voids
     public void OpenUI()
     {
-        cancelObj.SetActive(true);
-        moveObj.SetActive(true);
-        sleepObj.SetActive(true);
+        moveUI();
+
+        main.SetActive(true);
         if (movedObj != Clicked)
         {
             tempRend.enabled = false;
             mainRend.enabled = false;
-            p_cancelObj.SetActive(false);
-            p_placeObj.SetActive(false);
-            p_flipObj.SetActive(false);
+            placement.SetActive(false);
             moved = false;
         }
     }
@@ -51,12 +49,9 @@ public class interactionHandler : MonoBehaviour
     {
         tempRend.enabled = false;
         mainRend.enabled = false;
-        cancelObj.SetActive(false);
-        moveObj.SetActive(false);
-        sleepObj.SetActive(false);
-        p_cancelObj.SetActive(false);
-        p_placeObj.SetActive(false);
-        p_flipObj.SetActive(false);
+        main.SetActive(false);
+        placement.SetActive(false);
+        moved = false;
     }
     public void CheckMove()
     {
@@ -64,18 +59,16 @@ public class interactionHandler : MonoBehaviour
         {
             Clicked.GetComponent<Building>().Placed = true;
             GridBuildingSystem.current.temp = null;
-            p_cancelObj.SetActive(false);
-            p_placeObj.SetActive(false);
-            p_flipObj.SetActive(false);
+            tempRend.enabled = false;
+            mainRend.enabled = false;
+            placement.SetActive(false);
             moved = false;
         }
         else
         {
             tempRend.enabled = true;
             mainRend.enabled = true;
-            p_cancelObj.SetActive(true);
-            p_placeObj.SetActive(true);
-            p_flipObj.SetActive(true);
+            placement.SetActive(true);
             Move();
             movedObj = Clicked;
             moved = true;
@@ -85,16 +78,24 @@ public class interactionHandler : MonoBehaviour
     {
         Currency.coins = Currency.coins + (Clicked.GetComponent<creatureControler>().thisCreature.worthInCoins/4);
         GridBuildingSystem.current.destroy();
-        p_cancelObj.SetActive(false);
-        p_placeObj.SetActive(false);
-        p_flipObj.SetActive(false);
+        placement.SetActive(false);
         Cancel();
         EC_mainWidget.current.setUpEC();
+    }
+    public void p_place()
+    {
+        GridBuildingSystem.current.place();
+    }
+    public void p_flip()
+    {
+        GridBuildingSystem.current.flip();
     }
     public void Cancel()
     {
         Clicked.transform.position = Clicked.GetComponent<Building>().prevPOS;
         Clicked.GetComponent<Building>().Placed = true;
+        GridBuildingSystem.current.temp = null;
+        GridBuildingSystem.current.ClearArea();
         Clicked = null;
         CloseUI();
     }
@@ -102,9 +103,11 @@ public class interactionHandler : MonoBehaviour
     {
         Clicked.GetComponent<Building>().Placed = false;
         GridBuildingSystem.current.temp = Clicked.GetComponent<Building>();
+        GridBuildingSystem.current.FollowBuilding();
     }
     public void Sleep()
     {
+        GridBuildingSystem.current.sleep();
         bool _sleep = Clicked.GetComponent<creatureControler>().sleep;
         if (_sleep)
         {

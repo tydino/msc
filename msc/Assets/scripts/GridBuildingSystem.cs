@@ -17,6 +17,8 @@ public class GridBuildingSystem : MonoBehaviour
     public TileBase Red;
     public TileBase White;
 
+    public Coroutine pc;
+
     static Dictionary<TileTypes, TileBase> tileBases = new Dictionary<TileTypes, TileBase>();
 
     public Building temp;
@@ -27,6 +29,7 @@ public class GridBuildingSystem : MonoBehaviour
 
     public void flip()
     {
+        StopCoroutine(pc);
         Vector3 ScaleOne = new Vector3(-1, 1, 1);
         Vector3 ScaleTwo = new Vector3(1, 1, 1);
         if (temp.gameObject.transform.localScale == ScaleTwo)
@@ -40,6 +43,7 @@ public class GridBuildingSystem : MonoBehaviour
     }
     public void destroy()
     {
+        StopCoroutine(pc);
         //give back price of creature
         ClearArea();
         Destroy(temp.gameObject);
@@ -48,9 +52,16 @@ public class GridBuildingSystem : MonoBehaviour
     {
         if (temp.CanBePlaced())
         {
+            StopCoroutine(pc);
             temp.Place();
-            interactionHandler.current.Cancel();
+            interactionHandler.current.CheckMove();
+            ClearArea();
         }
+    }
+
+    public void sleep()
+    {
+        StopCoroutine(pc);
     }
 
     void Awake()
@@ -88,7 +99,7 @@ public class GridBuildingSystem : MonoBehaviour
 
                     if (prevPos != cellPos)
                     {
-                        StartCoroutine(fb(cellPos));
+                        pc = StartCoroutine(fb(cellPos));
                     }
                 }
             }
@@ -108,6 +119,7 @@ public class GridBuildingSystem : MonoBehaviour
             temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos + new Vector3(.5f, .5f, 0f));
             prevPos = cellPos;
             FollowBuilding();
+            interactionHandler.current.moveUI();
         }
     }
 
@@ -158,14 +170,14 @@ public class GridBuildingSystem : MonoBehaviour
         FollowBuilding();
     }
 
-    void ClearArea()
+    public void ClearArea()
     {
         TileBase[] toClear = new TileBase[prevarea.size.x * prevarea.size.y * prevarea.size.z];
         FillTiles(toClear, TileTypes.Empty);
         TempTilemap.SetTilesBlock(prevarea, toClear);
     }
 
-    void FollowBuilding()
+    public void FollowBuilding()
     {
         ClearArea();
 
