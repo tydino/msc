@@ -7,8 +7,10 @@ public class Building : MonoBehaviour
     public bool Placed;
     public int ID;
     public BoundsInt area;
+    public Vector3 prevPOS;
     void Start()
     {
+        prevPOS = transform.position;
         GridBuildingSystem.current.temp = this;
     }
 
@@ -36,6 +38,7 @@ public class Building : MonoBehaviour
         Placed = true;
         GridBuildingSystem.current.TakeArea(areaTemp);
         EC_mainWidget.current.setUpEC();
+        prevPOS = transform.position;
     }
 
     public void Save()

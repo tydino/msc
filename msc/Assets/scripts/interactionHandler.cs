@@ -93,6 +93,8 @@ public class interactionHandler : MonoBehaviour
     }
     public void Cancel()
     {
+        Clicked.transform.position = Clicked.GetComponent<Building>().prevPOS;
+        Clicked.GetComponent<Building>().Placed = true;
         Clicked = null;
         CloseUI();
     }

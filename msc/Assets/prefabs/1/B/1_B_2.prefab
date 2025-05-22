@@ -4468,6 +4468,7 @@ GameObject:
   - component: {fileID: 5269231445086944345}
   - component: {fileID: 5977056718866114282}
   - component: {fileID: 8146546507028451479}
+  - component: {fileID: 1352178811643819683}
   m_Layer: 0
   m_Name: 1_B_2
   m_TagString: creature
@@ -4529,7 +4530,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8135636011756541362}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b34503af62bdc42449dffa85cd63b620, type: 3}
   m_Name: 
@@ -4542,14 +4543,15 @@ MonoBehaviour:
   food: 0
   howLongInSecondsTillMoneyAddedToTotal: 0
   TimeInGame: 0
-  playWhere: 
-  animator: {fileID: 0}
-  AnimatorIntName: 
-  TempoBeforeCal: 0
-  samples: 0
+  playWhere: 0100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000000000000
+  animator: {fileID: 1352178811643819683}
+  AnimatorIntName: p
+  TempoBeforeCal: 75
+  samples: 60
   sleep: 0
   AS: {fileID: 8146546507028451479}
-  Ac: []
+  Ac:
+  - {fileID: 8300000, guid: 50ad00bf749772c4985699693d257dbf, type: 3}
 --- !u!61 &5269231445086944345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4589,7 +4591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Placed: 0
-  ID: 0
+  ID: 2
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
@@ -4689,6 +4691,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1352178811643819683
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135636011756541362}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 399085f55c49b2543a780c49721cdec9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8191699298451505790
 GameObject:
   m_ObjectHideFlags: 0

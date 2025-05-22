@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d622ac6e6024ca14ebf15376fc6013d6, type: 2}
+  m_Motion: {fileID: 7400000, guid: dfba61a5573bc4b40aaba9e555e9a694, type: 2}
   m_Tag: 
   m_SpeedParameter: s
   m_MirrorParameter: 
@@ -49,7 +49,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 98206ce633cf49c4f8a29af79cb91c22, type: 2}
+  m_Motion: {fileID: 7400000, guid: 118f48d75cc788446b35305a35a9c67e, type: 2}
   m_Tag: 
   m_SpeedParameter: s
   m_MirrorParameter: 
@@ -69,10 +69,10 @@ AnimatorStateMachine:
     m_Position: {x: 250, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8838946016468006559}
-    m_Position: {x: 285, y: 95, z: 0}
+    m_Position: {x: 280, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8016624629532540014}
-    m_Position: {x: 510, y: 50, z: 0}
+    m_Position: {x: 560, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6171909976236223850}
     m_Position: {x: 490, y: -30, z: 0}
@@ -108,7 +108,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dc29dd069e700934f99e8993dc212b68, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1788bf7c21590d441a14f4d24f4de35e, type: 2}
   m_Tag: 
   m_SpeedParameter: s
   m_MirrorParameter: 
@@ -135,7 +135,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 09a1e2ce11cd75c46930f54e2114432b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2e65887b3c877da4c8023121f9f3f766, type: 2}
   m_Tag: 
   m_SpeedParameter: s
   m_MirrorParameter: 
@@ -197,7 +197,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1_B_1
+  m_Name: 1_B_2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: p

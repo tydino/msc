@@ -7,7 +7,8 @@ public class CameraDrag : MonoBehaviour//https://youtu.be/H7pjj1K91HE for code
 {
     public Vector3 topLeftBound;
     public Vector3 bottomRightBound;
-    public Transform testTransform;
+    public Vector3 testTransform;
+    public float smoothTime = 1f;
     Vector3 _origin;
     Vector3 _difference;
 
@@ -18,7 +19,7 @@ public class CameraDrag : MonoBehaviour//https://youtu.be/H7pjj1K91HE for code
     void Awake()
     {
         _mainCamera = Camera.main;
-        testTransform.position = transform.position;
+        testTransform = transform.position;
     }
 
     public void OnDrag(InputAction.CallbackContext ctx)
@@ -31,17 +32,11 @@ public class CameraDrag : MonoBehaviour//https://youtu.be/H7pjj1K91HE for code
     {
         if (!_isDragging) return;
 
-        _difference = GetMousePosition - testTransform.position;
-        testTransform.position = _origin - _difference;
-        if (!(testTransform.position.x < topLeftBound.x || testTransform.position.x > bottomRightBound.x || testTransform.position.y > topLeftBound.y || testTransform.position.y < bottomRightBound.y))
-        {
-            _difference = GetMousePosition - transform.position;
-            transform.position = _origin - _difference;
-        }
-        else
-        {
-            testTransform.position = transform.position;
-        }
+        _difference = GetMousePosition - testTransform;
+        testTransform = _origin - _difference;
+        testTransform.x = Mathf.Clamp(testTransform.x, topLeftBound.x, bottomRightBound.x);
+        testTransform.y = Mathf.Clamp(testTransform.y, bottomRightBound.y, topLeftBound.y);
+        transform.position = testTransform;
     }
 
     Vector3 GetMousePosition => _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
