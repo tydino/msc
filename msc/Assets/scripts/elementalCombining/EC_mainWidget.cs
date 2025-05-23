@@ -35,6 +35,7 @@ public class EC_mainWidget : MonoBehaviour
         foreach (creatureData cd in ch.creatureObjects)
         {
             creaturePrefabs.Add(cd.PrefabObj);
+            setUpEC();
         }
     }
     void Update()
