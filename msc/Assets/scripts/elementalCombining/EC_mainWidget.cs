@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,12 @@ using UnityEngine.UI;
 
 public class EC_mainWidget : MonoBehaviour
 {
+    [Header("this widget is made for a ABCDEZ place")]
     public static EC_mainWidget current;
-    public GameObject ECInterface;
     [Header("UI set up")]
-    public creatureHandler ch;
-    public List<GameObject> creaturePrefabs;
+    creatureHandler ch;
+    List<creatureData> creatureDatas = new List<creatureData>();
+    List<GameObject> creaturePrefabs = new List<GameObject>();
     public List<GameObject> Icons1;
     public List<GameObject> Icons2;
     public Slider slider1;
@@ -17,9 +19,20 @@ public class EC_mainWidget : MonoBehaviour
     public GameObject breedScreen;
     public GameObject IconSet1;
     public GameObject IconSet2;
+    Text TimeLeft;
+    Slider TimeLeftSlider;
+    GameObject TimeLeftObj;
     [Header("audio things")]
     public AudioSource AS;
     public AudioClip[] Ac;
+    [Header("save data things")]
+    public static bool inProgress;
+    public static Status status;
+    public static int creatureDone;
+    public static int creature1_Egg;
+    public static int creature2_Egg;
+    public static DateTime TimerStart;
+    public static DateTime TimerEnd;
     [Header("private varibles")]
     [SerializeField] bool isBreeding;
     [SerializeField] creatureData Creature1;
@@ -27,19 +40,52 @@ public class EC_mainWidget : MonoBehaviour
     [SerializeField] creatureData Creature2;
     [SerializeField] string creature2_E;
 
-    #region unity voids
+    #region enum
+    public enum Status {idle, working, complete}
+    #endregion
 
+    #region activation
+    void OnMouseDown()
+    {
+        if (status == Status.complete)
+        {
+            GridBuildingSystem.current.InitializeWithBuilding(creaturePrefabs[creatureDone]);
+            interactionHandler.current.OpenUI(false);
+            status = Status.idle;
+        }
+        else
+        {
+            if (!inProgress)
+            {
+                interactionHandler.current.canClick = false;
+                interactionHandler.current.ECInterface.SetActive(true);
+            }
+        }
+    }
+    #endregion
+
+    #region unity voids
     void Awake()
     {
         current = this;
+    }
+
+    void Start()
+    {
+        TimeLeft = interactionHandler.current.TimeLeft;
+        TimeLeftSlider = interactionHandler.current.TimeLeftSlider;
+        TimeLeftObj = interactionHandler.current.TimeLeftObj;
+        ch = creatureHandler.current;
         foreach (creatureData cd in ch.creatureObjects)
         {
             creaturePrefabs.Add(cd.PrefabObj);
-            setUpEC();
+            creatureDatas.Add(cd);
         }
+        setUpEC();
     }
     void Update()
     {
+        SetUpTimer();
         slider1.maxValue = Icons1.Count - 1;
         slider2.maxValue = Icons2.Count - 1;
         for (int i = 0; i < Icons1.Count; i++)
@@ -98,6 +144,7 @@ public class EC_mainWidget : MonoBehaviour
             temp.GetComponent<EC_button>().OneOrTwo = 2;
             Icons2.Add(temp);
         }
+        SetUpTimer();
     }
     public void Button(creatureData cd, int OneOrTwo)
     {
@@ -116,15 +163,16 @@ public class EC_mainWidget : MonoBehaviour
         {
             if (Creature1 != Creature2)
             {
+                status = Status.working;
                 GoThroughPossibilities();
-                resetVars();
             }
         }
         else
         {
             //once sound is made have the audio sourcer play the bad sound
         }
-        ECInterface.SetActive(false);
+        interactionHandler.current.ECInterface.SetActive(false);
+        interactionHandler.current.canClick = true;
     }
 
     void findElement()
@@ -143,12 +191,42 @@ public class EC_mainWidget : MonoBehaviour
     void GoThroughPossibilities()
     {
         findElement();
-        //int random = Random.Range(-1, 1);
-        //remember that the breed is cap sensitive and there is a space before, between, and after every elemental letter
+        int chance = UnityEngine.Random.Range(-1, 1);
+        //remember that the breed is cap sensitive and there is a space before, between, and after every elemental letter (order A,B,AB,C, AC, BC, ABC, D, AD, BD, CD, ABD, ACD, BCD, ABCD, E, AE, BE, CE, DE, ABE, ACE, ADE, BCE, BDE, CDE, ABCE, ABDE, ACDE, BCDE, ABCDE, Z)
+        gtpDoubles(chance);
+        gtpTriples(chance);
+
+        resetVars();
+    }
+    //doubles if statements
+    void gtpDoubles(int chance)
+    {
         if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " B " || creature2_E == " B "))
         {
-            GridBuildingSystem.current.InitializeWithBuilding(creaturePrefabs[2]);
+            CreatureChosen(2, chance);
         }
+        if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " C " || creature2_E == " C "))
+        {
+            CreatureChosen(4, chance);
+        }
+        if ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " C " || creature2_E == " C "))
+        {
+            CreatureChosen(5, chance);
+        }
+    }
+    //triples if statements
+    void gtpTriples(int chance)
+    {
+        if (((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " BC " || creature2_E == " BC ")) || ((creature1_E == " AB " || creature2_E == " AB ") && (creature1_E == " C " || creature2_E == " C ")) || ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " AC " || creature2_E == " AC ")))
+        {
+            CreatureChosen(6, chance);
+        }
+    }
+    void CreatureChosen(int CreatureID, int chance)
+    {
+        //make chance system
+        creatureDone = CreatureID;
+        StartTimer(CreatureID);
     }
     void resetVars()
     {
@@ -158,4 +236,107 @@ public class EC_mainWidget : MonoBehaviour
         Creature2 = null;
     }
     #endregion
+
+    #region timer
+
+    //figure out skip button eventually
+
+    Coroutine lastTimer;
+    Coroutine lastDisplay;
+
+    public void SetUpTimer()
+    {
+
+        lastDisplay = StartCoroutine(DisplayTime());
+    }
+
+    void StartTimer(int i)
+    {
+        inProgress = true;
+        //initialize before data
+        creatureData cd = creatureDatas[i];
+        //initialize after data
+        TimerStart = DateTime.Now;
+        int Days = cd.timeInDays;
+        int Hours = cd.timeInHours;
+        int Minutes = cd.timeInMinutes;
+        int Seconds = cd.timeInSeconds;
+        TimeSpan time = new TimeSpan(Days, Hours, Minutes, Seconds);
+        TimerEnd = TimerStart.Add(time);
+
+        SetUpTimer();
+        lastTimer = StartCoroutine(Timer());
+    }
+
+    #region iEnumerators
+    IEnumerator DisplayTime()
+    {
+        DateTime start = DateTime.Now;
+        TimeSpan timeLeft = TimerEnd - start;
+        double totalSecondsLeft = timeLeft.TotalSeconds;
+        double totalSeconds = (TimerEnd - TimerStart).TotalSeconds;
+        string text;
+        while (status == Status.working)
+        {
+            text = "";
+            interactionHandler.current.TimeLeftSlider.value = 1 - Convert.ToSingle((TimerEnd - DateTime.Now).TotalSeconds / totalSeconds);
+            interactionHandler.current.TimeLeftObj.SetActive(true);
+            //skipButton.gameObject.SetActive(true);
+
+            if (totalSecondsLeft > 1)
+            {
+                if (timeLeft.Days != 0)
+                {
+                    text += timeLeft.Days + "d ";
+                    text += timeLeft.Hours + "h";
+                    interactionHandler.current.TimeLeft.text = text;
+                    yield return new WaitForSeconds(timeLeft.Minutes * 60);
+                }
+                else if (timeLeft.Hours != 0)
+                {
+                    text += timeLeft.Hours + "h ";
+                    text += timeLeft.Minutes + "m";
+                    interactionHandler.current.TimeLeft.text = text;
+                    yield return new WaitForSeconds(timeLeft.Seconds);
+                }
+                else if (timeLeft.Minutes != 0)
+                {
+                    TimeSpan ts = TimeSpan.FromSeconds(totalSecondsLeft);
+                    text += ts.Minutes + "m ";
+                    text += ts.Seconds + "s";
+                    interactionHandler.current.TimeLeft.text = text;
+                }
+                else
+                {
+                    text += Mathf.FloorToInt((float)totalSecondsLeft) + "s";
+                    interactionHandler.current.TimeLeft.text = text;
+                }
+
+                totalSecondsLeft -= Time.deltaTime;
+                yield return null;
+
+            }
+            else
+            {
+                interactionHandler.current.TimeLeft.text = "Finished";
+                //skipButton.gameObject.SetActive(false);
+                interactionHandler.current.TimeLeftSlider.value = 1;
+                interactionHandler.current.TimeLeftObj.SetActive(false);
+                status = Status.complete;
+                inProgress = false;
+            }
+        }    
+
+        yield return null;
+    }
+
+    IEnumerator Timer()
+    {
+        DateTime start = DateTime.Now;
+        double secondsToFinished = (TimerEnd - start).TotalSeconds;
+        yield return new WaitForSeconds(Convert.ToSingle(secondsToFinished));
+        Debug.Log("complete!");
+    }
+    #endregion
+#endregion
 }

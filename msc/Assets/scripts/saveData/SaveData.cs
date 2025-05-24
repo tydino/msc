@@ -8,6 +8,7 @@ public class SaveData : MonoBehaviour
     public SD_Currency sdc;
     public SD_Island sdi;
     public SD_Path sdp;
+    public SD_ECTimer sdect;
     public int coin_editable;
     public int diamond_editable;
     public int food_editable;
@@ -24,17 +25,21 @@ public class SaveData : MonoBehaviour
         }
         sdc.path = path;
         sdi.path = path;
+        sdect.path = path;
         sdc.SaveToJson();
         sdi.SaveToJson();
-    }
+        sdect.SaveToJson();
+}
     public void load()
     {
         sdp.LoadFromJson();
         path = sdp.path.path;
         sdc.path = path;
         sdi.path = path;
+        sdect.path = path;
         sdc.LoadFromJson();
         sdi.LoadFromJson();
+        sdect.LoadFromJson();
     }
 
     void Awake()

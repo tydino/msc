@@ -10,6 +10,8 @@ public class GridBuildingSystem : MonoBehaviour
 {
     public static GridBuildingSystem current;
 
+    public bool startGame = true;
+
     public GridLayout gridLayout;
     public Tilemap MainTilemap;
     public Tilemap TempTilemap;
@@ -67,6 +69,7 @@ public class GridBuildingSystem : MonoBehaviour
     void Awake()
     {
         current = this;
+        startGame = true;
     }
 
     void Start()
@@ -164,7 +167,9 @@ public class GridBuildingSystem : MonoBehaviour
 
     public void InitializeWithBuilding(GameObject building)
     {
+        startGame = false;
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        temp.Started();
         interactionHandler.current.Clicked = temp.gameObject;
         interactionHandler.current.CheckMove();
         FollowBuilding();

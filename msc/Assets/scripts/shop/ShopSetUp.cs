@@ -17,4 +17,10 @@ public class ShopSetUp : MonoBehaviour
             si.Icons.Add(temp);
         }
     }
+
+    void OnMouseDown()
+    {
+        interactionHandler.current.shopUI.SetActive(true);
+        interactionHandler.current.canClick = false;
+    }
 }

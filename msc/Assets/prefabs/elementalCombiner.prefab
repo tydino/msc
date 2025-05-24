@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5046644168467220377}
   - component: {fileID: 5046644168467220382}
-  - component: {fileID: 5046644168467220379}
   - component: {fileID: 5046644168467220376}
   - component: {fileID: 5046644168467220378}
   m_Layer: 0
@@ -87,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5046644168467220379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046644168467220383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b76a03170bb874da141115316b56c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objToActivate: {fileID: 0}
 --- !u!61 &5046644168467220376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,8 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ECInterface: {fileID: 0}
-  ch: {fileID: 0}
-  creaturePrefabs: []
   Icons1: []
   Icons2: []
   slider1: {fileID: 0}
@@ -150,6 +134,11 @@ MonoBehaviour:
   IconSet2: {fileID: 0}
   AS: {fileID: 0}
   Ac: []
+  inProgress: 0
+  status: 0
+  creatureDone: 0
+  creature1_Egg: 0
+  creature2_Egg: 0
   isBreeding: 0
   Creature1: {fileID: 0}
   creature1_E: 

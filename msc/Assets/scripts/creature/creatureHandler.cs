@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class creatureHandler : MonoBehaviour
 {
+    public static creatureHandler current;
     public SD_Island islandSaveData;
     public List<creatureData> creatureObjects; //have in elemental order: A, B, AB, C, AC, BC, ABC, etc
     public List<sd_CreatureHandler> creatureInformation;
+
+    void Awake()
+    {
+        current = this;
+    }
 
     public void compileCreatures()
     {

@@ -7,16 +7,42 @@ using UnityEngine.UI;
 public class interactionHandler : MonoBehaviour
 {
     public static interactionHandler current;
+    public bool canClick;
     public GameObject Clicked;
     public GameObject main;
     public GameObject placement;
     public bool moved;
-    TilemapRenderer tempRend;
-    TilemapRenderer mainRend;
-    GameObject movedObj;
+    public TilemapRenderer tempRend;
+    public TilemapRenderer mainRend;
+    public GameObject movedObj;
+    [Header("elemental combiner")]
+    public GameObject ECUI;
+    public GameObject completeEC;
+    public GameObject ECInterface;
+    public GameObject EC;
+    public Text TimeLeft;
+    public Slider TimeLeftSlider;
+    public GameObject TimeLeftObj;
+    [Header("shop")]
+    public GameObject shopUI;
+
+    void Update()
+    {
+        if (EC_mainWidget.status == EC_mainWidget.Status.complete)
+        {
+            completeEC.SetActive(true);
+        }
+        else
+        {
+            completeEC.SetActive(false);
+        }
+    }
 
     void Start()
     {
+        canClick = true;
+        ECUI.transform.position = EC_mainWidget.current.gameObject.transform.position;
+        EC.SetActive(false);
         tempRend = GridBuildingSystem.current.TempTilemap.GetComponent<TilemapRenderer>();
         mainRend = GridBuildingSystem.current.MainTilemap.GetComponent<TilemapRenderer>();
         this.gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
@@ -32,17 +58,25 @@ public class interactionHandler : MonoBehaviour
     }
 
     #region voids
-    public void OpenUI()
+    public void OnClick()
     {
-        moveUI();
+        canClick = true;
+    }
 
-        main.SetActive(true);
-        if (movedObj != Clicked)
+    public void OpenUI(bool open)
+    {
+        if (canClick || open)
         {
-            tempRend.enabled = false;
-            mainRend.enabled = false;
-            placement.SetActive(false);
-            moved = false;
+            moveUI();
+
+            main.SetActive(true);
+            if (movedObj != Clicked)
+            {
+                tempRend.enabled = false;
+                mainRend.enabled = false;
+                placement.SetActive(false);
+                moved = false;
+            }
         }
     }
     public void CloseUI()

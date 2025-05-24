@@ -11,10 +11,21 @@ public class Building : MonoBehaviour
     void Start()
     {
         prevPOS = transform.position;
-        GridBuildingSystem.current.temp = this;
     }
 
     #region build Methods
+
+    public void Started()
+    {
+        interactionHandler.current.main.SetActive(true);
+        interactionHandler.current.tempRend.enabled = true;
+        interactionHandler.current.mainRend.enabled = true;
+        interactionHandler.current.placement.SetActive(true);
+        interactionHandler.current.Clicked = this.gameObject;
+        interactionHandler.current.movedObj = this.gameObject;
+        interactionHandler.current.moveUI();
+        prevPOS = transform.position;
+    }
 
     public bool CanBePlaced()
     {
@@ -39,6 +50,8 @@ public class Building : MonoBehaviour
         GridBuildingSystem.current.TakeArea(areaTemp);
         EC_mainWidget.current.setUpEC();
         prevPOS = transform.position;
+
+        SaveData.current.save();
     }
 
     public void Save()
@@ -60,7 +73,7 @@ public class Building : MonoBehaviour
         if ((interactionHandler.current.Clicked != this.gameObject || interactionHandler.current.Clicked == null) && interactionHandler.current.moved == false)
         {
             interactionHandler.current.Clicked = this.gameObject;
-            interactionHandler.current.OpenUI();
+            interactionHandler.current.OpenUI(false);
         }
     }
     #endregion
