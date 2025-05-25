@@ -168,6 +168,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: 
   place: 1_2
+  sdECT:
+    inProgress: 0
+    DateStart: 
+    DateEnd: 
+    Status: 
+    creatureDone: 0
+    creature1: 0
+    creature2: 0
 --- !u!1 &36711228
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +415,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2254941047864175799, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3485846776228416989, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -748,8 +760,7 @@ MonoBehaviour:
   TimeInGame: 0
   playWhere: 01000000010000000100000001000000020000000200000002000000020000000100000001000000010000000100000002000000020000000200000002000000010000000100000001000000010000000100000001000000010000000100000002000000
   animator: {fileID: 682095204}
-  AnimatorIntName: p
-  TempoBeforeCal: 75
+  Tempo: 75
   samples: 60
   sleep: 0
   AS: {fileID: 682095205}
@@ -1140,7 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9e8aeda48f12f428511a2e5237e49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 32
+  limit: 36
   a: {fileID: 1047778907}
 --- !u!95 &1047778907
 Animator:
@@ -1267,7 +1278,7 @@ MonoBehaviour:
   - {fileID: 6079378097275819518, guid: 192ad7ddc53daad4caec4384d0b30794, type: 3}
   - {fileID: 8135636011756541362, guid: 533293c8bf5e2c243b4fa186189c2583, type: 3}
   - {fileID: 1515538403521767026, guid: 56be78d0194ba64488d9bd845cdf26f2, type: 3}
-  ch: {fileID: 1966373380}
+  - {fileID: 8581678351085532633, guid: 8f115a1a767ca984d81a94ace71cab48, type: 3}
   island:
     CHList: []
 --- !u!114 &1160077184 stripped
@@ -7420,6 +7431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37c26c22c76f73409f7772cef5ca66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGame: 1
   gridLayout: {fileID: 1356364313}
   MainTilemap: {fileID: 1272503593}
   TempTilemap: {fileID: 967142156}
@@ -7567,6 +7579,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1bdd36a224bab474c9a6a22caed19052, type: 2}
   - {fileID: 11400000, guid: 0d84293a69077614195c3e4d6d0d2111, type: 2}
   - {fileID: 11400000, guid: 6aa4f4442685e26488dafe005faaee27, type: 2}
+  - {fileID: 11400000, guid: a0f42db0427a3a046bac637ab1a48eac, type: 2}
   creatureInformation: []
 --- !u!1 &2082686363 stripped
 GameObject:

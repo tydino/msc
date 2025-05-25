@@ -17,9 +17,8 @@ public class creatureControler : MonoBehaviour
     public int[] playWhere;
     [Header("Animator")]
     public Animator animator;
-    public string AnimatorIntName;
-    public float TempoBeforeCal;
-    public int samples;
+    public float Tempo;
+    public int samples = 60;
     public bool sleep = false;
     [Header("audio")]
     public AudioSource AS;
@@ -27,7 +26,7 @@ public class creatureControler : MonoBehaviour
 
     public void Update() {
         TimeInGame = timer.Timer;
-        animator.SetFloat("s", TempoBeforeCal / samples);
+        animator.SetFloat("s", Tempo / samples);
 
         if (animator != null)
         {
@@ -35,7 +34,7 @@ public class creatureControler : MonoBehaviour
             {
                 if (i == TimeInGame)
                 {
-                    animator.SetInteger(AnimatorIntName, playWhere[i]);
+                    animator.SetInteger("p", playWhere[i]);
                 }
             }
 

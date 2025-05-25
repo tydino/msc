@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
+  m_Name: 1_2_AC
+  m_EditorClassIdentifier: 
+  creatureInIslandID: 5
+  PrefabObj: {fileID: 7564897538457579250, guid: f1690467b7ee755469fc19b46f4b7da1, type: 3}
+  StoreFront: {fileID: 0}
+  worthInCoins: 0
+  coins: 0
+  worthInDiamonds: 500
+  diamonds: 1
+  element:
+  - A
+  - C
+  BreedScreen: {fileID: 6888901894457015782, guid: ab885ed289c24784b9a73eed5588b232, type: 3}
+  egg: {fileID: 0}
+  timeInDays: 0
+  timeInHours: 0
+  timeInMinutes: 5
+  timeInSeconds: 0

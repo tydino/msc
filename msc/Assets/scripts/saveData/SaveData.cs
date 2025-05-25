@@ -42,7 +42,7 @@ public class SaveData : MonoBehaviour
         sdect.LoadFromJson();
     }
 
-    void Awake()
+    void Start()
     {
         current = this;
         load();

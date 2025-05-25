@@ -261,7 +261,7 @@ public class EC_mainWidget : MonoBehaviour
         creature2_E = null;
         Creature1 = null;
         Creature2 = null;
-        if (creatureDone !> 0)
+        if (creatureDone == 0)
         {
             AS.PlayOneShot(Ac[3]);
         }

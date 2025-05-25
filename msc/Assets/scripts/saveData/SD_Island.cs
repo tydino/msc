@@ -21,12 +21,6 @@ public class SD_Island : MonoBehaviour
     {
         if (System.IO.File.Exists(path + "/island_" + IslandString + ".json"))
         {
-            creatureObjects.Clear();
-            foreach (creatureData cd in creatureHandler.current.creatureObjects)
-            {
-                creatureObjects.Add(cd.PrefabObj);
-            }
-
             creatureHandler.current.creatureInformation.Clear();
             GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
             foreach (GameObject creatureToDestroy in creaturesEXE)
