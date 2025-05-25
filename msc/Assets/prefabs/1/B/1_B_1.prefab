@@ -4594,7 +4594,7 @@ MonoBehaviour:
   coins: 1
   diamonds: 0
   food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 10
+  howLongInSecondsTillMoneyAddedToTotal: 8
   TimeInGame: 0
   playWhere: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000000000000000000000000000000000000100000001000000010000000100000000000000
   animator: {fileID: 2976976209296608497}
@@ -4622,6 +4622,7 @@ MonoBehaviour:
   area:
     m_Position: {x: 0, y: 1, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
+  prevPOS: {x: 0, y: 0, z: 0}
 --- !u!82 &9219703525106280091
 AudioSource:
   m_ObjectHideFlags: 0

@@ -6,13 +6,12 @@ public class SD_Island : MonoBehaviour
 {
     public string path;
     public string IslandString;
-    public List<GameObject> creatureObjects;
-    public creatureHandler ch;
+    public List<GameObject> creatureObjects = new List<GameObject>();
     public sd_Island island;
 
     public void SaveToJson()
     {
-        ch.compileCreatures();
+        creatureHandler.current.compileCreatures();
         string islandData = JsonUtility.ToJson(island);
         string filePath = path + "/island_" + IslandString + ".json";
         System.IO.File.WriteAllText(filePath, islandData);
@@ -22,7 +21,13 @@ public class SD_Island : MonoBehaviour
     {
         if (System.IO.File.Exists(path + "/island_" + IslandString + ".json"))
         {
-            ch.creatureInformation.Clear();
+            creatureObjects.Clear();
+            foreach (creatureData cd in creatureHandler.current.creatureObjects)
+            {
+                creatureObjects.Add(cd.PrefabObj);
+            }
+
+            creatureHandler.current.creatureInformation.Clear();
             GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
             foreach (GameObject creatureToDestroy in creaturesEXE)
             {
@@ -42,7 +47,7 @@ public class SD_Island : MonoBehaviour
                 clone.transform.position = pos;
                 clone.transform.localScale = scale;
                 clone.GetComponent<Building>().Placed = true;
-                ch.creatureInformation.Add(sdch);
+                creatureHandler.current.creatureInformation.Add(sdch);
             }
         }
     }

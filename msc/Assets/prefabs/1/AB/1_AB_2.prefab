@@ -675,9 +675,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 11400000, guid: 6aa4f4442685e26488dafe005faaee27, type: 2}
-  HowMuchThisCreatureMakes: 0
+  HowMuchThisCreatureMakes: 10
   random: 0
-  coins: 0
+  coins: 1
   diamonds: 0
   food: 0
   howLongInSecondsTillMoneyAddedToTotal: 0
@@ -734,6 +734,7 @@ MonoBehaviour:
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
+  prevPOS: {x: 0, y: 0, z: 0}
 --- !u!82 &1696422141240537619
 AudioSource:
   m_ObjectHideFlags: 0

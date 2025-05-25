@@ -3778,9 +3778,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 0}
-  HowMuchThisCreatureMakes: 0
+  HowMuchThisCreatureMakes: 5
   random: 0
-  coins: 0
+  coins: 1
   diamonds: 0
   food: 0
   howLongInSecondsTillMoneyAddedToTotal: 0
@@ -3836,6 +3836,7 @@ MonoBehaviour:
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
+  prevPOS: {x: 0, y: 0, z: 0}
 --- !u!82 &6783145907746294072
 AudioSource:
   m_ObjectHideFlags: 0

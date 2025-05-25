@@ -228,6 +228,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f74f8eab23351040a071ba9735d443e, type: 2}
   - {fileID: 11400000, guid: 503f30a55c51435409a5f2505e031a7b, type: 2}
   - {fileID: 11400000, guid: a445ef5a368da7a40bbb8b2c8c830ad7, type: 2}
+  - {fileID: 11400000, guid: 178c0673cda7612469505a86acacdc66, type: 2}
+  - {fileID: 11400000, guid: d2181d751cbc91d408a2a418f4917292, type: 2}
+  - {fileID: 11400000, guid: 6f91061b6147b0f40a1e3b02e0a9f1df, type: 2}
+  - {fileID: 11400000, guid: 526cc679cf6e0ec41a79390c0daf5ccf, type: 2}
   creatureInformation: []
 --- !u!1 &353353923 stripped
 GameObject:
@@ -13110,11 +13114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: 
   IslandString: 1_1
-  creatureObjects:
-  - {fileID: 8048276427707932470, guid: 855a2b826de616a4b90a159fd94d43fe, type: 3}
-  - {fileID: 7759344096495628837, guid: e9eae6a6c0496424495f3bc79b1eb7d3, type: 3}
-  - {fileID: 950689595908357984, guid: 73a3b21f852fe3b45adc0ba731256b62, type: 3}
-  ch: {fileID: 336836884}
+  creatureObjects: []
   island:
     CHList: []
 --- !u!1001 &962779326041619084
