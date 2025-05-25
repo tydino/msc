@@ -26,5 +26,5 @@ MonoBehaviour:
   egg: {fileID: 0}
   timeInDays: 0
   timeInHours: 0
-  timeInMinutes: 0
+  timeInMinutes: 10
   timeInSeconds: 0

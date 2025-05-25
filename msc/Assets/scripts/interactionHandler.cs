@@ -115,6 +115,7 @@ public class interactionHandler : MonoBehaviour
         placement.SetActive(false);
         Cancel();
         EC_mainWidget.current.setUpEC();
+        SaveData.current.save();
     }
     public void p_place()
     {
@@ -123,6 +124,7 @@ public class interactionHandler : MonoBehaviour
     public void p_flip()
     {
         GridBuildingSystem.current.flip();
+        SaveData.current.save();
     }
     public void Cancel()
     {
@@ -151,6 +153,7 @@ public class interactionHandler : MonoBehaviour
             Clicked.GetComponent<creatureControler>().sleep = true;
             GridBuildingSystem.current.sleep();
         }
+        SaveData.current.save();
     }
     #endregion
 }

@@ -175,12 +175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 0}
-  HowMuchThisCreatureMakes: 10
+  HowMuchThisCreatureMakes: 15
   random: 0
   coins: 1
   diamonds: 0
   food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 0
+  howLongInSecondsTillMoneyAddedToTotal: 5
   TimeInGame: 0
   playWhere: 
   animator: {fileID: 0}

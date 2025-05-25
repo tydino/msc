@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1_1_AC
   m_EditorClassIdentifier: 
   creatureInIslandID: 5
-  PrefabObj: {fileID: 0}
+  PrefabObj: {fileID: 7564897538457579250, guid: f1690467b7ee755469fc19b46f4b7da1, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: 26a01b57c1523ec4cb4eab83a28b02b8, type: 3}
   worthInCoins: 0
   coins: 0
@@ -22,9 +22,9 @@ MonoBehaviour:
   element:
   - A
   - C
-  BreedScreen: {fileID: 0}
+  BreedScreen: {fileID: 6888901894457015782, guid: ab885ed289c24784b9a73eed5588b232, type: 3}
   egg: {fileID: 0}
   timeInDays: 0
   timeInHours: 0
-  timeInMinutes: 0
+  timeInMinutes: 5
   timeInSeconds: 0

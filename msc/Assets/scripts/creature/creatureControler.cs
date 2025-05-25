@@ -29,26 +29,28 @@ public class creatureControler : MonoBehaviour
         TimeInGame = timer.Timer;
         animator.SetFloat("s", TempoBeforeCal / samples);
 
-        for (int i = 0; i < playWhere.Length; i++)
+        if (animator != null)
         {
-            if (i == TimeInGame)
+            for (int i = 0; i < playWhere.Length; i++)
             {
-                animator.SetInteger(AnimatorIntName, playWhere[i]);
+                if (i == TimeInGame)
+                {
+                    animator.SetInteger(AnimatorIntName, playWhere[i]);
+                }
+            }
+
+            if (sleep == false)
+            {
+                animator.SetBool("z", false);
+                AS.enabled = true;
+
+            }
+            else
+            {
+                AS.enabled = false;
+                animator.SetBool("z", true);
             }
         }
-
-        if (sleep == false)
-        {
-            animator.SetBool("z", false);
-            AS.enabled = true;
-            
-        }
-        else
-        {
-            AS.enabled = false;
-            animator.SetBool("z", true);
-        }
-        
     }
     void Start()
     {

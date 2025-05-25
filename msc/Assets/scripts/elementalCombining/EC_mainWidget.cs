@@ -19,13 +19,14 @@ public class EC_mainWidget : MonoBehaviour
     public GameObject breedScreen;
     public GameObject IconSet1;
     public GameObject IconSet2;
+    public int chance;
     Text TimeLeft;
     Slider TimeLeftSlider;
     GameObject TimeLeftObj;
     [Header("audio things")]
     public AudioSource AS;
     public AudioClip[] Ac;
-    [Header("save data things")]
+    //save data things
     public static bool inProgress;
     public static Status status;
     public static int creatureDone;
@@ -51,7 +52,11 @@ public class EC_mainWidget : MonoBehaviour
         {
             GridBuildingSystem.current.InitializeWithBuilding(creaturePrefabs[creatureDone]);
             interactionHandler.current.OpenUI(false);
+            AS.PlayOneShot(Ac[0]);
+            creatureDone = 0;
             status = Status.idle;
+            inProgress = false;
+            SaveData.current.save();
         }
         else
         {
@@ -165,14 +170,14 @@ public class EC_mainWidget : MonoBehaviour
             {
                 status = Status.working;
                 GoThroughPossibilities();
+                interactionHandler.current.ECInterface.SetActive(false);
+                interactionHandler.current.canClick = true;
+            }
+            else
+            {
+                resetVars();
             }
         }
-        else
-        {
-            //once sound is made have the audio sourcer play the bad sound
-        }
-        interactionHandler.current.ECInterface.SetActive(false);
-        interactionHandler.current.canClick = true;
     }
 
     void findElement()
@@ -191,42 +196,64 @@ public class EC_mainWidget : MonoBehaviour
     void GoThroughPossibilities()
     {
         findElement();
-        int chance = UnityEngine.Random.Range(-1, 1);
+        chance = UnityEngine.Random.Range(-1, 1);
+        if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
+        if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
+        if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
         //remember that the breed is cap sensitive and there is a space before, between, and after every elemental letter (order A,B,AB,C, AC, BC, ABC, D, AD, BD, CD, ABD, ACD, BCD, ABCD, E, AE, BE, CE, DE, ABE, ACE, ADE, BCE, BDE, CDE, ABCE, ABDE, ACDE, BCDE, ABCDE, Z)
-        gtpDoubles(chance);
-        gtpTriples(chance);
+        gtpDoubles();
+        gtpTriples();
 
         resetVars();
     }
     //doubles if statements
-    void gtpDoubles(int chance)
+    void gtpDoubles()
     {
         if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " B " || creature2_E == " B "))
         {
-            CreatureChosen(2, chance);
+            CreatureChosen(2);
         }
         if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " C " || creature2_E == " C "))
         {
-            CreatureChosen(4, chance);
+            CreatureChosen(4);
         }
         if ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " C " || creature2_E == " C "))
         {
-            CreatureChosen(5, chance);
+            CreatureChosen(5);
         }
     }
     //triples if statements
-    void gtpTriples(int chance)
+    void gtpTriples()
     {
         if (((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " BC " || creature2_E == " BC ")) || ((creature1_E == " AB " || creature2_E == " AB ") && (creature1_E == " C " || creature2_E == " C ")) || ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " AC " || creature2_E == " AC ")))
         {
-            CreatureChosen(6, chance);
+            CreatureChosen(6);
         }
     }
-    void CreatureChosen(int CreatureID, int chance)
+    void CreatureChosen(int CreatureID)
     {
-        //make chance system
-        creatureDone = CreatureID;
-        StartTimer(CreatureID);
+        if (creatureDatas[CreatureID].PrefabObj != null)
+        {
+            if (chance == 0)
+            {
+                AS.PlayOneShot(Ac[2]);
+                creatureDone = CreatureID;
+                StartTimer(CreatureID);
+            }
+            if (chance == 1)
+            {
+                creatureDone = Creature2.creatureInIslandID;
+                StartTimer(Creature2.creatureInIslandID);
+                AS.PlayOneShot(Ac[1]);
+            }
+            if (chance == -1)
+            {
+                creatureDone = Creature1.creatureInIslandID;
+                StartTimer(Creature1.creatureInIslandID);
+                AS.PlayOneShot(Ac[1]);
+            }
+            SaveData.current.save();
+        }
     }
     void resetVars()
     {
@@ -234,6 +261,10 @@ public class EC_mainWidget : MonoBehaviour
         creature2_E = null;
         Creature1 = null;
         Creature2 = null;
+        if (creatureDone !> 0)
+        {
+            AS.PlayOneShot(Ac[3]);
+        }
     }
     #endregion
 

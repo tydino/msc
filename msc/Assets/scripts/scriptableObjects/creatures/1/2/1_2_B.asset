@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creatureInIslandID: 2
   PrefabObj: {fileID: 8135636011756541362, guid: 533293c8bf5e2c243b4fa186189c2583, type: 3}
-  BreedScreen: {fileID: 6888901894457015782, guid: faf02afceeac2df4a872acc19721160b, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: a9a5fff01e34d0e439c5b1e37189635b, type: 3}
   worthInCoins: 250
   coins: 1
@@ -22,3 +21,9 @@ MonoBehaviour:
   diamonds: 0
   element:
   - B
+  BreedScreen: {fileID: 6888901894457015782, guid: faf02afceeac2df4a872acc19721160b, type: 3}
+  egg: {fileID: 0}
+  timeInDays: 0
+  timeInHours: 0
+  timeInMinutes: 0
+  timeInSeconds: 30
