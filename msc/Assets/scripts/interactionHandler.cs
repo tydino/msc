@@ -141,7 +141,6 @@ public class interactionHandler : MonoBehaviour
     }
     public void Sleep()
     {
-        GridBuildingSystem.current.sleep();
         bool _sleep = Clicked.GetComponent<creatureControler>().sleep;
         if (_sleep)
         {
@@ -150,6 +149,7 @@ public class interactionHandler : MonoBehaviour
         else
         {
             Clicked.GetComponent<creatureControler>().sleep = true;
+            GridBuildingSystem.current.sleep();
         }
     }
     #endregion
