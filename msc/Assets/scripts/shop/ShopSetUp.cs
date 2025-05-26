@@ -12,9 +12,12 @@ public class ShopSetUp : MonoBehaviour
     {
         foreach(creatureData cd in ch.creatureObjects)
         {
-            GameObject temp = Instantiate(cd.StoreFront);
-            temp.transform.SetParent(ShopObj.transform,false);
-            si.Icons.Add(temp);
+            if (cd.creatureInIslandID != -1)
+            {
+                GameObject temp = Instantiate(cd.StoreFront);
+                temp.transform.SetParent(ShopObj.transform, false);
+                si.Icons.Add(temp);
+            }
         }
     }
 

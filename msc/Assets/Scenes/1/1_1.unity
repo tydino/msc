@@ -232,6 +232,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d2181d751cbc91d408a2a418f4917292, type: 2}
   - {fileID: 11400000, guid: 6f91061b6147b0f40a1e3b02e0a9f1df, type: 2}
   - {fileID: 11400000, guid: 526cc679cf6e0ec41a79390c0daf5ccf, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
   creatureInformation: []
 --- !u!1 &353353923 stripped
 GameObject:
