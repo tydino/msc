@@ -1189,7 +1189,7 @@ MonoBehaviour:
   - creatureIdNeeded: 00000000010000001100000016000000180000001b00000021000000
   - creatureIdNeeded: 00000000010000001100000016000000180000001b00000021000000
   - creatureIdNeeded: 00000000010000001100000016000000180000001b00000021000000
-  limit: 36
+  limit: 35
   a: {fileID: 1047778907}
 --- !u!95 &1047778907
 Animator:
@@ -7618,6 +7618,35 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0d84293a69077614195c3e4d6d0d2111, type: 2}
   - {fileID: 11400000, guid: 6aa4f4442685e26488dafe005faaee27, type: 2}
   - {fileID: 11400000, guid: a0f42db0427a3a046bac637ab1a48eac, type: 2}
+  - {fileID: 11400000, guid: cc504376aafc195418c50f41d9e7cd3b, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
+  - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
   creatureInformation: []
 --- !u!1 &2082686363 stripped
 GameObject:

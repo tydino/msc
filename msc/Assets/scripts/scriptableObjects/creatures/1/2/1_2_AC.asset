@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 1_2_AC
   m_EditorClassIdentifier: 
   creatureInIslandID: 5
-  PrefabObj: {fileID: 7564897538457579250, guid: f1690467b7ee755469fc19b46f4b7da1, type: 3}
-  StoreFront: {fileID: 0}
+  PrefabObj: {fileID: 7564897538457579250, guid: e4baf75c5938688418724fa5152a2201, type: 3}
+  StoreFront: {fileID: 6888901894457015782, guid: 86218f1c07794ab4591359463f910597, type: 3}
   worthInCoins: 0
   coins: 0
   worthInDiamonds: 500
