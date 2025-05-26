@@ -2899,7 +2899,7 @@ MonoBehaviour:
   sleep: 0
   AS: {fileID: 8152869666028227673}
   Ac:
-  - {fileID: 8300000, guid: 173249fa12d7fc64ca70398d116ae154, type: 3}
+  - {fileID: 8300000, guid: ea392d154492e4941bbe581ae92b5d01, type: 3}
 --- !u!82 &8152869666028227673
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3050,7 +3050,7 @@ Animator:
   m_GameObject: {fileID: 7564897538457579250}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e7a2c751684698e4bbb6df3b6b4b3aa3, type: 2}
+  m_Controller: {fileID: 9100000, guid: f7b1a6307c370564c83823cf1258dd05, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

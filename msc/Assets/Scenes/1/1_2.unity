@@ -1317,6 +1317,7 @@ MonoBehaviour:
   - {fileID: 8135636011756541362, guid: 533293c8bf5e2c243b4fa186189c2583, type: 3}
   - {fileID: 1515538403521767026, guid: 56be78d0194ba64488d9bd845cdf26f2, type: 3}
   - {fileID: 8581678351085532633, guid: 8f115a1a767ca984d81a94ace71cab48, type: 3}
+  - {fileID: 7564897538457579250, guid: e4baf75c5938688418724fa5152a2201, type: 3}
   island:
     CHList: []
 --- !u!114 &1160077184 stripped
