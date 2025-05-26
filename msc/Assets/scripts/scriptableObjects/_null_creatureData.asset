@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: _null_creatureData
   m_EditorClassIdentifier: 
   creatureInIslandID: -1
-  PrefabObj: {fileID: 0}
-  StoreFront: {fileID: 0}
+  PrefabObj: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
+  StoreFront: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
   worthInCoins: 0
   coins: 0
   worthInDiamonds: 0
@@ -22,8 +22,8 @@ MonoBehaviour:
   element:
   - this is a null creature data. when a place needs something to take its place
     this will be there.
-  BreedScreen: {fileID: 0}
-  egg: {fileID: 0}
+  BreedScreen: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
+  egg: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
   timeInDays: 0
   timeInHours: 0
   timeInMinutes: 0
