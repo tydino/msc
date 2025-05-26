@@ -35,6 +35,14 @@ public class creatureControler : MonoBehaviour
                 if (i == TimeInGame)
                 {
                     animator.SetInteger("p", playWhere[i]);
+                    if (playWhere[i] == 0)
+                    {
+                        AS.enabled = false;
+                    }
+                    else
+                    {
+                        AS.enabled = true;
+                    }
                 }
             }
 
