@@ -405,7 +405,7 @@ MonoBehaviour:
   sdi: {fileID: 1122765661}
   sdp: {fileID: 1811773991}
   sdect: {fileID: 12682459}
-  sdmit: {fileID: 0}
+  sdmit: {fileID: 338920917}
   coin_editable: 0
   diamond_editable: 0
   food_editable: 0

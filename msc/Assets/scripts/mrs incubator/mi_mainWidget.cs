@@ -59,6 +59,7 @@ public class mi_mainWidget : MonoBehaviour
             creaturePrefabs.Add(cd.PrefabObj);
             creatureDatas.Add(cd);
         }
+        interactionHandler.current.TimeLeftObj1.SetActive(false);
         SetUpTimer();
     }
     void Update()
