@@ -9,6 +9,7 @@ public class SaveData : MonoBehaviour
     public SD_Island sdi;
     public SD_Path sdp;
     public SD_ECTimer sdect;
+    public SD_MITimer sdmit;
     public int coin_editable;
     public int diamond_editable;
     public int food_editable;
@@ -26,10 +27,12 @@ public class SaveData : MonoBehaviour
         sdc.path = path;
         sdi.path = path;
         sdect.path = path;
+        sdmit.path = path;
         sdc.SaveToJson();
         sdi.SaveToJson();
         sdect.SaveToJson();
-}
+        sdmit.SaveToJson();
+    }
     public void load()
     {
         sdp.LoadFromJson();
@@ -37,9 +40,11 @@ public class SaveData : MonoBehaviour
         sdc.path = path;
         sdi.path = path;
         sdect.path = path;
+        sdmit.path = path;
         sdc.LoadFromJson();
         sdi.LoadFromJson();
         sdect.LoadFromJson();
+        sdmit.LoadFromJson();
     }
 
     void Start()

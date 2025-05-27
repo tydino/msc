@@ -50,13 +50,15 @@ public class EC_mainWidget : MonoBehaviour
     {
         if (status == Status.complete)
         {
-            GridBuildingSystem.current.InitializeWithBuilding(creaturePrefabs[creatureDone]);
-            interactionHandler.current.OpenUI(false);
-            AS.PlayOneShot(Ac[0]);
-            creatureDone = 0;
-            status = Status.idle;
-            inProgress = false;
-            SaveData.current.save();
+            if (mi_mainWidget.inProgress == false) 
+            {
+                mi_mainWidget.current.StartTimer(creatureDone);
+                AS.PlayOneShot(Ac[0]);
+                creatureDone = 0;
+                status = Status.idle;
+                inProgress = false;
+                SaveData.current.save();
+            }
         }
         else
         {
@@ -295,6 +297,7 @@ public class EC_mainWidget : MonoBehaviour
         TimeSpan time = new TimeSpan(Days, Hours, Minutes, Seconds);
         TimerEnd = TimerStart.Add(time);
 
+        SaveData.current.save();
         SetUpTimer();
         lastTimer = StartCoroutine(Timer());
     }

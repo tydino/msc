@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08625ab8d964442439c3b0b8b85a31bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisCreature: {fileID: 950689595908357984, guid: 73a3b21f852fe3b45adc0ba731256b62, type: 3}
+  ThisCreature: {fileID: 11400000, guid: a445ef5a368da7a40bbb8b2c8c830ad7, type: 2}
   coins: 0
   diamonds: 1
   food: 0

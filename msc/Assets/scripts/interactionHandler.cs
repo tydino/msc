@@ -23,6 +23,12 @@ public class interactionHandler : MonoBehaviour
     public Text TimeLeft;
     public Slider TimeLeftSlider;
     public GameObject TimeLeftObj;
+    [Header("mrs incubator")]
+    public GameObject MIUI;
+    public GameObject completeMI;
+    public Text TimeLeft1;
+    public Slider TimeLeftSlider1;
+    public GameObject TimeLeftObj1;
     [Header("shop")]
     public GameObject shopUI;
 
@@ -36,12 +42,21 @@ public class interactionHandler : MonoBehaviour
         {
             completeEC.SetActive(false);
         }
+        if (mi_mainWidget.status == mi_mainWidget.Status.complete)
+        {
+            completeMI.SetActive(true);
+        }
+        else
+        {
+            completeMI.SetActive(false);
+        }
     }
 
     void Start()
     {
         canClick = true;
         ECUI.transform.position = EC_mainWidget.current.gameObject.transform.position;
+        MIUI.transform.position = mi_mainWidget.current.gameObject.transform.position;
         EC.SetActive(false);
         tempRend = GridBuildingSystem.current.TempTilemap.GetComponent<TilemapRenderer>();
         mainRend = GridBuildingSystem.current.MainTilemap.GetComponent<TilemapRenderer>();
