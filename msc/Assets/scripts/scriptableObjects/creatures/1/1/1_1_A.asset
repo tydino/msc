@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
   m_Name: 1_1_A
   m_EditorClassIdentifier: Assembly-CSharp::creature
+  creatureName: fantanill
   creatureInIslandID: 1
+  psd: {fileID: 21300000, guid: 271971dc45b01e44ebb2c99d59d68ad9, type: 3}
   PrefabObj: {fileID: 8048276427707932470, guid: 855a2b826de616a4b90a159fd94d43fe, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: 7f04f1c6a0f9da74c8538a7466583698, type: 3}
   worthInCoins: 100
@@ -26,4 +28,4 @@ MonoBehaviour:
   timeInDays: 0
   timeInHours: 0
   timeInMinutes: 0
-  timeInSeconds: 5
+  timeInSeconds: 15

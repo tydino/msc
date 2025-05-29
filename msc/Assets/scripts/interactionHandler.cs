@@ -32,6 +32,11 @@ public class interactionHandler : MonoBehaviour
     [Header("shop")]
     public GameObject shopUI;
 
+    void Awake()
+    {
+        current = this;
+    }
+
     void Update()
     {
         if (EC_mainWidget.status == EC_mainWidget.Status.complete)
@@ -61,7 +66,6 @@ public class interactionHandler : MonoBehaviour
         tempRend = GridBuildingSystem.current.TempTilemap.GetComponent<TilemapRenderer>();
         mainRend = GridBuildingSystem.current.MainTilemap.GetComponent<TilemapRenderer>();
         this.gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
-        current = this;
         CloseUI();
     }
 

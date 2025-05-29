@@ -6301,6 +6301,138 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/left
+      eye
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/left
+      eye
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/left
+      eye
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right/mouth middle left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right/mouth middle left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right/mouth middle left
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right/mouth middle right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right/mouth middle right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
+      right/mouth middle right
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
     path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
       right/mouth middle right/mouth left
     classID: 4
@@ -6865,138 +6997,6 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/left
-      eye
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/left
-      eye
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/left
-      eye
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right/mouth middle left
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right/mouth middle left
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right/mouth middle left
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right/mouth middle right
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right/mouth middle right
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: root/body/neck1/neck2/neck3/neck4/neck5/neck6/neck7/neck8/neck9/neck10/head/mouth
-      right/mouth middle right
     classID: 4
     script: {fileID: 0}
   - curve:

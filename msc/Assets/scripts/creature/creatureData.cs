@@ -5,8 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "creature Data")]
 public class creatureData : ScriptableObject
 {
+    [Header("main sets")]
+    public string creatureName;
     public int creatureInIslandID;
+    public Sprite psd;
     public GameObject PrefabObj;
+    [Header("store based")]
     public GameObject StoreFront;
     public int worthInCoins;
     public bool coins;

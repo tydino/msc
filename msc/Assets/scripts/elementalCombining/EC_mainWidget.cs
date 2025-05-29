@@ -50,7 +50,7 @@ public class EC_mainWidget : MonoBehaviour
     {
         if (status == Status.complete)
         {
-            if (mi_mainWidget.inProgress == false) 
+            if (mi_mainWidget.status == mi_mainWidget.Status.idle) 
             {
                 mi_mainWidget.current.StartTimer(creatureDone);
                 AS.PlayOneShot(Ac[0]);
@@ -203,8 +203,8 @@ public class EC_mainWidget : MonoBehaviour
         if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
         if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
         //remember that the breed is cap sensitive and there is a space before, between, and after every elemental letter (order A,B,AB,C, AC, BC, ABC, D, AD, BD, CD, ABD, ACD, BCD, ABCD, E, AE, BE, CE, DE, ABE, ACE, ADE, BCE, BDE, CDE, ABCE, ABDE, ACDE, BCDE, ABCDE, Z)
-        gtpDoubles();
         gtpTriples();
+        gtpDoubles();
 
         resetVars();
     }
@@ -227,7 +227,7 @@ public class EC_mainWidget : MonoBehaviour
     //triples if statements
     void gtpTriples()
     {
-        if (((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " BC " || creature2_E == " BC ")) || ((creature1_E == " AB " || creature2_E == " AB ") && (creature1_E == " C " || creature2_E == " C ")) || ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " AC " || creature2_E == " AC ")))
+        if (((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " B C " || creature2_E == " B C ")) || ((creature1_E == " A B " || creature2_E == " A B ") && (creature1_E == " C " || creature2_E == " C ")) || ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " A C " || creature2_E == " A C ")))
         {
             CreatureChosen(6);
         }

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
   m_Name: 1_2_A
   m_EditorClassIdentifier: 
+  creatureName: fantanill
   creatureInIslandID: 1
+  psd: {fileID: 21300000, guid: 271971dc45b01e44ebb2c99d59d68ad9, type: 3}
   PrefabObj: {fileID: 6079378097275819518, guid: 192ad7ddc53daad4caec4384d0b30794, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: ad522a8a2f95bd040aa1f1541611609b, type: 3}
   worthInCoins: 100
@@ -26,4 +28,4 @@ MonoBehaviour:
   timeInDays: 0
   timeInHours: 0
   timeInMinutes: 0
-  timeInSeconds: 5
+  timeInSeconds: 15

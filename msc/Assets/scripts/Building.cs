@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public bool creature = true;
     public bool Placed;
     public int ID;
     public BoundsInt area;
@@ -17,14 +18,17 @@ public class Building : MonoBehaviour
 
     public void Started()
     {
-        interactionHandler.current.main.SetActive(true);
-        interactionHandler.current.tempRend.enabled = true;
-        interactionHandler.current.mainRend.enabled = true;
-        interactionHandler.current.placement.SetActive(true);
-        interactionHandler.current.Clicked = this.gameObject;
-        interactionHandler.current.movedObj = this.gameObject;
-        interactionHandler.current.moveUI();
-        prevPOS = transform.position;
+        if (creature)
+        {
+            interactionHandler.current.main.SetActive(true);
+            interactionHandler.current.tempRend.enabled = true;
+            interactionHandler.current.mainRend.enabled = true;
+            interactionHandler.current.placement.SetActive(true);
+            interactionHandler.current.Clicked = this.gameObject;
+            interactionHandler.current.movedObj = this.gameObject;
+            interactionHandler.current.moveUI();
+            prevPOS = transform.position;
+        }
     }
 
     public bool CanBePlaced()
@@ -56,14 +60,17 @@ public class Building : MonoBehaviour
 
     public void Save()
     {
-        sd_CreatureHandler ch = new sd_CreatureHandler();
-        ch.XPos = gameObject.transform.position.x;
-        ch.YPos = gameObject.transform.position.y;
-        ch.XScl = gameObject.transform.localScale.x;
-        ch.CreatureID = ID;
-        ch.asleep = gameObject.GetComponent<creatureControler>().sleep;
-        creatureHandler CreatureH = GameObject.FindWithTag("CreatureHandler").GetComponent<creatureHandler>();
-        CreatureH.creatureInformation.Add(ch);
+        if (creature)
+        {
+            sd_CreatureHandler ch = new sd_CreatureHandler();
+            ch.XPos = gameObject.transform.position.x;
+            ch.YPos = gameObject.transform.position.y;
+            ch.XScl = gameObject.transform.localScale.x;
+            ch.CreatureID = ID;
+            ch.asleep = gameObject.GetComponent<creatureControler>().sleep;
+            creatureHandler CreatureH = GameObject.FindWithTag("CreatureHandler").GetComponent<creatureHandler>();
+            CreatureH.creatureInformation.Add(ch);
+        }
     }
 
     #endregion
@@ -73,7 +80,10 @@ public class Building : MonoBehaviour
         if ((interactionHandler.current.Clicked != this.gameObject || interactionHandler.current.Clicked == null) && interactionHandler.current.moved == false)
         {
             interactionHandler.current.Clicked = this.gameObject;
-            interactionHandler.current.OpenUI(false);
+            if (creature)
+            {
+                interactionHandler.current.OpenUI(false);
+            }
         }
     }
     #endregion

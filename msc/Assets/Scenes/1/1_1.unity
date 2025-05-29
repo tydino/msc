@@ -13247,6 +13247,8 @@ MonoBehaviour:
   - {fileID: 950689595908357984, guid: 73a3b21f852fe3b45adc0ba731256b62, type: 3}
   - {fileID: 5272373543465470252, guid: 50cc78269977c6c4db23901940eca036, type: 3}
   - {fileID: 7564897538457579250, guid: f1690467b7ee755469fc19b46f4b7da1, type: 3}
+  - {fileID: 2036564090451583199, guid: 273bfcefb633dfb4084d297febf7cebb, type: 3}
+  - {fileID: 2964008757642785121, guid: bfda257eedf95c444ab9f072a9da01c1, type: 3}
   island:
     CHList: []
 --- !u!1001 &962779326041619084

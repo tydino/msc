@@ -51,9 +51,6 @@ public class mi_mainWidget : MonoBehaviour
 
     void Start()
     {
-        TimeLeft = interactionHandler.current.TimeLeft1;
-        TimeLeftSlider = interactionHandler.current.TimeLeftSlider1;
-        TimeLeftObj = interactionHandler.current.TimeLeftObj1;
         foreach (creatureData cd in creatureHandler.current.creatureObjects)
         {
             creaturePrefabs.Add(cd.PrefabObj);

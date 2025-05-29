@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
   m_Name: 1_2_ABC
   m_EditorClassIdentifier: 
+  creatureName: zinethansiac
   creatureInIslandID: 7
+  psd: {fileID: 21300000, guid: c3a29f794265cfb4195ca88202cfb6d2, type: 3}
   PrefabObj: {fileID: 0}
   StoreFront: {fileID: 0}
   worthInCoins: 0

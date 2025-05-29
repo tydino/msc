@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
   m_Name: 1_2_B
   m_EditorClassIdentifier: 
+  creatureName: carreeon
   creatureInIslandID: 2
+  psd: {fileID: 21300000, guid: 131f56d09d7806641a89cd7a194a93be, type: 3}
   PrefabObj: {fileID: 8135636011756541362, guid: 533293c8bf5e2c243b4fa186189c2583, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: a9a5fff01e34d0e439c5b1e37189635b, type: 3}
   worthInCoins: 250

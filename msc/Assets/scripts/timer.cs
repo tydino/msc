@@ -11,7 +11,7 @@ public class timer : MonoBehaviour
     public static int Timer;
     void Start()
     {
-        Timer = 0;
+        Timer = -2;
     }
 
     void Update()
@@ -25,27 +25,30 @@ public class timer : MonoBehaviour
     public void Tick()
     {
         Timer++;
-        bool contains = false;
-        while (contains == false)
+        if (Timer != -1 || Timer != -2)
         {
-            foreach (int ID in creaturesNeededForEachTime[Timer].creatureIdNeeded)
+            bool contains = false;
+            while (contains == false)
             {
-                foreach (sd_CreatureHandler sdh in creatureHandler.current.creatureInformation)
+                foreach (int ID in creaturesNeededForEachTime[Timer].creatureIdNeeded)
                 {
-                    if (sdh.CreatureID == ID && sdh.asleep == false)
+                    foreach (sd_CreatureHandler sdh in creatureHandler.current.creatureInformation)
                     {
-                        contains = true;
+                        if (sdh.CreatureID == ID && sdh.asleep == false)
+                        {
+                            contains = true;
+                        }
                     }
                 }
-            }
-            if (contains == false)
-            {
-                Timer++;
-            }
-            if (limit < Timer)
-            {
-                Timer = 0;
-                break;
+                if (contains == false)
+                {
+                    Timer++;
+                }
+                if (limit < Timer)
+                {
+                    Timer = 0;
+                    break;
+                }
             }
         }
 
