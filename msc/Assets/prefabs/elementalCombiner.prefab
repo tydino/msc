@@ -132,6 +132,7 @@ MonoBehaviour:
   breedScreen: {fileID: 0}
   IconSet1: {fileID: 0}
   IconSet2: {fileID: 0}
+  chance: 0
   AS: {fileID: 3772928131911644772}
   Ac:
   - {fileID: 8300000, guid: 47fbd53035ae485448325e4019faf93b, type: 3}
@@ -161,7 +162,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

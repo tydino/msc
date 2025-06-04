@@ -43,6 +43,7 @@ public class SD_Island : MonoBehaviour
                 clone.GetComponent<Building>().Placed = true;
                 creatureHandler.current.creatureInformation.Add(sdch);
             }
+            EC_mainWidget.current.setUpEC();
         }
     }
 }

@@ -20,7 +20,7 @@ public class creatureData : ScriptableObject
     public string[] element;
     [Header("elemental combiner based things")]
     public GameObject BreedScreen;
-    public GameObject egg;
+    public Sprite egg;
     public int timeInDays;
     public int timeInHours;
     public int timeInMinutes;

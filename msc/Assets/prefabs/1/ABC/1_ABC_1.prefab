@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 1521375732039436566}
   m_Layer: 0
   m_Name: 1_ABC_1
-  m_TagString: Untagged
+  m_TagString: creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1163,6 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creature: 1
   Placed: 0
   ID: 7
   area:
