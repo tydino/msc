@@ -25,7 +25,7 @@ MonoBehaviour:
   - B
   - C
   BreedScreen: {fileID: 6888901894457015782, guid: 07438cf7a83cfbd4b945efe5d16336f6, type: 3}
-  egg: {fileID: 0}
+  egg: {fileID: 1702340639, guid: f53626afc147d694085c3b672a05789d, type: 3}
   timeInDays: 0
   timeInHours: 0
   timeInMinutes: 10

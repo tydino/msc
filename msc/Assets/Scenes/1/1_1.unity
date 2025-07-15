@@ -13587,6 +13587,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: Tempo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
       propertyPath: slider1
       value: 
       objectReference: {fileID: 821785710}

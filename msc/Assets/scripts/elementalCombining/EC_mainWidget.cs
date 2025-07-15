@@ -8,6 +8,13 @@ public class EC_mainWidget : MonoBehaviour
 {
     [Header("this widget is made for a ABCDEZ place")]
     public static EC_mainWidget current;
+    [Header("visuals/animation")]
+    public SpriteRenderer inputOne;
+    public SpriteRenderer inputTwo;
+    public SpriteRenderer output;
+    public Animator animator;
+    public float Tempo;
+    int samples = 60;
     [Header("UI set up")]
     creatureHandler ch;
     List<creatureData> creatureDatas = new List<creatureData>();
@@ -79,6 +86,7 @@ public class EC_mainWidget : MonoBehaviour
 
     void Start()
     {
+        animator.SetFloat("s", Tempo / samples);
         TimeLeft = interactionHandler.current.TimeLeft;
         TimeLeftSlider = interactionHandler.current.TimeLeftSlider;
         TimeLeftObj = interactionHandler.current.TimeLeftObj;
@@ -92,6 +100,31 @@ public class EC_mainWidget : MonoBehaviour
     }
     void Update()
     {
+        if (status == Status.idle)
+        {
+            animator.SetBool("working", false);
+            animator.SetBool("waiting", false);
+            inputOne.sprite = null;
+            inputTwo.sprite = null;
+            output.sprite = null;
+        }
+        else if(status == Status.working)
+        {
+            animator.SetBool("working", true);
+            animator.SetBool("waiting", false);
+            inputOne.sprite = creatureHandler.current.creatureObjects[creature1_Egg].egg;
+            inputTwo.sprite = creatureHandler.current.creatureObjects[creature2_Egg].egg;
+            output.sprite = null;
+        }
+        else if(status == Status.complete)
+        {
+            animator.SetBool("working", false);
+            animator.SetBool("waiting", true);
+            inputOne.sprite = null;
+            inputTwo.sprite = null;
+            output.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+        }
+            
         SetUpTimer();
         slider1.maxValue = Icons1.Count - 1;
         slider2.maxValue = Icons2.Count - 1;
@@ -170,7 +203,6 @@ public class EC_mainWidget : MonoBehaviour
         {
             if (Creature1 != Creature2)
             {
-                status = Status.working;
                 GoThroughPossibilities();
                 interactionHandler.current.ECInterface.SetActive(false);
                 interactionHandler.current.canClick = true;
@@ -199,9 +231,6 @@ public class EC_mainWidget : MonoBehaviour
     {
         findElement();
         chance = UnityEngine.Random.Range(-1, 1);
-        if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
-        if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
-        if (chance == -1 || chance == 1) chance = UnityEngine.Random.Range(-1, 1);
         //remember that the breed is cap sensitive and there is a space before, between, and after every elemental letter (order A,B,AB,C, AC, BC, ABC, D, AD, BD, CD, ABD, ACD, BCD, ABCD, E, AE, BE, CE, DE, ABE, ACE, ADE, BCE, BDE, CDE, ABCE, ABDE, ACDE, BCDE, ABCDE, Z)
         gtpTriples();
         gtpDoubles();
@@ -213,14 +242,20 @@ public class EC_mainWidget : MonoBehaviour
     {
         if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " B " || creature2_E == " B "))
         {
+            creature1_Egg = Creature1.creatureInIslandID - 1;
+            creature2_Egg = Creature2.creatureInIslandID - 1;
             CreatureChosen(2);
         }
         if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " C " || creature2_E == " C "))
         {
+            creature1_Egg = Creature1.creatureInIslandID - 1;
+            creature2_Egg = Creature2.creatureInIslandID - 1;
             CreatureChosen(4);
         }
         if ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " C " || creature2_E == " C "))
         {
+            creature1_Egg = Creature1.creatureInIslandID - 1;
+            creature2_Egg = Creature2.creatureInIslandID - 1;
             CreatureChosen(5);
         }
     }
@@ -229,11 +264,14 @@ public class EC_mainWidget : MonoBehaviour
     {
         if (((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " B C " || creature2_E == " B C ")) || ((creature1_E == " A B " || creature2_E == " A B ") && (creature1_E == " C " || creature2_E == " C ")) || ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " A C " || creature2_E == " A C ")))
         {
+            creature1_Egg = Creature1.creatureInIslandID - 1;
+            creature2_Egg = Creature2.creatureInIslandID - 1;
             CreatureChosen(6);
         }
     }
     void CreatureChosen(int CreatureID)
     {
+        status = Status.working;
         if (creatureDatas[CreatureID].PrefabObj != null)
         {
             if (chance == 0)
