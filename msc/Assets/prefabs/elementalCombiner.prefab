@@ -298,6 +298,7 @@ MonoBehaviour:
   inputTwo: {fileID: 2759331547874220042}
   output: {fileID: 7705907438360597344}
   animator: {fileID: 5213034909006964117}
+  Tempo: 0
   Icons1: []
   Icons2: []
   slider1: {fileID: 0}
@@ -507,6 +508,10 @@ PrefabInstance:
     - target: {fileID: -8653719598885068355, guid: 14fb69ef41d2fe449b489b8aec25541e, type: 3}
       propertyPath: m_Name
       value: elementalCombiner
+      objectReference: {fileID: 0}
+    - target: {fileID: -8534912653799400221, guid: 14fb69ef41d2fe449b489b8aec25541e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7490196
       objectReference: {fileID: 0}
     - target: {fileID: -7610074957061587383, guid: 14fb69ef41d2fe449b489b8aec25541e, type: 3}
       propertyPath: m_LocalScale.x
@@ -855,6 +860,10 @@ PrefabInstance:
     - target: {fileID: -713308454646270980, guid: 14fb69ef41d2fe449b489b8aec25541e, type: 3}
       propertyPath: m_Bounds.m_Extent.y
       value: 0.2929027
+      objectReference: {fileID: 0}
+    - target: {fileID: -562961388586207821, guid: 14fb69ef41d2fe449b489b8aec25541e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7490196
       objectReference: {fileID: 0}
     - target: {fileID: 41365675082354936, guid: 14fb69ef41d2fe449b489b8aec25541e, type: 3}
       propertyPath: m_Bounds.m_Center.x

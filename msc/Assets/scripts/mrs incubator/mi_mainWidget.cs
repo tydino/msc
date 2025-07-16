@@ -7,6 +7,11 @@ using UnityEngine.UI;
 public class mi_mainWidget : MonoBehaviour
 {
     public static mi_mainWidget current;
+    [Header("animation")]
+    public SpriteRenderer input;
+    public Animator animator;
+    public float Tempo;
+    int samples = 60;
 
     //save data things
     public static bool inProgress;
@@ -51,6 +56,7 @@ public class mi_mainWidget : MonoBehaviour
 
     void Start()
     {
+        animator.SetFloat("s", Tempo / samples);
         foreach (creatureData cd in creatureHandler.current.creatureObjects)
         {
             creaturePrefabs.Add(cd.PrefabObj);
@@ -62,6 +68,24 @@ public class mi_mainWidget : MonoBehaviour
     void Update()
     {
         SetUpTimer();
+        if (status == Status.idle)
+        {
+            animator.SetBool("working", false);
+            animator.SetBool("waiting", false);
+            input.sprite = null;
+        }
+        else if (status == Status.working)
+        {
+            animator.SetBool("working", true);
+            animator.SetBool("waiting", false);
+            input.sprite = creatureHandler.current.creatureObjects[creatureDone - 1].egg;
+        }
+        else if (status == Status.complete)
+        {
+            animator.SetBool("working", false);
+            animator.SetBool("waiting", true);
+            input.sprite = creatureHandler.current.creatureObjects[creatureDone - 1].egg;
+        }
     }
     #endregion
 
