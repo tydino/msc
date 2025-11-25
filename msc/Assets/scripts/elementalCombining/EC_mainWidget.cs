@@ -33,7 +33,9 @@ public class EC_mainWidget : MonoBehaviour
     [Header("audio things")]
     public AudioSource AS;
     public AudioClip[] Ac;
-    //save data things
+    [Header("Choices")]
+    public List<EC_Choice> ChoicesA = new List<EC_Choice>();
+    [Header("save data things")]
     public static bool inProgress;
     public static Status status;
     public static int creatureDone;
@@ -232,8 +234,15 @@ public class EC_mainWidget : MonoBehaviour
         findElement();
         chance = UnityEngine.Random.Range(-1, 1);
         //remember that the breed is cap sensitive and there is a space before, between, and after every elemental letter (order A,B,AB,C, AC, BC, ABC, D, AD, BD, CD, ABD, ACD, BCD, ABCD, E, AE, BE, CE, DE, ABE, ACE, ADE, BCE, BDE, CDE, ABCE, ABDE, ACDE, BCDE, ABCDE, Z)
-        gtpTriples();
-        gtpDoubles();
+        foreach (EC_Choice ChoicesB in ChoicesA)
+        {
+            if((ChoicesB.choiceOne == creature1_E || ChoicesB.choiceOne == creature2_E) && (ChoicesB.choiceTwo == creature1_E || ChoicesB.choiceTwo == creature2_E))
+            {
+                creature1_Egg = Creature1.creatureInIslandID - 1;
+                creature2_Egg = Creature2.creatureInIslandID - 1;
+                CreatureChosen(ChoicesB.CreatureIDOut);
+            }
+        }
 
         resetVars();
     }
@@ -411,4 +420,12 @@ public class EC_mainWidget : MonoBehaviour
     }
     #endregion
 #endregion
+}
+
+[System.Serializable]
+public class EC_Choice
+{
+    public String choiceOne;
+    public String choiceTwo;
+    public int CreatureIDOut;
 }

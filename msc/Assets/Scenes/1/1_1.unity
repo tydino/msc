@@ -13618,6 +13618,82 @@ PrefabInstance:
       propertyPath: breedScreen
       value: 
       objectReference: {fileID: 416628983}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[0].choiceOne
+      value: ' A '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[0].choiceTwo
+      value: ' B '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[1].choiceOne
+      value: ' A '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[1].choiceTwo
+      value: ' C '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[2].choiceOne
+      value: ' B '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[2].choiceTwo
+      value: ' C '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[3].choiceOne
+      value: ' A B '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[3].choiceTwo
+      value: ' C '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[4].choiceOne
+      value: ' A C '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[4].choiceTwo
+      value: ' B '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[5].choiceOne
+      value: ' B C '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[5].choiceTwo
+      value: ' A '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[0].CreatureIDOut
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[1].CreatureIDOut
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[2].CreatureIDOut
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[3].CreatureIDOut
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[4].CreatureIDOut
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046644168467220378, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+      propertyPath: ChoicesA.Array.data[5].CreatureIDOut
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5046644168467220383, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
       propertyPath: m_Name
       value: elementalCombiner
