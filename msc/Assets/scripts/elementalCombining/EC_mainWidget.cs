@@ -246,38 +246,6 @@ public class EC_mainWidget : MonoBehaviour
 
         resetVars();
     }
-    //doubles if statements
-    void gtpDoubles()
-    {
-        if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " B " || creature2_E == " B "))
-        {
-            creature1_Egg = Creature1.creatureInIslandID - 1;
-            creature2_Egg = Creature2.creatureInIslandID - 1;
-            CreatureChosen(2);
-        }
-        if ((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " C " || creature2_E == " C "))
-        {
-            creature1_Egg = Creature1.creatureInIslandID - 1;
-            creature2_Egg = Creature2.creatureInIslandID - 1;
-            CreatureChosen(4);
-        }
-        if ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " C " || creature2_E == " C "))
-        {
-            creature1_Egg = Creature1.creatureInIslandID - 1;
-            creature2_Egg = Creature2.creatureInIslandID - 1;
-            CreatureChosen(5);
-        }
-    }
-    //triples if statements
-    void gtpTriples()
-    {
-        if (((creature1_E == " A " || creature2_E == " A ") && (creature1_E == " B C " || creature2_E == " B C ")) || ((creature1_E == " A B " || creature2_E == " A B ") && (creature1_E == " C " || creature2_E == " C ")) || ((creature1_E == " B " || creature2_E == " B ") && (creature1_E == " A C " || creature2_E == " A C ")))
-        {
-            creature1_Egg = Creature1.creatureInIslandID - 1;
-            creature2_Egg = Creature2.creatureInIslandID - 1;
-            CreatureChosen(6);
-        }
-    }
     void CreatureChosen(int CreatureID)
     {
         status = Status.working;
