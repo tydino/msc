@@ -3,3 +3,8 @@ a_i=audio individuals
 1; (dreamicks)
 1:neglected nostalgia
 2: chimera quagmire
+
+2; (the dyno's series)
+1: green gallery forest
+2: chocolate chapel
+3: elephentine expanses
