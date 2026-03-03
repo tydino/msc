@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SD_Currency : MonoBehaviour
+[System.Serializable]
+public class SD_Currency
 {
-    public string path;
     public sd_currency sdc;
 
     public void SaveToJson()
@@ -13,15 +13,15 @@ public class SD_Currency : MonoBehaviour
         sdc.diamonds = Currency.diamonds;
         sdc.food = Currency.food;
         string data = JsonUtility.ToJson(sdc);
-        string filePath = path + "/currency.json";
+        string filePath = SaveData.current.path + "/currency.json";
         System.IO.File.WriteAllText(filePath, data);
     }
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(path + "/currency.json"))
+        if (System.IO.File.Exists(SaveData.current.path + "/currency.json"))
         {
-            string filePath = path + "/currency.json";
+            string filePath = SaveData.current.path + "/currency.json";
             string data = System.IO.File.ReadAllText(filePath);
 
             sdc = JsonUtility.FromJson<sd_currency>(data);

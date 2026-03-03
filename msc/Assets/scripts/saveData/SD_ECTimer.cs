@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SD_ECTimer : MonoBehaviour
+[System.Serializable]
+public class SD_ECTimer
 {
     public static SD_ECTimer current;
-    public string path;
     public sd_ECTimer sdECT;
 
     public void SaveToJson()
@@ -22,15 +22,19 @@ public class SD_ECTimer : MonoBehaviour
         sdECT.creature2 = EC_mainWidget.creature2_Egg;
 
         string data = JsonUtility.ToJson(sdECT);
-        string filePath = path + "/EC_" + SaveData.current.islandString + ".json";
-        System.IO.File.WriteAllText(filePath, data);
+        string filePath = SaveData.current.path + "/islands/EC";
+        if (!System.IO.Directory.Exists(filePath))
+        {
+            System.IO.Directory.CreateDirectory(filePath);
+        }
+        System.IO.File.WriteAllText(filePath + "/" + SaveData.current.islandString + ".json", data);
     }
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(path + "/EC_" + SaveData.current.islandString + ".json"))
+        if (System.IO.File.Exists(SaveData.current.path + "/islands/EC/" + SaveData.current.islandString + ".json"))
         {
-            string filePath = path + "/EC_" + SaveData.current.islandString + ".json";
+            string filePath = SaveData.current.path + "/islands/EC/" + SaveData.current.islandString + ".json";
             string data = System.IO.File.ReadAllText(filePath);
 
             sdECT = JsonUtility.FromJson<sd_ECTimer>(data);
@@ -55,6 +59,10 @@ public class SD_ECTimer : MonoBehaviour
             {
                 EC_mainWidget.status = EC_mainWidget.Status.complete;
             }
+        }
+        else
+        {
+            Debug.Log("No data to load");
         }
     }
 }

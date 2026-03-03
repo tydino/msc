@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class SD_Island : MonoBehaviour
 {
-    public string path;
-    public List<GameObject> creatureObjects = new List<GameObject>();
     public sd_Island island;
 
     public void SaveToJson()
     {
         creatureHandler.current.compileCreatures();
         string islandData = JsonUtility.ToJson(island);
-        string filePath = path + "/island_" + SaveData.current.islandString + ".json";
-        System.IO.File.WriteAllText(filePath, islandData);
+        string filePath = SaveData.current.path + "/islands";
+        if (!System.IO.Directory.Exists(filePath))
+        {
+            System.IO.Directory.CreateDirectory(filePath);
+        }
+        System.IO.File.WriteAllText(filePath + "/" + SaveData.current.islandString + ".json", islandData);
     }
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(path + "/island_" + SaveData.current.islandString + ".json"))
+        if (System.IO.File.Exists(SaveData.current.path + "/islands/" + SaveData.current.islandString + ".json"))
         {
             creatureHandler.current.creatureInformation.Clear();
             GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
@@ -26,7 +28,7 @@ public class SD_Island : MonoBehaviour
             {
                 GameObject.Destroy(creatureToDestroy);
             }
-            string filePath = path + "/island_" + SaveData.current.islandString + ".json";
+            string filePath = SaveData.current.path + "/islands/" + SaveData.current.islandString + ".json";
             string islandData = System.IO.File.ReadAllText(filePath);
 
             island = JsonUtility.FromJson<sd_Island>(islandData);
@@ -34,7 +36,7 @@ public class SD_Island : MonoBehaviour
             {
                 Vector3 pos = new Vector3(sdch.XPos, sdch.YPos, 1);
                 Vector3 scale = new Vector3(sdch.XScl, 1, 1);
-                GameObject cd = creatureObjects[sdch.CreatureID - 1];
+                GameObject cd = creatureHandler.current.creatureObjects[sdch.CreatureID - 1].PrefabObj;
                 GameObject clone = Instantiate(cd);
                 clone.GetComponent<creatureControler>().sleep = sdch.asleep;
                 clone.transform.position = pos;
@@ -43,6 +45,10 @@ public class SD_Island : MonoBehaviour
                 creatureHandler.current.creatureInformation.Add(sdch);
             }
             EC_mainWidget.current.setUpEC();
+        }
+        else
+        {
+            Debug.Log("No data to load");
         }
     }
 }

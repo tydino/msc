@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SD_Path : MonoBehaviour
+[System.Serializable]
+public class SD_Path
 {
     public sd_Path path;
 

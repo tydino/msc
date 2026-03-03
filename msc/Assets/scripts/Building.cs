@@ -70,7 +70,8 @@ public class Building : MonoBehaviour
             ch.CreatureID = ID;
             ch.asleep = gameObject.GetComponent<creatureControler>().sleep;
             creatureHandler CreatureH = GameObject.FindWithTag("CreatureHandler").GetComponent<creatureHandler>();
-            CreatureH.creatureInformation.Add(ch);
+            creatureHandler.current.creatureInformation.Add(ch);
+            Debug.Log("Saved" + ID);
         }
     }
 

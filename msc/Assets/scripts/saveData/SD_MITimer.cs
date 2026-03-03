@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SD_MITimer : MonoBehaviour
+[System.Serializable]
+public class SD_MITimer
 {
     public static SD_MITimer current;
-    public string path;
     public sd_MITimer sdMIT;
 
     public void SaveToJson()
@@ -18,15 +18,19 @@ public class SD_MITimer : MonoBehaviour
         sdMIT.creatureDone = mi_mainWidget.creatureDone;
 
         string data = JsonUtility.ToJson(sdMIT);
-        string filePath = path + "/MI_" + SaveData.current.islandString + ".json";
-        System.IO.File.WriteAllText(filePath, data);
+        string filePath = SaveData.current.path + "/islands/MI";
+        if (!System.IO.Directory.Exists(filePath))
+        {
+            System.IO.Directory.CreateDirectory(filePath);
+        }
+        System.IO.File.WriteAllText(filePath + "/" + SaveData.current.islandString + ".json", data);
     }
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(path + "/MI_" + SaveData.current.islandString + ".json"))
+        if (System.IO.File.Exists(SaveData.current.path + "/islands/MI/" + SaveData.current.islandString + ".json"))
         {
-            string filePath = path + "/MI_" + SaveData.current.islandString + ".json";
+            string filePath = SaveData.current.path + "/islands/MI/" + SaveData.current.islandString + ".json";
             string data = System.IO.File.ReadAllText(filePath);
 
             sdMIT = JsonUtility.FromJson<sd_MITimer>(data);
@@ -49,6 +53,10 @@ public class SD_MITimer : MonoBehaviour
             {
                 mi_mainWidget.status = mi_mainWidget.Status.complete;
             }
+        }
+        else
+        {
+            Debug.Log("No data to load");
         }
     }
 }
