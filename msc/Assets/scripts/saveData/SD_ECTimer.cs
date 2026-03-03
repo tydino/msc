@@ -9,7 +9,6 @@ public class SD_ECTimer : MonoBehaviour
 {
     public static SD_ECTimer current;
     public string path;
-    public string place;
     public sd_ECTimer sdECT;
 
     public void SaveToJson()
@@ -23,15 +22,15 @@ public class SD_ECTimer : MonoBehaviour
         sdECT.creature2 = EC_mainWidget.creature2_Egg;
 
         string data = JsonUtility.ToJson(sdECT);
-        string filePath = path + "/EC_" + place + ".json";
+        string filePath = path + "/EC_" + SaveData.current.islandString + ".json";
         System.IO.File.WriteAllText(filePath, data);
     }
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(path + "/EC_" + place + ".json"))
+        if (System.IO.File.Exists(path + "/EC_" + SaveData.current.islandString + ".json"))
         {
-            string filePath = path + "/EC_" + place + ".json";
+            string filePath = path + "/EC_" + SaveData.current.islandString + ".json";
             string data = System.IO.File.ReadAllText(filePath);
 
             sdECT = JsonUtility.FromJson<sd_ECTimer>(data);

@@ -4327,6 +4327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDestroyed: 1
   creature: 1
   Placed: 0
   ID: 1
@@ -4468,13 +4469,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34503af62bdc42449dffa85cd63b620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCreature: {fileID: 0}
-  HowMuchThisCreatureMakes: 10
-  random: 0
-  coins: 1
-  diamonds: 0
-  food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 5
+  thisCreature: {fileID: 11400000, guid: 31a412c7ac8edb840a6285fc29b740df, type: 2}
+  currencyControl:
+    HowMuchThisCreatureMakes: 0
+    currencyIdentifier: 0
+    howLongInSecondsTillMoneyAddedToTotal: 0
   TimeInGame: 0
   playWhere: 0100000001000000010000000100000001000000010000000200000002000000000000000000000000000000000000000000000000000000000000000000000001000000010000000200000002000000010000000100000000000000000000000000000000000000000000000000000001000000010000000200000002000000
   animator: {fileID: 6149880992643493041}

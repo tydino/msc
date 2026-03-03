@@ -45,10 +45,13 @@ public class GridBuildingSystem : MonoBehaviour
     }
     public void destroy()
     {
-        StopCoroutine(pc);
-        //give back price of creature
-        ClearArea();
-        Destroy(temp.gameObject);
+        if (temp.canBeDestroyed)
+        {
+            StopCoroutine(pc);
+            //give back price of creature
+            ClearArea();
+            Destroy(temp.gameObject);
+        }
     }
     public void place()
     {

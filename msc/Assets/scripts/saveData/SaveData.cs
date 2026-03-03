@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
+    public string islandString;
+    public bool Saves = true;
     public static SaveData current;
     public SD_Currency sdc;
     public SD_Island sdi;
@@ -17,21 +19,24 @@ public class SaveData : MonoBehaviour
 
     public void save()
     {
-        sdp.SaveToJson();
-        if (coin_editable != 0 || diamond_editable != 0 || food_editable != 0)
+        if (Saves)
         {
-            if (coin_editable != 0) { Currency.coins = coin_editable; }
-            if (diamond_editable != 0) { Currency.diamonds = diamond_editable; }
-            if (food_editable != 0) { Currency.food = food_editable; }
+            sdp.SaveToJson();
+            if (coin_editable != 0 || diamond_editable != 0 || food_editable != 0)
+            {
+                if (coin_editable != 0) { Currency.coins = coin_editable; }
+                if (diamond_editable != 0) { Currency.diamonds = diamond_editable; }
+                if (food_editable != 0) { Currency.food = food_editable; }
+            }
+            sdc.path = path;
+            sdi.path = path;
+            sdect.path = path;
+            sdmit.path = path;
+            sdc.SaveToJson();
+            sdi.SaveToJson();
+            sdect.SaveToJson();
+            sdmit.SaveToJson();
         }
-        sdc.path = path;
-        sdi.path = path;
-        sdect.path = path;
-        sdmit.path = path;
-        sdc.SaveToJson();
-        sdi.SaveToJson();
-        sdect.SaveToJson();
-        sdmit.SaveToJson();
     }
     public void load()
     {
@@ -49,7 +54,6 @@ public class SaveData : MonoBehaviour
 
     void Start()
     {
-        current = this;
         load();
         save();
     }
@@ -57,5 +61,10 @@ public class SaveData : MonoBehaviour
     {
         sdp.path.path = Path;
         path = sdp.path.path;
+    }
+
+    private void Awake()
+    {
+        current = this;
     }
 }

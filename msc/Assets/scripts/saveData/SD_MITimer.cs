@@ -7,7 +7,6 @@ public class SD_MITimer : MonoBehaviour
 {
     public static SD_MITimer current;
     public string path;
-    public string place;
     public sd_MITimer sdMIT;
 
     public void SaveToJson()
@@ -19,15 +18,15 @@ public class SD_MITimer : MonoBehaviour
         sdMIT.creatureDone = mi_mainWidget.creatureDone;
 
         string data = JsonUtility.ToJson(sdMIT);
-        string filePath = path + "/MI_" + place + ".json";
+        string filePath = path + "/MI_" + SaveData.current.islandString + ".json";
         System.IO.File.WriteAllText(filePath, data);
     }
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(path + "/MI_" + place + ".json"))
+        if (System.IO.File.Exists(path + "/MI_" + SaveData.current.islandString + ".json"))
         {
-            string filePath = path + "/MI_" + place + ".json";
+            string filePath = path + "/MI_" + SaveData.current.islandString + ".json";
             string data = System.IO.File.ReadAllText(filePath);
 
             sdMIT = JsonUtility.FromJson<sd_MITimer>(data);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public bool canBeDestroyed = true;
     public bool creature = true;
     public bool Placed;
     public int ID;
@@ -51,7 +52,7 @@ public class Building : MonoBehaviour
         BoundsInt areaTemp = area;
         areaTemp.position = positionInt;
         Placed = true;
-        GridBuildingSystem.current.TakeArea(areaTemp);
+        //GridBuildingSystem.current.TakeArea(areaTemp);
         EC_mainWidget.current.setUpEC();
         prevPOS = transform.position;
 
@@ -77,7 +78,7 @@ public class Building : MonoBehaviour
     #region interaction
     void OnMouseDown()
     {
-        if ((interactionHandler.current.Clicked != this.gameObject || interactionHandler.current.Clicked == null) && interactionHandler.current.moved == false)
+        if (interactionHandler.current.Clicked != this.gameObject && interactionHandler.current.moved == false)
         {
             interactionHandler.current.Clicked = this.gameObject;
             if (creature)

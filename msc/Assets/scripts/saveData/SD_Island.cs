@@ -5,7 +5,6 @@ using UnityEngine;
 public class SD_Island : MonoBehaviour
 {
     public string path;
-    public string IslandString;
     public List<GameObject> creatureObjects = new List<GameObject>();
     public sd_Island island;
 
@@ -13,13 +12,13 @@ public class SD_Island : MonoBehaviour
     {
         creatureHandler.current.compileCreatures();
         string islandData = JsonUtility.ToJson(island);
-        string filePath = path + "/island_" + IslandString + ".json";
+        string filePath = path + "/island_" + SaveData.current.islandString + ".json";
         System.IO.File.WriteAllText(filePath, islandData);
     }
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(path + "/island_" + IslandString + ".json"))
+        if (System.IO.File.Exists(path + "/island_" + SaveData.current.islandString + ".json"))
         {
             creatureHandler.current.creatureInformation.Clear();
             GameObject[] creaturesEXE = GameObject.FindGameObjectsWithTag("creature");
@@ -27,7 +26,7 @@ public class SD_Island : MonoBehaviour
             {
                 GameObject.Destroy(creatureToDestroy);
             }
-            string filePath = path + "/island_" + IslandString + ".json";
+            string filePath = path + "/island_" + SaveData.current.islandString + ".json";
             string islandData = System.IO.File.ReadAllText(filePath);
 
             island = JsonUtility.FromJson<sd_Island>(islandData);

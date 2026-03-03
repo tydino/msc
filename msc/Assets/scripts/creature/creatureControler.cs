@@ -5,13 +5,7 @@ using UnityEngine;
 public class creatureControler : MonoBehaviour
 {
     public creatureData thisCreature;
-    [Header("currency control")]
-    public int HowMuchThisCreatureMakes;
-    public bool random;
-    public bool coins;
-    public bool diamonds;
-    public bool food;
-    public float howLongInSecondsTillMoneyAddedToTotal;
+    public CurrencyControl currencyControl;
     [Header("timestamps")]
     public int TimeInGame;
     public int[] playWhere;
@@ -65,21 +59,43 @@ public class creatureControler : MonoBehaviour
     }
     public void currencyUpdate()
     {
-        if (!random)
+        if (currencyControl.currencyIdentifier != CurrencyIdentifier.random)
         {
-            if (coins) { Currency.coins = Currency.coins + HowMuchThisCreatureMakes; }
-            if (diamonds) { Currency.diamonds = Currency.diamonds + HowMuchThisCreatureMakes; }
-            if (food) { Currency.food = Currency.food + HowMuchThisCreatureMakes; }
+            if (currencyControl.currencyIdentifier == CurrencyIdentifier.coins) { Currency.coins = Currency.coins + currencyControl.HowMuchThisCreatureMakes; }
+            if (currencyControl.currencyIdentifier == CurrencyIdentifier.diamonds) { Currency.diamonds = Currency.diamonds + currencyControl.HowMuchThisCreatureMakes; }
+            if (currencyControl.currencyIdentifier == CurrencyIdentifier.food) { Currency.food = Currency.food + currencyControl.HowMuchThisCreatureMakes; }
+        }
+        else
+        {
+            ///TODO: randomize what currency will be used.
         }
     }
     IEnumerator CurrencyUpdate()
     {
-        yield return new WaitForSeconds(howLongInSecondsTillMoneyAddedToTotal);
-        currencyUpdate();
-        StartCoroutine(CurrencyUpdate());
+        if (currencyControl.howLongInSecondsTillMoneyAddedToTotal! < 1)
+        {
+            yield return new WaitForSeconds(currencyControl.howLongInSecondsTillMoneyAddedToTotal);
+            currencyUpdate();
+            StartCoroutine(CurrencyUpdate());
+        }
     }
 
     public void soundPlay(int WhichOne){
         AS.PlayOneShot(Ac[WhichOne - 1]);
+    }
+
+    [System.Serializable]
+    public struct CurrencyControl
+    {
+        public int HowMuchThisCreatureMakes;
+        public CurrencyIdentifier currencyIdentifier;
+        public float howLongInSecondsTillMoneyAddedToTotal;
+    }
+
+    public enum CurrencyIdentifier{
+        coins,
+        diamonds,
+        food,
+        random
     }
 }
