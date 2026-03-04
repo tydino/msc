@@ -13,10 +13,10 @@ public class SD_ECTimer
 
     public void SaveToJson()
     {
-        sdECT.inProgress = EC_mainWidget.inProgress;
-        sdECT.DateStart = EC_mainWidget.TimerStart.ToString();
-        sdECT.DateEnd = EC_mainWidget.TimerEnd.ToString();
-        sdECT.Status = EC_mainWidget.status.ToString();
+        sdECT.inProgress = EC_mainWidget.current.inProgress;
+        sdECT.DateStart = EC_mainWidget.current.TimerStart.ToString();
+        sdECT.DateEnd = EC_mainWidget.current.TimerEnd.ToString();
+        sdECT.Status = EC_mainWidget.current.status.ToString();
         sdECT.creatureDone = EC_mainWidget.creatureDone;
         sdECT.creature1 = EC_mainWidget.creature1_Egg;
         sdECT.creature2 = EC_mainWidget.creature2_Egg;
@@ -39,25 +39,25 @@ public class SD_ECTimer
 
             sdECT = JsonUtility.FromJson<sd_ECTimer>(data);
 
-            EC_mainWidget.inProgress = sdECT.inProgress;
+            EC_mainWidget.current.inProgress = sdECT.inProgress;
             EC_mainWidget.creatureDone = sdECT.creatureDone;
             EC_mainWidget.creature1_Egg = sdECT.creature1;
             EC_mainWidget.creature2_Egg = sdECT.creature2;
 
-            EC_mainWidget.TimerStart = Convert.ToDateTime(sdECT.DateStart);
-            EC_mainWidget.TimerEnd = Convert.ToDateTime(sdECT.DateEnd);
+            EC_mainWidget.current.TimerStart = Convert.ToDateTime(sdECT.DateStart);
+            EC_mainWidget.current.TimerEnd = Convert.ToDateTime(sdECT.DateEnd);
 
             if (sdECT.Status == "idle")
             {
-                EC_mainWidget.status = EC_mainWidget.Status.idle;
+                EC_mainWidget.current.status = EC_mainWidget.Status.idle;
             }
             if (sdECT.Status == "working")
             {
-                EC_mainWidget.status = EC_mainWidget.Status.working;
+                EC_mainWidget.current.status = EC_mainWidget.Status.working;
             }
             if (sdECT.Status == "complete")
             {
-                EC_mainWidget.status = EC_mainWidget.Status.complete;
+                EC_mainWidget.current.status = EC_mainWidget.Status.complete;
             }
         }
         else

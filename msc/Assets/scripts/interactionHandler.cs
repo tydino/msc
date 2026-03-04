@@ -39,7 +39,7 @@ public class interactionHandler : MonoBehaviour
 
     void Update()
     {
-        if (EC_mainWidget.status == EC_mainWidget.Status.complete)
+        if (EC_mainWidget.current.status == EC_mainWidget.Status.complete)
         {
             completeEC.SetActive(true);
         }
@@ -47,7 +47,7 @@ public class interactionHandler : MonoBehaviour
         {
             completeEC.SetActive(false);
         }
-        if (mi_mainWidget.status == mi_mainWidget.Status.complete)
+        if (mi_mainWidget.current.status == mi_mainWidget.Status.complete)
         {
             completeMI.SetActive(true);
         }

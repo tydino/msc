@@ -6,15 +6,14 @@ using UnityEngine;
 public class ObjectTimersBase : MonoBehaviour
 {
 
-    public List<creatureData> creatureDatas = new List<creatureData>();
     public List<GameObject> creaturePrefabs = new List<GameObject>();
 
-    public static bool inProgress;
-    public static Status status;
+    public bool inProgress;
+    public Status status;
     public enum Status { idle, working, complete }
 
-    public static DateTime TimerStart;
-    public static DateTime TimerEnd;
+    public DateTime TimerStart;
+    public DateTime TimerEnd;
 
     Coroutine lastTimer;
     Coroutine lastDisplay;
@@ -29,7 +28,7 @@ public class ObjectTimersBase : MonoBehaviour
     {
         inProgress = true;
         //initialize before data
-        creatureData cd = creatureDatas[i];
+        creatureData cd = creatureHandler.current.creatureObjects[i];
         //initialize after data
         TimerStart = DateTime.Now;
         int Days = cd.timeInDays;
@@ -42,6 +41,7 @@ public class ObjectTimersBase : MonoBehaviour
         SaveData.current.save();
         SetUpTimer();
         lastTimer = StartCoroutine(Timer());
+        //status = Status.working;
     }
 
     #region iEnumerators

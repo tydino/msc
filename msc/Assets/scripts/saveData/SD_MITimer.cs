@@ -11,10 +11,10 @@ public class SD_MITimer
 
     public void SaveToJson()
     {
-        sdMIT.inProgress = mi_mainWidget.inProgress;
-        sdMIT.DateStart = mi_mainWidget.TimerStart.ToString();
-        sdMIT.DateEnd = mi_mainWidget.TimerEnd.ToString();
-        sdMIT.Status = mi_mainWidget.status.ToString();
+        sdMIT.inProgress = mi_mainWidget.current.inProgress;
+        sdMIT.DateStart = mi_mainWidget.current.TimerStart.ToString();
+        sdMIT.DateEnd = mi_mainWidget.current.TimerEnd.ToString();
+        sdMIT.Status = mi_mainWidget.current.status.ToString();
         sdMIT.creatureDone = mi_mainWidget.creatureDone;
 
         string data = JsonUtility.ToJson(sdMIT);
@@ -35,23 +35,23 @@ public class SD_MITimer
 
             sdMIT = JsonUtility.FromJson<sd_MITimer>(data);
 
-            mi_mainWidget.inProgress = sdMIT.inProgress;
+            mi_mainWidget.current.inProgress = sdMIT.inProgress;
             mi_mainWidget.creatureDone = sdMIT.creatureDone;
 
-            mi_mainWidget.TimerStart = Convert.ToDateTime(sdMIT.DateStart);
-            mi_mainWidget.TimerEnd = Convert.ToDateTime(sdMIT.DateEnd);
+            mi_mainWidget.current.TimerStart = Convert.ToDateTime(sdMIT.DateStart);
+            mi_mainWidget.current.TimerEnd = Convert.ToDateTime(sdMIT.DateEnd);
 
             if (sdMIT.Status == "idle")
             {
-                mi_mainWidget.status = mi_mainWidget.Status.idle;
+                mi_mainWidget.current.status = mi_mainWidget.Status.idle;
             }
             if (sdMIT.Status == "working")
             {
-                mi_mainWidget.status = mi_mainWidget.Status.working;
+                mi_mainWidget.current.status = mi_mainWidget.Status.working;
             }
             if (sdMIT.Status == "complete")
             {
-                mi_mainWidget.status = mi_mainWidget.Status.complete;
+                mi_mainWidget.current.status = mi_mainWidget.Status.complete;
             }
         }
         else

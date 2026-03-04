@@ -11,7 +11,7 @@ public class CreatureButtonStore : MonoBehaviour
 
     public void IClicked(int howMuch)
     {
-        if (mi_mainWidget.inProgress == false)
+        if (mi_mainWidget.current.inProgress == false)
         {
             if (howMuch <= Currency.coins && coins == true)
             {

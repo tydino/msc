@@ -49,7 +49,7 @@ public class EC_mainWidget : ObjectTimersBase
     {
         if (status == Status.complete)
         {
-            if (mi_mainWidget.status == mi_mainWidget.Status.idle) 
+            if (mi_mainWidget.current.status == mi_mainWidget.Status.idle) 
             {
                 mi_mainWidget.current.StartTimer(creatureDone);
                 AS.PlayOneShot(Ac[0]);
@@ -86,7 +86,7 @@ public class EC_mainWidget : ObjectTimersBase
         foreach (creatureData cd in ch.creatureObjects)
         {
             creaturePrefabs.Add(cd.PrefabObj);
-            creatureDatas.Add(cd);
+            creatureHandler.current.creatureObjects.Add(cd);
         }
         setUpEC();
     }
@@ -239,7 +239,7 @@ public class EC_mainWidget : ObjectTimersBase
     void CreatureChosen(int CreatureID)
     {
         status = Status.working;
-        if (creatureDatas[CreatureID].PrefabObj != null)
+        if (creatureHandler.current.creatureObjects[CreatureID].PrefabObj != null)
         {
             if (chance == 0)
             {
