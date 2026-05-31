@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SD_Path
+public class SD_Path : MonoBehaviour
 {
     public sd_Path path;
 

@@ -80,9 +80,8 @@ public class Building : MonoBehaviour
             oh.YPos = gameObject.transform.position.y;
             oh.XScl = gameObject.transform.localScale.x;
             oh.ObjectID = ID;
-            //oh.Data = ;
+            oh.Data = gameObject.GetComponent<objectControler>().CompileData();
             objectHandler.current.objectInformation.Add(oh);
-            Debug.Log("Implement data for object with ID: " + ID);
         }
     }
 

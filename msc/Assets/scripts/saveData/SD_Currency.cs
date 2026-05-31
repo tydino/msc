@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SD_Currency
+public class SD_Currency : MonoBehaviour
 {
     public sd_currency sdc;
 

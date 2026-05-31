@@ -73,18 +73,30 @@ public class SD_Island : MonoBehaviour
             {
                 Vector3 pos = new Vector3(sdoh.XPos, sdoh.YPos, 1);
                 Vector3 scale = new Vector3(sdoh.XScl, 1, 1);
-                GameObject od = objectHandler.current.objectObjects[sdoh.ObjectID - 1].PrefabObj;
+                GameObject od = objectHandler.current.objectObjects[sdoh.ObjectID].PrefabObj;
                 GameObject clone = Instantiate(od);
                 clone.transform.position = pos;
                 clone.transform.localScale = scale;
                 clone.GetComponent<Building>().Placed = true;
-                Debug.LogWarning("Need to add Data to save load");
+                clone.GetComponent<objectControler>().DecompileData(sdoh.Data);
                 objectHandler.current.objectInformation.Add(sdoh);
             }
         }
         else
         {
-            Debug.Log("No data to load");
+            objectHandler.current.compileObjects(true);
+            foreach (sd_ObjectHandler sdoh in island.OHList)
+            {
+                Vector3 pos = new Vector3(sdoh.XPos, sdoh.YPos, 1);
+                Vector3 scale = new Vector3(sdoh.XScl, 1, 1);
+                GameObject od = objectHandler.current.objectObjects[sdoh.ObjectID].PrefabObj;
+                GameObject clone = Instantiate(od);
+                clone.transform.position = pos;
+                clone.transform.localScale = scale;
+                clone.GetComponent<Building>().Placed = true;
+                clone.GetComponent<objectControler>().DecompileData(sdoh.Data);
+                objectHandler.current.objectInformation.Add(sdoh);
+            }
         }
     }
 }

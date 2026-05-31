@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EC_mainWidget : ObjectTimersBase
-{
+{/*
     [Header("this widget is made for a ABCDEZ place")]
     public static EC_mainWidget current;
     [Header("visuals/animation")]
@@ -273,7 +273,7 @@ public class EC_mainWidget : ObjectTimersBase
             AS.PlayOneShot(Ac[3]);
         }
     }
-    #endregion
+    #endregion*/
 }
 
 [System.Serializable]

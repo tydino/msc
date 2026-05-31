@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1609292705689827752}
   - component: {fileID: 396287136509482958}
   - component: {fileID: 7162074174995299192}
+  - component: {fileID: 6889907131418920859}
   m_Layer: 0
   m_Name: mrs incubator
   m_TagString: object
@@ -42,7 +43,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6863300539684950816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a173d24bb8ed8d04fad0ad414a0b77fc, type: 3}
   m_Name: 
@@ -100,6 +101,20 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+--- !u!114 &6889907131418920859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863300539684950816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1abe4a17118ff48bc213a131d8b580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisObject: {fileID: 0}
+  ThisObjectType: 1
 --- !u!1 &8314674628809248881
 GameObject:
   m_ObjectHideFlags: 0

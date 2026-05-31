@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SD_MITimer
-{
+public class SD_MITimer : MonoBehaviour
+{/*
     public static SD_MITimer current;
     public sd_MITimer sdMIT;
 
@@ -58,7 +58,7 @@ public class SD_MITimer
         {
             Debug.Log("No data to load");
         }
-    }
+    }*/
 }
 
 [System.Serializable]

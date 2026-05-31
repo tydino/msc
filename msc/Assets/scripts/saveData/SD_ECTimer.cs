@@ -6,8 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class SD_ECTimer
-{
+public class SD_ECTimer : MonoBehaviour
+{/*
     public static SD_ECTimer current;
     public sd_ECTimer sdECT;
 
@@ -64,7 +64,7 @@ public class SD_ECTimer
         {
             Debug.Log("No data to load");
         }
-    }
+    }*/
 }
 
 [System.Serializable]
