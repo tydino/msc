@@ -23,7 +23,10 @@ public class ShopSetUp : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("You need to reinstate the shop");
+        /*
         interactionHandler.current.shopUI.SetActive(true);
         interactionHandler.current.canClick = false;
+        */
     }
 }

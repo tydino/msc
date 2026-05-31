@@ -5,6 +5,7 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public bool canBeDestroyed = true;
+    public bool hasUI = false;
     public bool creature = true;
     public bool Placed;
     public int ID;
@@ -69,9 +70,19 @@ public class Building : MonoBehaviour
             ch.XScl = gameObject.transform.localScale.x;
             ch.CreatureID = ID;
             ch.asleep = gameObject.GetComponent<creatureControler>().sleep;
-            creatureHandler CreatureH = GameObject.FindWithTag("CreatureHandler").GetComponent<creatureHandler>();
             creatureHandler.current.creatureInformation.Add(ch);
             Debug.Log("Saved" + ID);
+        }
+        else
+        {
+            sd_ObjectHandler oh = new sd_ObjectHandler();
+            oh.XPos = gameObject.transform.position.x;
+            oh.YPos = gameObject.transform.position.y;
+            oh.XScl = gameObject.transform.localScale.x;
+            oh.ObjectID = ID;
+            //oh.Data = ;
+            objectHandler.current.objectInformation.Add(oh);
+            Debug.Log("Implement data for object with ID: " + ID);
         }
     }
 
@@ -82,10 +93,7 @@ public class Building : MonoBehaviour
         if (interactionHandler.current.Clicked != this.gameObject && interactionHandler.current.moved == false)
         {
             interactionHandler.current.Clicked = this.gameObject;
-            if (creature)
-            {
-                interactionHandler.current.OpenUI(false);
-            }
+            interactionHandler.current.OpenUI(false, canBeDestroyed, hasUI);
         }
     }
     #endregion

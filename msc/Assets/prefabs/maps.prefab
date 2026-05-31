@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7622195509342594589}
   - component: {fileID: 8917782530642706752}
-  - component: {fileID: 4210770659026835528}
   - component: {fileID: 4210770659026835527}
+  - component: {fileID: 7854736496943378474}
   m_Layer: 0
   m_Name: maps
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4210770659026835528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4258087723301485341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b76a03170bb874da141115316b56c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objToActivate: {fileID: 0}
 --- !u!61 &4210770659026835527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,3 +112,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4392662, y: 1.1999073}
   m_EdgeRadius: 0
+--- !u!114 &7854736496943378474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258087723301485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeDestroyed: 0
+  hasUI: 0
+  creature: 0
+  Placed: 0
+  ID: 0
+  area:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 2, y: 2, z: 1}
+  prevPOS: {x: 0, y: 0, z: 0}

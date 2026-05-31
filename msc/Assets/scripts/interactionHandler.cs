@@ -11,6 +11,8 @@ public class interactionHandler : MonoBehaviour
     public GameObject Clicked;
     public GameObject main;
     public GameObject placement;
+    public GameObject sell;
+    public GameObject HasUIButton;
     public bool moved;
     public TilemapRenderer tempRend;
     public TilemapRenderer mainRend;
@@ -82,13 +84,37 @@ public class interactionHandler : MonoBehaviour
         canClick = true;
     }
 
-    public void OpenUI(bool open)
+    public void OpenUI(bool open, bool canDestroy, bool hasUI)
     {
         if (canClick || open)
         {
             moveUI();
 
             main.SetActive(true);
+            if (canDestroy)
+            {
+                sell.SetActive(true);
+            }
+            else
+            {
+                sell.SetActive(false);
+            }
+            if (HasUIButton == null)
+            {
+                Debug.Log("Missing has UI button, fix ASAP");
+                ///When implementing have the UI allow for any special UI.
+            }
+            else
+            {
+                if (hasUI)
+                {
+                    HasUIButton.SetActive(true);
+                }
+                else
+                {
+                    HasUIButton.SetActive(false);
+                }
+            }
             if (movedObj != Clicked)
             {
                 tempRend.enabled = false;

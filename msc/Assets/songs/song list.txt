@@ -1,7 +1,7 @@
 a_i=audio individuals
 
 1; (dreamicks)
-1:neglected nostalgia
+1: neglected nostalgia
 2: chimera quagmire
 
 2; (the dyno's series)

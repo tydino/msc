@@ -22,7 +22,7 @@ public class mi_mainWidget : ObjectTimersBase
         if (status == Status.complete)
         {
             GridBuildingSystem.current.InitializeWithBuilding(creaturePrefabs[creatureDone-1]);
-            interactionHandler.current.OpenUI(true);
+            interactionHandler.current.OpenUI(true, false, false);
             status = Status.idle;
             creatureDone = 0;
             inProgress = false;

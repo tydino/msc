@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941b8368898ae574c9470f6f952d71ad, type: 3}
+  m_Name: elementalCombiner
+  m_EditorClassIdentifier: 
+  canBeBought: 0
+  objectName: elemental combiner
+  objectID: 2
+  PrefabObj: {fileID: 5046644168467220383, guid: b3ca2b225d1fb9547bb6b339f26118ff, type: 3}
+  StoreFront: {fileID: 0}
+  worthInCoins: 0
+  coins: 0
+  worthInDiamonds: 0
+  diamonds: 0

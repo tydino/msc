@@ -3768,6 +3768,7 @@ MonoBehaviour:
   Clicked: {fileID: 0}
   main: {fileID: 6363943815016514111}
   placement: {fileID: 7406165843317595960}
+  sell: {fileID: 8602599897459888654}
   moved: 0
   tempRend: {fileID: 0}
   mainRend: {fileID: 0}

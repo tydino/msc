@@ -21,8 +21,8 @@ public class SaveData : MonoBehaviour
             sdp.SaveToJson();
             sdc.SaveToJson();
             sdi.SaveToJson();
-            sdect.SaveToJson();
-            sdmit.SaveToJson();
+            //sdect.SaveToJson();
+            //sdmit.SaveToJson();
         }
     }
     public void load()
@@ -31,8 +31,8 @@ public class SaveData : MonoBehaviour
         path = sdp.path.path;
         sdc.LoadFromJson();
         sdi.LoadFromJson();
-        sdect.LoadFromJson();
-        sdmit.LoadFromJson();
+        //sdect.LoadFromJson();
+        //sdmit.LoadFromJson();
     }
 
     void Start()
