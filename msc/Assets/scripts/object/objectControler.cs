@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class objectControler : MonoBehaviour
 {
+    //Universal
     public GameObject ThisObject;
     public ObjectTypes ThisObjectType;
+
+    //Elemental Combiner
+    public EC_Widget ElementalCombinerWidget;
+
+    //Mrs Incubator
+
+    //Numster
 
     public enum ObjectTypes
     {

@@ -3660,6 +3660,7 @@ GameObject:
   - component: {fileID: 9029476224546998521}
   - component: {fileID: 8878316722733967709}
   - component: {fileID: 3904327768843488276}
+  - component: {fileID: 4162552766884074305}
   m_Layer: 5
   m_Name: worldSpace Canvas
   m_TagString: Untagged
@@ -3765,10 +3766,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canClick: 0
-  Clicked: {fileID: 0}
+  Clicked: {fileID: 6363943815016514111}
   main: {fileID: 6363943815016514111}
   placement: {fileID: 7406165843317595960}
   sell: {fileID: 8602599897459888654}
+  HasUIButton: {fileID: 0}
   moved: 0
   tempRend: {fileID: 0}
   mainRend: {fileID: 0}
@@ -3786,6 +3788,29 @@ MonoBehaviour:
   TimeLeftSlider1: {fileID: 2725187746477774611}
   TimeLeftObj1: {fileID: 1712522558774359789}
   shopUI: {fileID: 3485846776407297726}
+--- !u!114 &4162552766884074305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805308009560351352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f518a7fc5fe0634091117af323dbe1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IH: {fileID: 3904327768843488276}
+  tempEC: {fileID: 0}
+  Icons1: []
+  Icons2: []
+  slider1: {fileID: 3485846777055987835}
+  slider2: {fileID: 3485846777415589094}
+  breedScreen: {fileID: 3485846777728531682}
+  IconSet1: {fileID: 3485846777499757754}
+  IconSet2: {fileID: 3485846777497156822}
+  chance: 0
+  ChoicesA: []
 --- !u!1 &3882710495124031853
 GameObject:
   m_ObjectHideFlags: 0

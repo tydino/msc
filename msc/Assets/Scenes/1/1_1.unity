@@ -360,7 +360,6 @@ MonoBehaviour:
   TimeInGame: 0
   playWhere: 0100000001000000010000000100000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000000000000000000000000000000000002000000
   animator: {fileID: 554671665}
-  Tempo: 100
   samples: 60
   sleep: 0
   AS: {fileID: 554671667}
@@ -587,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9e8aeda48f12f428511a2e5237e49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tempo: 100
   creaturesNeededForEachTime:
   - creatureIdNeeded: 04000000090000000c0000000f00000000000000
   - creatureIdNeeded: 04000000090000000c0000000f00000000000000
@@ -13437,6 +13437,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3904327768843488276, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: mainRend
+      value: 
+      objectReference: {fileID: 1622973034}
+    - target: {fileID: 3904327768843488276, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: tempRend
+      value: 
+      objectReference: {fileID: 2070061726}
     - target: {fileID: 5107022962973812672, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -11,7 +11,6 @@ public class creatureControler : MonoBehaviour
     public int[] playWhere;
     [Header("Animator")]
     public Animator animator;
-    public float Tempo;
     public int samples = 60;
     public bool sleep = false;
     [Header("audio")]
@@ -20,7 +19,7 @@ public class creatureControler : MonoBehaviour
 
     public void Update() {
         TimeInGame = timer.Timer;
-        animator.SetFloat("s", Tempo / samples);
+        animator.SetFloat("s", timer.Tempo / samples);
 
         if (animator != null)
         {

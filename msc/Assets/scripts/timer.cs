@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class timer : MonoBehaviour
 {
+    public float tempo;
+    public static float Tempo;
+
     public List<t_creaturesNeeded> creaturesNeededForEachTime;
     [Header("limit is 1 less then song's true end")]
     public int limit;
     public Animator a;
     public static int Timer;
+
+    private void Awake()
+    {
+        Tempo = tempo;
+    }
+
     void Start()
     {
         Timer = -2;

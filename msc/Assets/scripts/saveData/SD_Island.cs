@@ -61,7 +61,6 @@ public class SD_Island : MonoBehaviour
                 clone.GetComponent<Building>().Placed = true;
                 creatureHandler.current.creatureInformation.Add(sdch);
             }
-            EC_mainWidget.current.setUpEC();
             ///     OBJECTS     ///
             objectHandler.current.objectInformation.Clear();
             GameObject[] objectsEXE = GameObject.FindGameObjectsWithTag("object");
@@ -81,6 +80,7 @@ public class SD_Island : MonoBehaviour
                 clone.GetComponent<objectControler>().DecompileData(sdoh.Data);
                 objectHandler.current.objectInformation.Add(sdoh);
             }
+            ///EC_mainWidget.current.setUpEC(); FIX THIS
         }
         else
         {

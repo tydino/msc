@@ -40,7 +40,7 @@ public class interactionHandler : MonoBehaviour
     }
 
     void Update()
-    {
+    {/*
         if (EC_mainWidget.current.status == EC_mainWidget.Status.complete)
         {
             completeEC.SetActive(true);
@@ -56,14 +56,14 @@ public class interactionHandler : MonoBehaviour
         else
         {
             completeMI.SetActive(false);
-        }
+        }*/
     }
 
     void Start()
     {
         canClick = true;
-        ECUI.transform.position = EC_mainWidget.current.gameObject.transform.position;
-        MIUI.transform.position = mi_mainWidget.current.gameObject.transform.position;
+        ///ECUI.transform.position = EC_mainWidget.current.gameObject.transform.position;
+        ///MIUI.transform.position = mi_mainWidget.current.gameObject.transform.position;
         EC.SetActive(false);
         tempRend = GridBuildingSystem.current.TempTilemap.GetComponent<TilemapRenderer>();
         mainRend = GridBuildingSystem.current.MainTilemap.GetComponent<TilemapRenderer>();

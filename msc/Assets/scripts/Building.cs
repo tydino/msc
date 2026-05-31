@@ -54,7 +54,7 @@ public class Building : MonoBehaviour
         areaTemp.position = positionInt;
         Placed = true;
         //GridBuildingSystem.current.TakeArea(areaTemp);
-        EC_mainWidget.current.setUpEC();
+        ///EC_mainWidget.current.setUpEC(); FIX THIS
         prevPOS = transform.position;
 
         SaveData.current.save();

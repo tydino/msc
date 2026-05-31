@@ -21,7 +21,8 @@ public class objectHandler : MonoBehaviour
     {
         if (start)
         {
-            SD_Island.current.island.CHList.Clear();
+            objectInformation.Clear();
+            SD_Island.current.island.OHList.Clear();
             for (int i = 0; i < objectStart.Count; i++)
             {
                 SD_Island.current.island.OHList.Add(objectStart[i]);
@@ -35,7 +36,7 @@ public class objectHandler : MonoBehaviour
             {
                 creature.GetComponent<Building>().Save();
             }
-            SD_Island.current.island.CHList.Clear();
+            SD_Island.current.island.OHList.Clear();
             for (int i = 0; i < objectInformation.Count; i++)
             {
                 SD_Island.current.island.OHList.Add(objectInformation[i]);
