@@ -16,9 +16,9 @@ public class EC_Widget : ObjectTimersBase
     public AudioClip[] Ac;
 
     [Header("save data things")]
-    public static int creatureDone;
-    public static int creature1_Egg;
-    public static int creature2_Egg;
+    public int creatureDone;
+    public int creature1_Egg;
+    public int creature2_Egg;
 
     [Header("private varibles")]
     [SerializeField] bool isBreeding;

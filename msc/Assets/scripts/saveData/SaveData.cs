@@ -10,7 +10,6 @@ public class SaveData : MonoBehaviour
     public SD_Currency sdc;
     public SD_Island sdi;
     public SD_Path sdp;
-    public SD_ECTimer sdect;
     public SD_MITimer sdmit;
     public string path; //my path: C:\Users\tydin\OneDrive\Documents\mscTesting
 
@@ -21,7 +20,6 @@ public class SaveData : MonoBehaviour
             sdp.SaveToJson();
             sdc.SaveToJson();
             sdi.SaveToJson();
-            //sdect.SaveToJson();
             //sdmit.SaveToJson();
         }
     }
@@ -31,7 +29,6 @@ public class SaveData : MonoBehaviour
         path = sdp.path.path;
         sdc.LoadFromJson();
         sdi.LoadFromJson();
-        //sdect.LoadFromJson();
         //sdmit.LoadFromJson();
     }
 

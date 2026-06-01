@@ -71,7 +71,6 @@ public class Building : MonoBehaviour
             ch.CreatureID = ID;
             ch.asleep = gameObject.GetComponent<creatureControler>().sleep;
             creatureHandler.current.creatureInformation.Add(ch);
-            Debug.Log("Saved" + ID);
         }
         else
         {
