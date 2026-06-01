@@ -16,6 +16,8 @@ public class objectControler : MonoBehaviour
 
     //Numster
 
+    //Stan
+
     public enum ObjectTypes
     {
         ElementalCombiner,//Elemental combiner
@@ -71,19 +73,7 @@ public class objectControler : MonoBehaviour
         {
             //empty
         }
-        else if (ThisObjectType == ObjectTypes.Market)
-        {
-            //empty
-        }
-        else if (ThisObjectType == ObjectTypes.Maps)
-        {
-            //empty
-        }
         else if (ThisObjectType == ObjectTypes.Numster)
-        {
-            //empty
-        }
-        else if (ThisObjectType == ObjectTypes.Stan)
         {
             //empty
         }*/

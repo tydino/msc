@@ -33,6 +33,7 @@ public class interactionHandler : MonoBehaviour
     public GameObject TimeLeftObj1;
     [Header("shop")]
     public GameObject shopUI;
+    public GameObject ShopObj;
 
     void Awake()
     {
@@ -199,6 +200,31 @@ public class interactionHandler : MonoBehaviour
             GridBuildingSystem.current.sleep();
         }
         SaveData.current.save();
+    }
+
+    public void UIOpen()
+    {
+        objectControler OC = Clicked.GetComponent<objectControler>();
+        if(OC.ThisObjectType == objectControler.ObjectTypes.Market)
+        {
+            shopUI.SetActive(true);
+
+            foreach (shopInside obj in ShopObj.GetComponentsInChildren<shopInside>())
+            {
+                Destroy(obj.gameObject);
+            }
+
+            foreach (creatureData cd in creatureHandler.current.creatureObjects)
+            {
+                if (cd.creatureInIslandID != -1)
+                {
+                    GameObject temp = Instantiate(cd.StoreFront);
+                    temp.transform.SetParent(ShopObj.transform, false);
+                    shopInside.current.Icons.Add(temp);
+                    shopInside.current.Open();
+                }
+            }
+        }
     }
     #endregion
 }

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDestroyed: 0
-  hasUI: 0
+  hasUI: 1
   creature: 0
   Placed: 0
   ID: 0
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisObject: {fileID: 0}
   ThisObjectType: 3
+  ElementalCombinerWidget: {fileID: 0}

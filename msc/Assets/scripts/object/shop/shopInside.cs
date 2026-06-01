@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class shopInside : MonoBehaviour
 {
+    public static shopInside current;
     public List<GameObject> Icons;
     public Slider slider;
-    void Start()
+
+    private void Awake()
+    {
+        current = this;
+    }
+
+    public void Open()
     {
         slider.maxValue = Icons.Count - 1;
     }

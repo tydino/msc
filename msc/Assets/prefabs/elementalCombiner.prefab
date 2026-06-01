@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDestroyed: 0
-  hasUI: 0
+  hasUI: 1
   creature: 0
   Placed: 0
   ID: 2
@@ -384,6 +384,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   AS: {fileID: 0}
   Ac: []
+  creatureDone: 0
+  creature1_Egg: 0
+  creature2_Egg: 0
   isBreeding: 0
   Creature1: {fileID: 0}
   creature1_E: 

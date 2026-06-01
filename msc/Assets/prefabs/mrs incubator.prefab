@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3904113014474747306}
-  - component: {fileID: 1609292705689827752}
   - component: {fileID: 396287136509482958}
   - component: {fileID: 7162074174995299192}
   - component: {fileID: 6889907131418920859}
@@ -36,24 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1609292705689827752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6863300539684950816}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a173d24bb8ed8d04fad0ad414a0b77fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creaturePrefabs: []
-  inProgress: 0
-  status: 0
-  input: {fileID: 8848670709299136760}
-  animator: {fileID: 9110949265874436547}
-  Tempo: 100
 --- !u!61 &396287136509482958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDestroyed: 0
-  hasUI: 0
+  hasUI: 1
   creature: 0
   Placed: 0
   ID: 3
