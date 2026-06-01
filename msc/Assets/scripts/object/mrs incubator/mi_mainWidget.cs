@@ -21,7 +21,7 @@ public class mi_mainWidget : ObjectTimersBase
     {
         if (status == Status.complete)
         {
-            GridBuildingSystem.current.InitializeWithBuilding(creaturePrefabs[creatureDone-1]);
+            //GridBuildingSystem.current.InitializeWithBuilding(creaturePrefabs[creatureDone-1]);
             interactionHandler.current.OpenUI(true, false, false);
             status = Status.idle;
             creatureDone = 0;
@@ -43,7 +43,7 @@ public class mi_mainWidget : ObjectTimersBase
         animator.SetFloat("s", Tempo / samples);
         foreach (creatureData cd in creatureHandler.current.creatureObjects)
         {
-            creaturePrefabs.Add(cd.PrefabObj);
+            //creaturePrefabs.Add(cd.PrefabObj);
             creatureHandler.current.creatureObjects.Add(cd);
         }
         //interactionHandler.current.TimeLeftObj1.SetActive(false);

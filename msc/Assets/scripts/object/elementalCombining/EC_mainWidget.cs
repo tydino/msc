@@ -85,7 +85,7 @@ public class EC_mainWidget : ObjectTimersBase
         ch = creatureHandler.current;
         foreach (creatureData cd in ch.creatureObjects)
         {
-            creaturePrefabs.Add(cd.PrefabObj);
+            //creaturePrefabs.Add(cd.PrefabObj);
             creatureHandler.current.creatureObjects.Add(cd);
         }
         setUpEC();

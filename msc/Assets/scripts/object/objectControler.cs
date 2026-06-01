@@ -92,7 +92,7 @@ public class objectControler : MonoBehaviour
 
     public void DecompileData(string Data)///   Load    ///
     {
-        if (Data != null || Data == "") 
+        if (Data != null || Data != "") 
         {
             #region Elemental Combiner
             /*if (ThisObjectType == ObjectTypes.ElementalCombiner)

@@ -6,8 +6,6 @@ using UnityEngine;
 public class ObjectTimersBase : MonoBehaviour
 {
 
-    public List<GameObject> creaturePrefabs = new List<GameObject>();
-
     public bool inProgress;
     public Status status;
     public enum Status { idle, working, complete }

@@ -67,7 +67,7 @@ public class interactionHandler : MonoBehaviour
         this.gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
         CloseUI();
     }
-
+    
     public void moveUI()
     {
         Vector3 screenPos = Clicked.transform.position * 80;
@@ -81,6 +81,7 @@ public class interactionHandler : MonoBehaviour
         canClick = true;
     }
 
+    #region clicked UI (if something is clicked)
     public void OpenUI(bool open, bool canDestroy, bool hasUI)
     {
         if (canClick || open)
@@ -121,6 +122,7 @@ public class interactionHandler : MonoBehaviour
             }
         }
     }
+    
     public void CloseUI()
     {
         tempRend.enabled = false;
@@ -197,6 +199,12 @@ public class interactionHandler : MonoBehaviour
         }
         SaveData.current.save();
     }
+    #endregion
+
+    public void SetUpMrsIncubatorUI()
+    {
+
+    }
 
     public void UIOpen()
     {
@@ -235,6 +243,7 @@ public class interactionHandler : MonoBehaviour
         {
             MrsIncubatorUI.SetActive(true);
             MI_Universal.current.tempMI = Clicked.gameObject;
+            SetUpMrsIncubatorUI();
         }
         #endregion
     }
