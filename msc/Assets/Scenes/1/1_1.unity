@@ -230,50 +230,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
   - {fileID: 11400000, guid: b43e90c4617e2944ba8dd505b419e666, type: 2}
   creatureInformation: []
---- !u!1 &356499010
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 356499012}
-  - component: {fileID: 356499011}
-  m_Layer: 0
-  m_Name: sd_MI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &356499011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356499010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 762718ac3d39daf43a7ce8166dc03155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &356499012
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356499010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1984302782}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &383473830 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3485846777494299827, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
@@ -13006,50 +12962,6 @@ MonoBehaviour:
   Coins: {fileID: 383473830}
   Diamonds: {fileID: 980394880}
   Food: {fileID: 721500921}
---- !u!1 &1675176010
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1675176012}
-  - component: {fileID: 1675176011}
-  m_Layer: 0
-  m_Name: sd_EC
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1675176011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675176010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f741a1be0e20b49a9cad09bf4a65d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1675176012
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675176010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1984302782}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1984302781
 GameObject:
   m_ObjectHideFlags: 0
@@ -13082,8 +12994,6 @@ Transform:
   - {fileID: 1670838692}
   - {fileID: 2140196517}
   - {fileID: 133871692}
-  - {fileID: 1675176012}
-  - {fileID: 356499012}
   m_Father: {fileID: 1284537607}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13104,7 +13014,6 @@ MonoBehaviour:
   sdc: {fileID: 1670838693}
   sdi: {fileID: 2140196518}
   sdp: {fileID: 133871693}
-  sdect: {fileID: 0}
   sdmit: {fileID: 0}
   path: 
 --- !u!1 &2070061724

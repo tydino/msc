@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EC_Universal : MonoBehaviour
 {
     public static EC_Universal current;
+    public List<GameObject> ECs;
 
     [Header("Outward Things")]
     public interactionHandler IH;

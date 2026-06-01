@@ -26,11 +26,7 @@ public class interactionHandler : MonoBehaviour
     public Slider TimeLeftSlider;
     public GameObject TimeLeftObj;
     [Header("mrs incubator")]
-    public GameObject MIUI;
-    public GameObject completeMI;
-    public Text TimeLeft1;
-    public Slider TimeLeftSlider1;
-    public GameObject TimeLeftObj1;
+    public GameObject MrsIncubatorUI;
     [Header("shop")]
     public GameObject shopUI;
     public GameObject ShopObj;
@@ -205,7 +201,8 @@ public class interactionHandler : MonoBehaviour
     public void UIOpen()
     {
         objectControler OC = Clicked.GetComponent<objectControler>();
-        if(OC.ThisObjectType == objectControler.ObjectTypes.Market)
+        #region shop
+        if (OC.ThisObjectType == objectControler.ObjectTypes.Market)
         {
             shopUI.SetActive(true);
 
@@ -225,6 +222,21 @@ public class interactionHandler : MonoBehaviour
                 }
             }
         }
+        #endregion
+        #region ElementalCombiner
+        if (OC.ThisObjectType == objectControler.ObjectTypes.ElementalCombiner)
+        {
+            EC_Universal.current.tempEC = Clicked.gameObject;
+            Debug.Log("Elemental combiner is incomplete. FINISH IT SOON!");
+        }
+        #endregion
+        #region Mrs Incubator
+        if (OC.ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
+        {
+            MrsIncubatorUI.SetActive(true);
+            MI_Universal.current.tempMI = Clicked.gameObject;
+        }
+        #endregion
     }
     #endregion
 }

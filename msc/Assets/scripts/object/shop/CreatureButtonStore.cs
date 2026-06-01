@@ -11,14 +11,14 @@ public class CreatureButtonStore : MonoBehaviour
 
     public void IClicked(int howMuch)
     {
-        if (mi_mainWidget.current.inProgress == false)
+        if (MI_Universal.current.FindOneInProgress())
         {
             if (howMuch <= Currency.coins && coins == true)
             {
                 if (diamonds == false && food == false)
                 {
                     Currency.coins = Currency.coins - howMuch;
-                    mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID-1);
+                    MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID-1);
                 }
                 else
                 {
@@ -26,20 +26,20 @@ public class CreatureButtonStore : MonoBehaviour
                     {
                         Currency.diamonds = Currency.diamonds - howMuch;
                         Currency.coins = Currency.coins - howMuch;
-                        mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                        MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                     }
                     if (diamonds == false && howMuch <= Currency.food && food == true)
                     {
                         Currency.coins = Currency.coins - howMuch;
                         Currency.food = Currency.food - howMuch;
-                        mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                        MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                     }
                     if (diamonds == true && howMuch <= Currency.diamonds && food == true && howMuch <= Currency.food)
                     {
                         Currency.diamonds = Currency.diamonds - howMuch;
                         Currency.coins = Currency.coins - howMuch;
                         Currency.food = Currency.food - howMuch;
-                        mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                        MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                     }
                 }
             }
@@ -50,7 +50,7 @@ public class CreatureButtonStore : MonoBehaviour
                     if (coins == false && food == false)
                     {
                         Currency.diamonds = Currency.diamonds - howMuch;
-                        mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                        MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                     }
                     else
                     {
@@ -58,20 +58,20 @@ public class CreatureButtonStore : MonoBehaviour
                         {
                             Currency.diamonds = Currency.diamonds - howMuch;
                             Currency.coins = Currency.coins - howMuch;
-                            mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                            MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                         }
                         if (coins == false && howMuch <= Currency.food && food == true)
                         {
                             Currency.coins = Currency.coins - howMuch;
                             Currency.food = Currency.food - howMuch;
-                            mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                            MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                         }
                         if (coins == true && howMuch <= Currency.coins && food == true && howMuch <= Currency.food)
                         {
                             Currency.diamonds = Currency.diamonds - howMuch;
                             Currency.coins = Currency.coins - howMuch;
                             Currency.food = Currency.food - howMuch;
-                            mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                            MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                         }
                     }
                 }
@@ -80,7 +80,7 @@ public class CreatureButtonStore : MonoBehaviour
                     if (howMuch <= Currency.food && food == true)
                     {
                         Currency.food = Currency.food - howMuch;
-                        mi_mainWidget.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                        MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
                     }
                 }
             }

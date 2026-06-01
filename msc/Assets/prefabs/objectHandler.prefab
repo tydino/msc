@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d0e7759eeb88f4498af1a2a68c9d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  islandSaveData: {fileID: 0}
   objectObjects:
   - {fileID: 11400000, guid: 8d9aaed1a3ba34a4cad39a0961977fba, type: 2}
   - {fileID: 11400000, guid: d1c69cdfd39454c408e207e10c9c9aa1, type: 2}
   - {fileID: 11400000, guid: ee299f1e867bc334caf54764a09e0b5b, type: 2}
   - {fileID: 11400000, guid: 3e7a725f59c0d164f9bd3240eb4ffbb3, type: 2}
+  objectStart: []
   objectInformation: []

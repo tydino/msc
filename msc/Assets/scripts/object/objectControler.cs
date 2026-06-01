@@ -32,6 +32,13 @@ public class objectControler : MonoBehaviour
     private void Start()
     {
         ThisObject = gameObject;
+        if(ThisObjectType == ObjectTypes.ElementalCombiner)
+        {
+            EC_Universal.current.ECs.Add(gameObject);
+        }else if (ThisObjectType == ObjectTypes.MrsIncubator)
+        {
+            MI_Universal.current.MIs.Add(gameObject);
+        }
     }
 
     public string CompileData()///   Save    ///
@@ -88,7 +95,7 @@ public class objectControler : MonoBehaviour
         if (Data != null || Data == "") 
         {
             #region Elemental Combiner
-            if (ThisObjectType == ObjectTypes.ElementalCombiner)
+            /*if (ThisObjectType == ObjectTypes.ElementalCombiner)
             {//save data for EC: InProgress DateStart DateEnd Status CreatureDone Creature1 Creature2
                 int index = 0;
 
@@ -228,7 +235,8 @@ public class objectControler : MonoBehaviour
                     LengthString = LengthString + character;
                 }
                 ElementalCombinerWidget.creature2_Egg = int.Parse(LengthString);
-            }
+            }*/
+            Debug.Log("you need to reinstate the Elemental combiner Decompilation");
             #endregion
         }
     }

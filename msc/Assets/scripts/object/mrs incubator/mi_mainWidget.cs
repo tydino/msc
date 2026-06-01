@@ -46,7 +46,7 @@ public class mi_mainWidget : ObjectTimersBase
             creaturePrefabs.Add(cd.PrefabObj);
             creatureHandler.current.creatureObjects.Add(cd);
         }
-        interactionHandler.current.TimeLeftObj1.SetActive(false);
+        //interactionHandler.current.TimeLeftObj1.SetActive(false);
         SetUpTimer();
     }
     void Update()

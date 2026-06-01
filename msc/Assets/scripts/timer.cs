@@ -34,7 +34,7 @@ public class timer : MonoBehaviour
     public void Tick()
     {
         Timer++;
-        if (Timer != -1 || Timer != -2)
+        if (Timer > -1)
         {
             bool contains = false;
             while (contains == false)
