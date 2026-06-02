@@ -13014,7 +13014,6 @@ MonoBehaviour:
   sdc: {fileID: 1670838693}
   sdi: {fileID: 2140196518}
   sdp: {fileID: 133871693}
-  sdmit: {fileID: 0}
   path: 
 --- !u!1 &2070061724
 GameObject:
@@ -13221,10 +13220,6 @@ PrefabInstance:
     - target: {fileID: 2254941047864175799, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
-      propertyPath: ChoicesA.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: ChoicesA.Array.data[0].choiceOne

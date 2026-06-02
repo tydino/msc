@@ -139,6 +139,7 @@ public class EC_Universal : MonoBehaviour
             tempEC.GetComponent<EC_Widget>().creatureDone = 0;
             tempEC.GetComponent<EC_Widget>().status = ObjectTimersBase.Status.idle;
             tempEC.GetComponent<EC_Widget>().inProgress = false;
+            tempEC = null;
             SaveData.current.save();
         }
         else
@@ -177,40 +178,36 @@ public class EC_Universal : MonoBehaviour
                 tempEC.GetComponent<EC_Widget>().creature2_Egg = tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID - 1;
                 Debug.Log("Legal: " + ChoicesB.CreatureIDOut);
                 CreatureChosen(ChoicesB.CreatureIDOut, true);
-            }
-            else
-            {
-                tempEC.GetComponent<EC_Widget>().creature1_Egg = tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID - 1;
-                tempEC.GetComponent<EC_Widget>().creature2_Egg = tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID - 1;
-                Debug.Log("Was Illegal");
-                CreatureChosen(0, false);
+                resetVars();
+                return;
             }
         }
-
-        resetVars();
     }
     void CreatureChosen(int CreatureID, bool legal)
     {
         tempEC.GetComponent<EC_Widget>().status = ObjectTimersBase.Status.working;
         if (legal)
         {
-            chance = UnityEngine.Random.Range(-1, 1);
+            chance = UnityEngine.Random.Range(0, 10);
             if (creatureHandler.current.creatureObjects[CreatureID].PrefabObj != null)
             {
-                if (chance == 0)
+                if (chance <= 8)
                 {
+                    Debug.Log(chance);
                     tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Success);
                     tempEC.GetComponent<EC_Widget>().creatureDone = CreatureID;
                     tempEC.GetComponent<EC_Widget>().StartTimer(CreatureID);
                 }
-                if (chance == 1)
+                if (chance == 9)
                 {
+                    Debug.Log(chance);
                     tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Failure);
                     tempEC.GetComponent<EC_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID;
                     tempEC.GetComponent<EC_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID);
                 }
-                if (chance == -1)
+                if (chance == 10)
                 {
+                    Debug.Log(chance);
                     tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Failure);
                     tempEC.GetComponent<EC_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID;
                     tempEC.GetComponent<EC_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID);

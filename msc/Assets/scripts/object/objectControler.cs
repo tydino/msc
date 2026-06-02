@@ -210,12 +210,10 @@ public class objectControler : MonoBehaviour
                 }
                 MrsIncubatorWidget.TimerEnd = Convert.ToDateTime(final);
             }
-            #region Elemental Combiner
             if (ThisObjectType == ObjectTypes.ElementalCombiner)
             {//save data for EC: InProgress DateStart DateEnd Status CreatureDone Creature1 Creature2
                 Debug.Log("you need to reinstate the Elemental combiner Decompilation");
             }
-            #endregion
         }
     }
 }

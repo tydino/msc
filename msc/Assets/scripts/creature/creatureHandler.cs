@@ -29,4 +29,41 @@ public class creatureHandler : MonoBehaviour
             SD_Island.current.island.CHList.Add(creatureInformation[i]);
         }
     }
+
+    private void Start()
+    {//the choices are reversable
+        foreach (creatureData CD in creatureObjects)
+        {//these must be in 0 1 2 3 4 order
+            if (CD.element.Length != 1)
+            {
+                if(CD.element.Length == 2)
+                {//only one needed
+                    EC_Universal.current.ChoicesA.Add(newChoice(" " + CD.element[0] + " ", " " + CD.element[1] + " ", CD.creatureInIslandID));
+                }
+                if(CD.element.Length == 3)
+                {//only 3 needed
+                    EC_Universal.current.ChoicesA.Add(newChoice(" " + CD.element[0] + " ", " " + CD.element[1] + " " + CD.element[2] + " ", CD.creatureInIslandID));
+                    EC_Universal.current.ChoicesA.Add(newChoice(" " + CD.element[1] + " ", " " + CD.element[0] + " " + CD.element[2] + " ", CD.creatureInIslandID));
+                    EC_Universal.current.ChoicesA.Add(newChoice(" " + CD.element[2] + " ", " " + CD.element[0] + " " + CD.element[1] + " ", CD.creatureInIslandID));
+                }
+                if (CD.element.Length == 4)
+                {//Math incomplete for methods of making one
+                    Debug.Log("This is incomplete at this time");
+                    return;
+                }
+                /*if (CD.element.Length == 5)
+                {
+
+                }*/
+            }
+        }
+    }
+    EC_Choice newChoice(string one, string two, int id)
+    {
+        EC_Choice choice = new EC_Choice();
+        choice.choiceOne = one;
+        choice.choiceTwo = two;
+        choice.CreatureIDOut = id;
+        return choice;
+    }
 }
