@@ -18,7 +18,7 @@ public class MI_Universal : MonoBehaviour
     {
         foreach(GameObject MI in MIs)
         {
-            if (MI.GetComponent<MI_Widget>().status != ObjectTimersBase.Status.working || MI.GetComponent<MI_Widget>().status != ObjectTimersBase.Status.complete)
+            if (MI.GetComponent<MI_Widget>().status == ObjectTimersBase.Status.idle)
             {
                 AvailableMI = MI;
                 return true;
