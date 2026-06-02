@@ -104,6 +104,7 @@ public class ObjectTimersBase : MonoBehaviour
         DateTime start = DateTime.Now;
         double secondsToFinished = (TimerEnd - start).TotalSeconds;
         yield return new WaitForSeconds(Convert.ToSingle(secondsToFinished));
+        status = Status.complete;
         Debug.Log("complete!");
     }
     #endregion

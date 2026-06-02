@@ -134,7 +134,6 @@ public class objectControler : MonoBehaviour
                 string final = "";
                 int length;
                 int.TryParse(Data[index].ToString(), out length);
-                Debug.Log(length);
                 for (int i = 0; i < length; i++)
                 {
                     index++;

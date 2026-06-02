@@ -363,6 +363,7 @@ MonoBehaviour:
   ThisObject: {fileID: 0}
   ThisObjectType: 0
   ElementalCombinerWidget: {fileID: 9136087188496416599}
+  MrsIncubatorWidget: {fileID: 0}
 --- !u!114 &9136087188496416599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,8 +382,12 @@ MonoBehaviour:
   inputTwo: {fileID: 2759331547874220042}
   output: {fileID: 7705907438360597344}
   animator: {fileID: 5213034909006964117}
+  samples: 0
   AS: {fileID: 3772928131911644772}
-  Ac: []
+  A_Collect: {fileID: 8300000, guid: 47fbd53035ae485448325e4019faf93b, type: 3}
+  A_Failure: {fileID: 8300000, guid: 7a398910d6e66d747b9d2fd321d5c2e6, type: 3}
+  A_Success: {fileID: 8300000, guid: 605e827da4e15df429fc8279842bb2b3, type: 3}
+  A_YouDidBad: {fileID: 8300000, guid: fddfd214030a7c342bb18536beb876a7, type: 3}
   creatureDone: 0
   creature1_Egg: 0
   creature2_Egg: 0

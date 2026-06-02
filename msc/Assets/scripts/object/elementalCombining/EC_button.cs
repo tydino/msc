@@ -9,6 +9,6 @@ public class EC_button : MonoBehaviour
     public int OneOrTwo;
     public void IClicked()
     {
-        EC_mainWidget.current.Button(cd, OneOrTwo);
+        EC_Universal.current.Button(cd, OneOrTwo);
     }
 }

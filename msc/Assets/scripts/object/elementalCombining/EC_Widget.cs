@@ -13,7 +13,10 @@ public class EC_Widget : ObjectTimersBase
 
     [Header("audio things")]
     public AudioSource AS;
-    public AudioClip[] Ac;
+    public AudioClip A_Collect;
+    public AudioClip A_Failure;
+    public AudioClip A_Success;
+    public AudioClip A_YouDidBad;
 
     [Header("save data things")]
     public int creatureDone;
@@ -21,11 +24,11 @@ public class EC_Widget : ObjectTimersBase
     public int creature2_Egg;
 
     [Header("private varibles")]
-    [SerializeField] bool isBreeding;
-    [SerializeField] creatureData Creature1;
-    [SerializeField] string creature1_E;
-    [SerializeField] creatureData Creature2;
-    [SerializeField] string creature2_E;
+    public bool isBreeding;
+    public creatureData Creature1;
+    public string creature1_E;
+    public creatureData Creature2;
+    public string creature2_E;
 
     void Start()
     {
@@ -59,5 +62,6 @@ public class EC_Widget : ObjectTimersBase
             inputTwo.sprite = null;
             output.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
         }
+        SetUpTimer();
     }
 }

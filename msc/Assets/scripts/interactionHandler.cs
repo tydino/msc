@@ -18,10 +18,8 @@ public class interactionHandler : MonoBehaviour
     public TilemapRenderer mainRend;
     public GameObject movedObj;
     [Header("elemental combiner")]
-    public GameObject ECUI;
-    public GameObject completeEC;
     public GameObject ECInterface;
-    public GameObject EC;
+    public ECUIObjects ElementaclCombinerInterface;
     [Header("mrs incubator")]
     public GameObject MrsIncubatorUI;
     public MIUIObjects MrsIncubatorUIInterface;
@@ -35,6 +33,17 @@ public class interactionHandler : MonoBehaviour
         public Text CompletedCreatureName;
         public GameObject CompleteScreen;
     }
+
+    [System.Serializable]
+    public struct ECUIObjects
+    {
+        public GameObject NothingScreen;
+        public GameObject PatienceScreen;
+        public Text TimeLeft;
+        public Slider TimeLeftSlider;
+        public GameObject CompleteScreen;
+    }
+
     [Header("shop")]
     public GameObject shopUI;
     public GameObject ShopObj;
@@ -44,32 +53,9 @@ public class interactionHandler : MonoBehaviour
         current = this;
     }
 
-    void Update()
-    {/*
-        if (EC_mainWidget.current.status == EC_mainWidget.Status.complete)
-        {
-            completeEC.SetActive(true);
-        }
-        else
-        {
-            completeEC.SetActive(false);
-        }
-        if (mi_mainWidget.current.status == mi_mainWidget.Status.complete)
-        {
-            completeMI.SetActive(true);
-        }
-        else
-        {
-            completeMI.SetActive(false);
-        }*/
-    }
-
     void Start()
     {
         canClick = true;
-        ///ECUI.transform.position = EC_mainWidget.current.gameObject.transform.position;
-        ///MIUI.transform.position = mi_mainWidget.current.gameObject.transform.position;
-        ///EC.SetActive(false);
         tempRend = GridBuildingSystem.current.TempTilemap.GetComponent<TilemapRenderer>();
         mainRend = GridBuildingSystem.current.MainTilemap.GetComponent<TilemapRenderer>();
         this.gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
@@ -212,21 +198,35 @@ public class interactionHandler : MonoBehaviour
     #region TimerUIs
     public void TimeLeftSlider(float time)
     {
-        if(Clicked.GetComponent<Building>().creature == false)
+        if (Clicked != null)
         {
-            if(Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
+            if (Clicked.GetComponent<Building>().creature == false)
             {
-                MrsIncubatorUIInterface.TimeLeftSlider.value = time;
+                if (Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
+                {
+                    MrsIncubatorUIInterface.TimeLeftSlider.value = time;
+                }
+                else if (Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.ElementalCombiner)
+                {
+                    ElementaclCombinerInterface.TimeLeftSlider.value = time;
+                }
             }
         }
     }
     public void TimeLeft(string time)
     {
-        if (Clicked.GetComponent<Building>().creature == false)
+        if (Clicked != null)
         {
-            if (Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
+            if (Clicked.GetComponent<Building>().creature == false)
             {
-                MrsIncubatorUIInterface.TimeLeft.text = time;
+                if (Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
+                {
+                    MrsIncubatorUIInterface.TimeLeft.text = time;
+                }
+                else if (Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.ElementalCombiner)
+                {
+                    ElementaclCombinerInterface.TimeLeft.text = time;
+                }
             }
         }
     }
@@ -276,6 +276,44 @@ public class interactionHandler : MonoBehaviour
     }
     #endregion
 
+    #region Elemental Combiner UI
+    public void SetUpElementaclCombinerUI()
+    {
+        ECInterface.SetActive(true);
+        EC_Widget temp = EC_Universal.current.tempEC.GetComponent<EC_Widget>();
+        if (temp.status == ObjectTimersBase.Status.idle)
+        {
+            ElementaclCombinerInterface.NothingScreen.SetActive(true);
+            ElementaclCombinerInterface.PatienceScreen.SetActive(false);
+            ElementaclCombinerInterface.CompleteScreen.SetActive(false);
+            EC_Universal.current.setUpEC();
+        }
+        if (temp.status == ObjectTimersBase.Status.working)
+        {
+            ElementaclCombinerInterface.NothingScreen.SetActive(false);
+            ElementaclCombinerInterface.PatienceScreen.SetActive(true);
+            ElementaclCombinerInterface.CompleteScreen.SetActive(false);
+        }
+        if (temp.status == ObjectTimersBase.Status.complete)
+        {
+            ElementaclCombinerInterface.NothingScreen.SetActive(false);
+            ElementaclCombinerInterface.PatienceScreen.SetActive(false);
+            ElementaclCombinerInterface.CompleteScreen.SetActive(true);
+        }
+    }
+
+    public void ECClose()
+    {
+        EC_Universal.current.tempEC = null;
+    }
+
+    public void ECSendCreature()
+    {
+        EC_Universal.current.SendToMrsIncubator();
+        ECClose();
+    }
+    #endregion
+
     public void UIOpen()
     {
         objectControler OC = Clicked.GetComponent<objectControler>();
@@ -305,7 +343,7 @@ public class interactionHandler : MonoBehaviour
         if (OC.ThisObjectType == objectControler.ObjectTypes.ElementalCombiner)
         {
             EC_Universal.current.tempEC = Clicked.gameObject;
-            Debug.Log("Elemental combiner is incomplete. FINISH IT SOON!");
+            SetUpElementaclCombinerUI();
         }
         #endregion
         #region Mrs Incubator
