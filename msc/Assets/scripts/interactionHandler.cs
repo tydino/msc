@@ -22,11 +22,19 @@ public class interactionHandler : MonoBehaviour
     public GameObject completeEC;
     public GameObject ECInterface;
     public GameObject EC;
-    public Text TimeLeft;
-    public Slider TimeLeftSlider;
-    public GameObject TimeLeftObj;
     [Header("mrs incubator")]
     public GameObject MrsIncubatorUI;
+    public MIUIObjects MrsIncubatorUIInterface;
+    [System.Serializable]
+    public struct MIUIObjects
+    {
+        public GameObject NothingScreen;
+        public GameObject PatienceScreen;
+        public Text TimeLeft;
+        public Slider TimeLeftSlider;
+        public Text CompletedCreatureName;
+        public GameObject CompleteScreen;
+    }
     [Header("shop")]
     public GameObject shopUI;
     public GameObject ShopObj;
@@ -61,7 +69,7 @@ public class interactionHandler : MonoBehaviour
         canClick = true;
         ///ECUI.transform.position = EC_mainWidget.current.gameObject.transform.position;
         ///MIUI.transform.position = mi_mainWidget.current.gameObject.transform.position;
-        EC.SetActive(false);
+        ///EC.SetActive(false);
         tempRend = GridBuildingSystem.current.TempTilemap.GetComponent<TilemapRenderer>();
         mainRend = GridBuildingSystem.current.MainTilemap.GetComponent<TilemapRenderer>();
         this.gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
@@ -201,10 +209,72 @@ public class interactionHandler : MonoBehaviour
     }
     #endregion
 
+    #region TimerUIs
+    public void TimeLeftSlider(float time)
+    {
+        if(Clicked.GetComponent<Building>().creature == false)
+        {
+            if(Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
+            {
+                MrsIncubatorUIInterface.TimeLeftSlider.value = time;
+            }
+        }
+    }
+    public void TimeLeft(string time)
+    {
+        if (Clicked.GetComponent<Building>().creature == false)
+        {
+            if (Clicked.GetComponent<objectControler>().ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
+            {
+                MrsIncubatorUIInterface.TimeLeft.text = time;
+            }
+        }
+    }
+    #endregion
+
+    #region mrs incubator UI
     public void SetUpMrsIncubatorUI()
     {
-
+        MrsIncubatorUI.SetActive(true);
+        MI_Widget temp = MI_Universal.current.tempMI.GetComponent<MI_Widget>();
+        if(temp.status == ObjectTimersBase.Status.idle)
+        {
+            MrsIncubatorUIInterface.NothingScreen.SetActive(true);
+            MrsIncubatorUIInterface.PatienceScreen.SetActive(false);
+            MrsIncubatorUIInterface.CompleteScreen.SetActive(false);
+            temp.PlaySound(MI_Widget.Sounds.nothing);
+        }
+        if(temp.status == ObjectTimersBase.Status.working)
+        {
+            MrsIncubatorUIInterface.NothingScreen.SetActive(false);
+            MrsIncubatorUIInterface.PatienceScreen.SetActive(true);
+            MrsIncubatorUIInterface.CompleteScreen.SetActive(false);
+            temp.PlaySound(MI_Widget.Sounds.patience);
+        }
+        if(temp.status == ObjectTimersBase.Status.complete)
+        {
+            MrsIncubatorUIInterface.NothingScreen.SetActive(false);
+            MrsIncubatorUIInterface.PatienceScreen.SetActive(false);
+            MrsIncubatorUIInterface.CompleteScreen.SetActive(true);
+            MrsIncubatorUIInterface.CompletedCreatureName.text = creatureHandler.current.creatureObjects[temp.creatureDone].creatureName;
+        }
     }
+
+    public void MI_Sell()
+    {
+        MI_Universal.current.Sell();
+        MI_Universal.current.tempMI.GetComponent<MI_Widget>().PlaySound(MI_Widget.Sounds.sell);
+    }
+    public void MI_Place()
+    {
+        MI_Universal.current.Place();
+        MI_Universal.current.tempMI.GetComponent<MI_Widget>().PlaySound(MI_Widget.Sounds.place);
+    }
+    public void MI_Close()
+    {
+        MI_Universal.current.tempMI = null;
+    }
+    #endregion
 
     public void UIOpen()
     {
@@ -241,7 +311,6 @@ public class interactionHandler : MonoBehaviour
         #region Mrs Incubator
         if (OC.ThisObjectType == objectControler.ObjectTypes.MrsIncubator)
         {
-            MrsIncubatorUI.SetActive(true);
             MI_Universal.current.tempMI = Clicked.gameObject;
             SetUpMrsIncubatorUI();
         }

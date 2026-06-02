@@ -375,14 +375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5eb499e67fe6d943834b836a8d4fc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefabs: []
   inProgress: 0
   status: 0
-  inputOne: {fileID: 0}
-  inputTwo: {fileID: 0}
-  output: {fileID: 0}
-  animator: {fileID: 0}
-  AS: {fileID: 0}
+  inputOne: {fileID: 1145154326340997992}
+  inputTwo: {fileID: 2759331547874220042}
+  output: {fileID: 7705907438360597344}
+  animator: {fileID: 5213034909006964117}
+  AS: {fileID: 3772928131911644772}
   Ac: []
   creatureDone: 0
   creature1_Egg: 0

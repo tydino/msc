@@ -26,4 +26,37 @@ public class EC_Widget : ObjectTimersBase
     [SerializeField] string creature1_E;
     [SerializeField] creatureData Creature2;
     [SerializeField] string creature2_E;
+
+    void Start()
+    {
+        animator.SetFloat("s", timer.Tempo / samples);
+    }
+
+    void Update()
+    {
+        if (status == Status.idle)
+        {
+            animator.SetBool("working", false);
+            animator.SetBool("waiting", false);
+            inputOne.sprite = null;
+            inputTwo.sprite = null;
+            output.sprite = null;
+        }
+        else if (status == Status.working)
+        {
+            animator.SetBool("working", true);
+            animator.SetBool("waiting", false);
+            inputOne.sprite = creatureHandler.current.creatureObjects[creature1_Egg].egg;
+            inputTwo.sprite = creatureHandler.current.creatureObjects[creature2_Egg].egg;
+            output.sprite = null;
+        }
+        else if (status == Status.complete)
+        {
+            animator.SetBool("working", false);
+            animator.SetBool("waiting", true);
+            inputOne.sprite = null;
+            inputTwo.sprite = null;
+            output.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+        }
+    }
 }

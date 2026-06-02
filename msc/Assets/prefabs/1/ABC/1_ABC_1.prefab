@@ -1135,16 +1135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 11400000, guid: 526cc679cf6e0ec41a79390c0daf5ccf, type: 2}
-  HowMuchThisCreatureMakes: 30
-  random: 0
-  coins: 1
-  diamonds: 0
-  food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 15
+  currencyControl:
+    HowMuchThisCreatureMakes: 0
+    currencyIdentifier: 0
+    howLongInSecondsTillMoneyAddedToTotal: 0
   TimeInGame: 0
   playWhere: 0000000000000000010000000100000002000000020000000200000002000000000000000000000000000000000000000000000000000000010000000100000002000000020000000200000002000000000000000000000000000000000000000000000000000000010000000100000002000000
   animator: {fileID: 8109928461896094286}
-  Tempo: 100
   samples: 60
   sleep: 0
   AS: {fileID: 5326084098224266251}
@@ -1163,12 +1160,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDestroyed: 1
+  hasUI: 0
   creature: 1
   Placed: 0
   ID: 7
   area:
     m_Position: {x: 0, y: 0, z: 0}
-    m_Size: {x: 1, y: 1, z: 1}
+    m_Size: {x: 2, y: 2, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
 --- !u!82 &5326084098224266251
 AudioSource:

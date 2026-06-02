@@ -8,8 +8,15 @@ public class MI_Widget : ObjectTimersBase
     public SpriteRenderer input;
     public Animator animator;
     int samples = 60;
-    [Header("MSC")]
+    [Header("Function")]
     public int creatureDone;
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip A_MI_sell;
+    public AudioClip A_MI_place;
+    public AudioClip A_MI_patience;
+    public AudioClip A_MI_nothing;
+    public enum Sounds { sell, place, patience, nothing}
 
     void Start()
     {
@@ -29,13 +36,32 @@ public class MI_Widget : ObjectTimersBase
         {
             animator.SetBool("working", true);
             animator.SetBool("waiting", false);
-            input.sprite = creatureHandler.current.creatureObjects[creatureDone - 1].egg;
+            input.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
         }
         else if (status == Status.complete)
         {
             animator.SetBool("working", false);
             animator.SetBool("waiting", true);
-            input.sprite = creatureHandler.current.creatureObjects[creatureDone - 1].egg;
+            input.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+        }
+    }
+
+    public void PlaySound(Sounds sound)
+    {
+        if(sound == Sounds.place)
+        {
+            audioSource.PlayOneShot(A_MI_place);
+        }else if (sound == Sounds.sell)
+        {
+            audioSource.PlayOneShot(A_MI_sell);
+        }
+        else if(sound == Sounds.patience)
+        {
+            audioSource.PlayOneShot(A_MI_patience);
+        }
+        else if(sound == Sounds.nothing)
+        {
+            audioSource.PlayOneShot(A_MI_nothing);
         }
     }
 }

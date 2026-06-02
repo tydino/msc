@@ -79,9 +79,6 @@ public class EC_mainWidget : ObjectTimersBase
     void Start()
     {
         animator.SetFloat("s", Tempo / samples);
-        TimeLeft = interactionHandler.current.TimeLeft;
-        TimeLeftSlider = interactionHandler.current.TimeLeftSlider;
-        TimeLeftObj = interactionHandler.current.TimeLeftObj;
         ch = creatureHandler.current;
         foreach (creatureData cd in ch.creatureObjects)
         {

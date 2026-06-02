@@ -25,6 +25,7 @@ public class ObjectTimersBase : MonoBehaviour
     public void StartTimer(int i)
     {
         inProgress = true;
+        status = Status.working;
         //initialize before data
         creatureData cd = creatureHandler.current.creatureObjects[i];
         //initialize after data
@@ -53,9 +54,7 @@ public class ObjectTimersBase : MonoBehaviour
         while (status == Status.working)
         {
             text = "";
-            interactionHandler.current.TimeLeftSlider.value = 1 - Convert.ToSingle((TimerEnd - DateTime.Now).TotalSeconds / totalSeconds);
-            interactionHandler.current.TimeLeftObj.SetActive(true);
-            //skipButton.gameObject.SetActive(true);
+            interactionHandler.current.TimeLeftSlider(1 - Convert.ToSingle((TimerEnd - DateTime.Now).TotalSeconds / totalSeconds));
 
             if (totalSecondsLeft > 1)
             {
@@ -63,14 +62,14 @@ public class ObjectTimersBase : MonoBehaviour
                 {
                     text += timeLeft.Days + "d ";
                     text += timeLeft.Hours + "h";
-                    interactionHandler.current.TimeLeft.text = text;
+                    interactionHandler.current.TimeLeft(text);
                     yield return new WaitForSeconds(timeLeft.Minutes * 60);
                 }
                 else if (timeLeft.Hours != 0)
                 {
                     text += timeLeft.Hours + "h ";
                     text += timeLeft.Minutes + "m";
-                    interactionHandler.current.TimeLeft.text = text;
+                    interactionHandler.current.TimeLeft(text);
                     yield return new WaitForSeconds(timeLeft.Seconds);
                 }
                 else if (timeLeft.Minutes != 0)
@@ -78,12 +77,12 @@ public class ObjectTimersBase : MonoBehaviour
                     TimeSpan ts = TimeSpan.FromSeconds(totalSecondsLeft);
                     text += ts.Minutes + "m ";
                     text += ts.Seconds + "s";
-                    interactionHandler.current.TimeLeft.text = text;
+                    interactionHandler.current.TimeLeft(text);
                 }
                 else
                 {
                     text += Mathf.FloorToInt((float)totalSecondsLeft) + "s";
-                    interactionHandler.current.TimeLeft.text = text;
+                    interactionHandler.current.TimeLeft(text);
                 }
 
                 totalSecondsLeft -= Time.deltaTime;
@@ -92,10 +91,8 @@ public class ObjectTimersBase : MonoBehaviour
             }
             else
             {
-                interactionHandler.current.TimeLeft.text = "Finished";
-                //skipButton.gameObject.SetActive(false);
-                interactionHandler.current.TimeLeftSlider.value = 1;
-                interactionHandler.current.TimeLeftObj.SetActive(false);
+                interactionHandler.current.TimeLeft("Finished");
+                interactionHandler.current.TimeLeftSlider(1);
                 status = Status.complete;
                 inProgress = false;
             }

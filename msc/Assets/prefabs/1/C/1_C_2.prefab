@@ -3172,16 +3172,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 11400000, guid: a0f42db0427a3a046bac637ab1a48eac, type: 2}
-  HowMuchThisCreatureMakes: 5
-  random: 0
-  coins: 1
-  diamonds: 0
-  food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 5
+  currencyControl:
+    HowMuchThisCreatureMakes: 0
+    currencyIdentifier: 0
+    howLongInSecondsTillMoneyAddedToTotal: 0
   TimeInGame: 0
   playWhere: 0100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000000000000
   animator: {fileID: 7949351964257172579}
-  Tempo: 75
   samples: 60
   sleep: 0
   AS: {fileID: 2209524744265423253}
@@ -3321,11 +3318,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDestroyed: 1
+  hasUI: 0
+  creature: 1
   Placed: 0
   ID: 4
   area:
     m_Position: {x: 0, y: 0, z: 0}
-    m_Size: {x: 2, y: 2, z: 1}
+    m_Size: {x: 3, y: 3, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
 --- !u!95 &7949351964257172579
 Animator:
