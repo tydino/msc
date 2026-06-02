@@ -5956,7 +5956,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3904327768843488276}
         m_TargetAssemblyTypeName: interactionHandler, Assembly-CSharp
-        m_MethodName: MI_Place
+        m_MethodName: MI_Sell
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

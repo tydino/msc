@@ -13,12 +13,11 @@ public class ObjectTimersBase : MonoBehaviour
     public DateTime TimerStart;
     public DateTime TimerEnd;
 
-    Coroutine lastTimer;
-    Coroutine lastDisplay;
+    public Coroutine lastTimer;
+    public Coroutine lastDisplay;
 
     public void SetUpTimer()
     {
-
         lastDisplay = StartCoroutine(DisplayTime());
     }
 
@@ -40,7 +39,6 @@ public class ObjectTimersBase : MonoBehaviour
         SaveData.current.save();
         SetUpTimer();
         lastTimer = StartCoroutine(Timer());
-        //status = Status.working;
     }
 
     #region iEnumerators

@@ -94,7 +94,6 @@ public class SD_Island : MonoBehaviour
                 clone.transform.position = pos;
                 clone.transform.localScale = scale;
                 clone.GetComponent<Building>().Placed = true;
-                clone.GetComponent<objectControler>().DecompileData(sdoh.Data);
                 objectHandler.current.objectInformation.Add(sdoh);
             }
         }

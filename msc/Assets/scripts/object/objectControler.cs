@@ -13,6 +13,7 @@ public class objectControler : MonoBehaviour
     public EC_Widget ElementalCombinerWidget;
 
     //Mrs Incubator
+    public MI_Widget MrsIncubatorWidget;
 
     //Numster
 
@@ -46,7 +47,7 @@ public class objectControler : MonoBehaviour
         #region Elemental Combiner
         if (ThisObjectType == ObjectTypes.ElementalCombiner)
         {
-            string final = "";
+            string final;
             if (ElementalCombinerWidget.inProgress)
             {
                 final = "T";
@@ -76,11 +77,32 @@ public class objectControler : MonoBehaviour
             return final;
         }
         #endregion
-        /*else if (ThisObjectType == ObjectTypes.MrsIncubator)
+        else if (ThisObjectType == ObjectTypes.MrsIncubator)
         {
-            //empty
+            string final;
+            if (MrsIncubatorWidget.inProgress)
+            {
+                final = "T";
+            }
+            else
+            {
+                final = "f";
+            }
+            final = final + MrsIncubatorWidget.status.ToString().Length.ToString();
+            final = final + MrsIncubatorWidget.status.ToString();
+            final = final + MrsIncubatorWidget.creatureDone.ToString().Length.ToString().Length.ToString();
+            final = final + MrsIncubatorWidget.creatureDone.ToString().Length.ToString();
+            final = final + MrsIncubatorWidget.creatureDone.ToString();
+            final = final + MrsIncubatorWidget.TimerStart.ToString().Length.ToString().Length.ToString();
+            final = final + MrsIncubatorWidget.TimerStart.ToString().Length.ToString();
+            final = final + MrsIncubatorWidget.TimerStart.ToString();
+            final = final + MrsIncubatorWidget.TimerEnd.ToString().Length.ToString().Length.ToString();
+            final = final + MrsIncubatorWidget.TimerEnd.ToString().Length.ToString();
+            final = final + MrsIncubatorWidget.TimerEnd.ToString();
+
+            return final;
         }
-        else if (ThisObjectType == ObjectTypes.Numster)
+        /*else if (ThisObjectType == ObjectTypes.Numster)
         {
             //empty
         }*/
@@ -94,149 +116,106 @@ public class objectControler : MonoBehaviour
     {
         if (Data != null || Data != "") 
         {
-            #region Elemental Combiner
-            /*if (ThisObjectType == ObjectTypes.ElementalCombiner)
-            {//save data for EC: InProgress DateStart DateEnd Status CreatureDone Creature1 Creature2
+            if(ThisObjectType == ObjectTypes.MrsIncubator)
+            {//save data for MI: InProgress Status creatureDone DateStart DateEnd
                 int index = 0;
 
-                //gets inprogress bool
-                string character = Data[index].ToString();///this gets individual character as a string
-                if (character == "T")
+                if(Data[index].ToString() == "T")
                 {
-                    ElementalCombinerWidget.inProgress = true;
+                    MrsIncubatorWidget.inProgress = true;
                 }
-                if (character == "F")
+                if(Data[index].ToString() == "F")
                 {
-                    ElementalCombinerWidget.inProgress = false;
+                    MrsIncubatorWidget.inProgress = false;
                 }
 
                 index++;
 
-                //gets a int of amount of characters for date length's amount of characters for DateStart
-                int Length = int.Parse(Data[index].ToString());
-                string LengthString = string.Empty;
-
-                for (int i = 0; i < Length; i++)
+                string final = "";
+                int length;
+                int.TryParse(Data[index].ToString(), out length);
+                Debug.Log(length);
+                for (int i = 0; i < length; i++)
                 {
                     index++;
-                    character = Data[index].ToString();
-                    LengthString = LengthString + character;
+                    final = final + Data[index].ToString();
                 }
 
-                string final = string.Empty;
-
-                for (int i = 0; i < int.Parse(LengthString); i++)
+                if(final == ObjectTimersBase.Status.complete.ToString())
                 {
-                    index++;
-                    character = Data[index].ToString();
-                    final = final + character;
+                    MrsIncubatorWidget.status = ObjectTimersBase.Status.complete;
                 }
-
-                ElementalCombinerWidget.TimerStart = Convert.ToDateTime(final);
-
-                index++;
-
-                //gets DateEnd
-                Length = int.Parse(Data[index].ToString());
-                LengthString = string.Empty;
-
-                for (int i = 0; Length < i; i++)
+                if (final == ObjectTimersBase.Status.idle.ToString())
                 {
-                    index++;
-                    character = Data[index].ToString();
-                    LengthString = LengthString + character;
-                }
-
-                Debug.Log(LengthString);
-
-                final = string.Empty;
-
-                for (int i = 0; i < int.Parse(LengthString); i++)
-                {
-                    index++;
-                    character = Data[index].ToString();
-                    final = final + character;
-                }
-
-                ElementalCombinerWidget.TimerEnd = Convert.ToDateTime(final);
-
-                index++;
-
-                ///     Status      ///
-                Length = int.Parse(Data[index].ToString());
-                LengthString = string.Empty;
-
-                for (int i = 0; Length < i; i++)
-                {
-                    index++;
-                    character = Data[index].ToString();
-                    LengthString = LengthString + character;
-                }
-
-                final = string.Empty;
-
-                for (int i = 0; i < int.Parse(LengthString); i++)
-                {
-                    index++;
-                    character = Data[index].ToString();
-                    final = final + character;
-                }
-
-                if (final == ObjectTimersBase.Status.complete.ToString())
-                {
-                    ElementalCombinerWidget.status = ObjectTimersBase.Status.complete;
-                } else if (final == ObjectTimersBase.Status.idle.ToString())
-                {
-                    ElementalCombinerWidget.status = ObjectTimersBase.Status.idle;
+                    MrsIncubatorWidget.status = ObjectTimersBase.Status.idle;
                 }
                 if (final == ObjectTimersBase.Status.working.ToString())
                 {
-                    ElementalCombinerWidget.status = ObjectTimersBase.Status.working;
+                    MrsIncubatorWidget.status = ObjectTimersBase.Status.working;
                 }
 
                 index++;
 
-                //creature done
-                Length = int.Parse(Data[index].ToString());
-                LengthString = string.Empty;
-
-                for (int i = 0; Length < i; i++)
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for(int i = 0; i < length; i++)
                 {
                     index++;
-                    character = Data[index].ToString();
-                    LengthString = LengthString + character;
+                    final = final + Data[index].ToString();
                 }
-                ElementalCombinerWidget.creatureDone = int.Parse(LengthString);
+
+                int.TryParse(final, out length);
+                final = "";
+                for(int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                int.TryParse(final, out  MrsIncubatorWidget.creatureDone);
 
                 index++;
 
-                //creature1
-                Length = int.Parse(Data[index].ToString());
-                LengthString = string.Empty;
-
-                for (int i = 0; Length < i; i++)
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
                 {
                     index++;
-                    character = Data[index].ToString();
-                    LengthString = LengthString + character;
+                    final = final + Data[index].ToString();
                 }
-                ElementalCombinerWidget.creature1_Egg = int.Parse(LengthString);
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                MrsIncubatorWidget.TimerStart = Convert.ToDateTime(final);
 
                 index++;
 
-                //creature2
-                Length = int.Parse(Data[index].ToString());
-                LengthString = string.Empty;
-
-                for (int i = 0; Length < i; i++)
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
                 {
                     index++;
-                    character = Data[index].ToString();
-                    LengthString = LengthString + character;
+                    final = final + Data[index].ToString();
                 }
-                ElementalCombinerWidget.creature2_Egg = int.Parse(LengthString);
-            }*/
-            Debug.Log("you need to reinstate the Elemental combiner Decompilation");
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                MrsIncubatorWidget.TimerEnd = Convert.ToDateTime(final);
+            }
+            #region Elemental Combiner
+            if (ThisObjectType == ObjectTypes.ElementalCombiner)
+            {//save data for EC: InProgress DateStart DateEnd Status CreatureDone Creature1 Creature2
+                Debug.Log("you need to reinstate the Elemental combiner Decompilation");
+            }
             #endregion
         }
     }

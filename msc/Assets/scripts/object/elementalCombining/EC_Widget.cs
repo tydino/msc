@@ -9,7 +9,7 @@ public class EC_Widget : ObjectTimersBase
     public SpriteRenderer inputTwo;
     public SpriteRenderer output;
     public Animator animator;
-    int samples = 60;
+    public int samples;
 
     [Header("audio things")]
     public AudioSource AS;
@@ -29,6 +29,7 @@ public class EC_Widget : ObjectTimersBase
 
     void Start()
     {
+        samples = 60;
         animator.SetFloat("s", timer.Tempo / samples);
     }
 
