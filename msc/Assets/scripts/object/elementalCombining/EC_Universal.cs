@@ -132,6 +132,7 @@ public class EC_Universal : MonoBehaviour
     {
         if (MI_Universal.current.FindOneInProgress())
         {
+            MI_Universal.current.AvailableMI.GetComponent<MI_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().creatureDone - 1;
             MI_Universal.current.AvailableMI.GetComponent<MI_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().creatureDone);
             tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Collect);
             Debug.Log("Elemental Combiner sent: " + tempEC.GetComponent<EC_Widget>().creatureDone);

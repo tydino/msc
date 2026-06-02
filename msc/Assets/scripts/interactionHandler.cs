@@ -152,7 +152,6 @@ public class interactionHandler : MonoBehaviour
         GridBuildingSystem.current.destroy();
         placement.SetActive(false);
         Cancel();
-        EC_mainWidget.current.setUpEC();
         SaveData.current.save();
     }
     public void p_place()
