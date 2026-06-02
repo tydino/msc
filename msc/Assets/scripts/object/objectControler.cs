@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class objectControler : MonoBehaviour
-{
+{//when adding new varible add them to the Editor in the switch cases!
     //Universal
     public GameObject ThisObject;
     public ObjectTypes ThisObjectType;
