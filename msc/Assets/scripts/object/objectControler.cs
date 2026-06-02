@@ -212,7 +212,143 @@ public class objectControler : MonoBehaviour
             }
             if (ThisObjectType == ObjectTypes.ElementalCombiner)
             {//save data for EC: InProgress DateStart DateEnd Status CreatureDone Creature1 Creature2
-                Debug.Log("you need to reinstate the Elemental combiner Decompilation");
+                int index = 0;
+
+                if(Data[index].ToString() == "T")
+                {
+                    ElementalCombinerWidget.inProgress = true;
+                }
+                if (Data[index].ToString() == "F")
+                {
+                    ElementalCombinerWidget.inProgress = false;
+                }
+
+                index++;
+
+                string final = "";
+                int length;
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                ElementalCombinerWidget.TimerStart = Convert.ToDateTime(final);
+
+                index++;
+
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                ElementalCombinerWidget.TimerEnd = Convert.ToDateTime(final);
+
+                index++;
+
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+
+                if (final == ObjectTimersBase.Status.complete.ToString())
+                {
+                    ElementalCombinerWidget.status = ObjectTimersBase.Status.complete;
+                }
+                if (final == ObjectTimersBase.Status.idle.ToString())
+                {
+                    ElementalCombinerWidget.status = ObjectTimersBase.Status.idle;
+                }
+                if (final == ObjectTimersBase.Status.working.ToString())
+                {
+                    ElementalCombinerWidget.status = ObjectTimersBase.Status.working;
+                }
+
+                index++;
+
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                int.TryParse(final, out ElementalCombinerWidget.creatureDone);
+
+                index++;
+
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                int.TryParse(final, out ElementalCombinerWidget.creature1_Egg);
+
+                index++;
+
+                final = "";
+                int.TryParse(Data[index].ToString(), out length);
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+
+                int.TryParse(final, out length);
+                final = "";
+                for (int i = 0; i < length; i++)
+                {
+                    index++;
+                    final = final + Data[index].ToString();
+                }
+                int.TryParse(final, out ElementalCombinerWidget.creature2_Egg);
             }
         }
     }
