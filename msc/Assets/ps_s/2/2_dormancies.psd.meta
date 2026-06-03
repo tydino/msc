@@ -113,7 +113,7 @@ TextureImporter:
         width: 38
         height: 39
       alignment: 9
-      pivot: {x: 0.49221545, y: 0.563223}
+      pivot: {x: 0.49819866, y: 0.88677746}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,6 +146,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 2_AB_dormancies
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 364
+        width: 30
+        height: 36
+      alignment: 9
+      pivot: {x: 0.47726378, y: 0.89472705}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573267a9f6118024fb777c73425f079c
+      internalID: -1077482175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -157,6 +178,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      2_AB_dormancies: -1077482175
       2_A_dormantSprite: 1863959175
       2_B_dormantSprite: -1254478742
   spritePackingTag: 

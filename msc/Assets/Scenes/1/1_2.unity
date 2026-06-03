@@ -336,6 +336,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3904327768843488276, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: mainRend
+      value: 
+      objectReference: {fileID: 1272503594}
+    - target: {fileID: 3904327768843488276, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: tempRend
+      value: 
+      objectReference: {fileID: 967142157}
     - target: {fileID: 4600748101155634222, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

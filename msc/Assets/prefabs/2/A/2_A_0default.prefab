@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 3768778922433697929}
   m_Layer: 0
   m_Name: 2_A_0default
-  m_TagString: Untagged
+  m_TagString: creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -60,7 +60,7 @@ public class EC_Widget : ObjectTimersBase
             animator.SetBool("waiting", true);
             inputOne.sprite = null;
             inputTwo.sprite = null;
-            output.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+            output.sprite = creatureHandler.current.creatureObjects[creatureDone-1].egg;
         }
         SetUpTimer();
     }

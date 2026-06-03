@@ -23,10 +23,13 @@ public class SaveData : MonoBehaviour
     }
     public void load()
     {
-        sdp.LoadFromJson();
-        path = sdp.path.path;
-        sdc.LoadFromJson();
-        sdi.LoadFromJson();
+        if (Saves)
+        {
+            sdp.LoadFromJson();
+            path = sdp.path.path;
+            sdc.LoadFromJson();
+            sdi.LoadFromJson();
+        }
     }
 
     void Start()

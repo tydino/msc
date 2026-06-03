@@ -133,7 +133,7 @@ public class EC_Universal : MonoBehaviour
         if (MI_Universal.current.FindOneInProgress())
         {
             MI_Universal.current.AvailableMI.GetComponent<MI_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().creatureDone - 1;
-            MI_Universal.current.AvailableMI.GetComponent<MI_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().creatureDone);
+            MI_Universal.current.AvailableMI.GetComponent<MI_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().creatureDone - 1);
             tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Collect);
             tempEC.GetComponent<EC_Widget>().creatureDone = 0;
             tempEC.GetComponent<EC_Widget>().creature1_Egg = 0;
@@ -170,6 +170,7 @@ public class EC_Universal : MonoBehaviour
     }
     void GoThroughPossibilities()
     {
+        bool legalFound = false;
         //remember that the breed is cap sensitive and there is a space before, between, and after every elemental letter (order A,B,AB,C, AC, BC, ABC, D, AD, BD, CD, ABD, ACD, BCD, ABCD, E, AE, BE, CE, DE, ABE, ACE, ADE, BCE, BDE, CDE, ABCE, ABDE, ACDE, BCDE, ABCDE, Z)
         foreach (EC_Choice ChoicesB in ChoicesA)
         {
@@ -179,9 +180,19 @@ public class EC_Universal : MonoBehaviour
                 tempEC.GetComponent<EC_Widget>().creature2_Egg = tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID - 1;
                 CreatureChosen(ChoicesB.CreatureIDOut, true);
                 resetVars();
+                legalFound = true;
                 return;
             }
         }
+
+        if(legalFound == false)
+        {
+            tempEC.GetComponent<EC_Widget>().creature1_Egg = tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID - 1;
+            tempEC.GetComponent<EC_Widget>().creature2_Egg = tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID - 1;
+            CreatureChosen(0, false);
+            resetVars();
+        }
+
     }
     void CreatureChosen(int CreatureID, bool legal)
     {
@@ -189,28 +200,26 @@ public class EC_Universal : MonoBehaviour
         if (legal)
         {
             chance = UnityEngine.Random.Range(0, 10);
-            if (creatureHandler.current.creatureObjects[CreatureID].PrefabObj != null)
+            if (chance <= 8)
             {
-                if (chance <= 8)
-                {
-                    tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Success);
-                    tempEC.GetComponent<EC_Widget>().creatureDone = CreatureID;
-                    tempEC.GetComponent<EC_Widget>().StartTimer(CreatureID);
-                }
-                if (chance == 9)
-                {
-                    tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Failure);
-                    tempEC.GetComponent<EC_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID;
-                    tempEC.GetComponent<EC_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID);
-                }
-                if (chance == 10)
-                {
-                    tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Failure);
-                    tempEC.GetComponent<EC_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID;
-                    tempEC.GetComponent<EC_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID);
-                }
-                SaveData.current.save();
+                tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Success);
+                tempEC.GetComponent<EC_Widget>().creatureDone = CreatureID;
+                tempEC.GetComponent<EC_Widget>().StartTimer(CreatureID - 1);
             }
+            if (chance == 9)
+            {
+                tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Failure);
+                tempEC.GetComponent<EC_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID;
+                tempEC.GetComponent<EC_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().Creature2.creatureInIslandID);
+            }
+            if (chance == 10)
+            {
+                tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Failure);
+                tempEC.GetComponent<EC_Widget>().creatureDone = tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID;
+                tempEC.GetComponent<EC_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().Creature1.creatureInIslandID);
+            }
+            SaveData.current.save();
+
         }
         else
         {

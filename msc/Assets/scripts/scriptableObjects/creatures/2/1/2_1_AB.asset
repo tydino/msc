@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
+  m_Name: 2_1_AB
+  m_EditorClassIdentifier: 
+  creatureName: MI
+  creatureInIslandID: 3
+  psd: {fileID: 21300000, guid: b49d1987df134fe408c6d1141f697b24, type: 3}
+  PrefabObj: {fileID: 260463417349822724, guid: 2a499e608970f1e4faa5a70ef12edf98, type: 3}
+  StoreFront: {fileID: 6888901894457015782, guid: 36a99f28eb8da5a4b92b8a30a8cd8873, type: 3}
+  worthInCoins: 0
+  coins: 0
+  worthInDiamonds: 1000
+  diamonds: 1
+  element:
+  - A
+  - B
+  BreedScreen: {fileID: 6888901894457015782, guid: 59e956d18e77a324b9d855ceb1e69120, type: 3}
+  egg: {fileID: -1077482175, guid: aada3e216bee7ee44839619adcd037e6, type: 3}
+  timeInDays: 0
+  timeInHours: 0
+  timeInMinutes: 15
+  timeInSeconds: 0
