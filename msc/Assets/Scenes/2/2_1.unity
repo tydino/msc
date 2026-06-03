@@ -295,12 +295,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[0].XScl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[0].YPos
       value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[1].XPos
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[1].XScl
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[1].YPos
@@ -311,12 +319,20 @@ PrefabInstance:
       value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[2].XScl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[2].YPos
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[3].XPos
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[3].XScl
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[3].YPos
@@ -400,6 +416,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3485846775858126730, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3485846776228416989, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -452,9 +472,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3485846777353391885, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485846777640514834, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3485846777647125055, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485846777709799287, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485846777728531682, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600748101155634222, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798995556325057819, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5107022962973812672, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_AnchorMax.y

@@ -136,6 +136,8 @@ public class EC_Universal : MonoBehaviour
             MI_Universal.current.AvailableMI.GetComponent<MI_Widget>().StartTimer(tempEC.GetComponent<EC_Widget>().creatureDone);
             tempEC.GetComponent<EC_Widget>().AS.PlayOneShot(tempEC.GetComponent<EC_Widget>().A_Collect);
             tempEC.GetComponent<EC_Widget>().creatureDone = 0;
+            tempEC.GetComponent<EC_Widget>().creature1_Egg = 0;
+            tempEC.GetComponent<EC_Widget>().creature2_Egg = 0;
             tempEC.GetComponent<EC_Widget>().status = ObjectTimersBase.Status.idle;
             tempEC.GetComponent<EC_Widget>().inProgress = false;
             tempEC = null;

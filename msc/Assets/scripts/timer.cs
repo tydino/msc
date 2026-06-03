@@ -20,6 +20,10 @@ public class timer : MonoBehaviour
 
     void Start()
     {
+        if(tempo == 0)
+        {
+            Debug.LogError("FORGOT TO SET TEMPO IN timer SCRIPT");
+        }
         Timer = -2;
     }
 

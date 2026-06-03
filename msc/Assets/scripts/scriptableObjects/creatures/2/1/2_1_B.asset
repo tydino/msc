@@ -16,14 +16,14 @@ MonoBehaviour:
   creatureInIslandID: 2
   psd: {fileID: 21300000, guid: 1c646a26752754b489fd4ea795bd29e0, type: 3}
   PrefabObj: {fileID: 1148676632102114554, guid: 9fcff91de384ea84bb544285222d6275, type: 3}
-  StoreFront: {fileID: 0}
-  worthInCoins: 0
+  StoreFront: {fileID: 6888901894457015782, guid: c84b174f5062d6b4eb9895581bfb60cf, type: 3}
+  worthInCoins: 1000
   coins: 0
   worthInDiamonds: 0
   diamonds: 0
   element:
   - B
-  BreedScreen: {fileID: 0}
+  BreedScreen: {fileID: 6888901894457015782, guid: b0d57f9d3796e734d8671766628c08e5, type: 3}
   egg: {fileID: 0}
   timeInDays: 0
   timeInHours: 0

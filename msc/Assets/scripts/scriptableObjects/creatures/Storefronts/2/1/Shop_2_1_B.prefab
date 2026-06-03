@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'coins: 500'
+  m_Text: 'coins: 1000'
 --- !u!1 &6888901894457015782
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6888901894457015800}
   - component: {fileID: 6888901894457015805}
   m_Layer: 5
-  m_Name: Shop_2_1_A
+  m_Name: Shop_2_1_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 500
+          m_IntArgument: 1000
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08625ab8d964442439c3b0b8b85a31bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisCreature: {fileID: 11400000, guid: 31a412c7ac8edb840a6285fc29b740df, type: 2}
+  ThisCreature: {fileID: 11400000, guid: 27d56c2d971a0ba43b8c81f4b4691161, type: 2}
   coins: 1
   diamonds: 0
   food: 0
@@ -268,8 +268,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 4.7}
-  m_SizeDelta: {x: 66.6, y: 100}
+  m_AnchoredPosition: {x: -10, y: -21.4}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6888901894711497424
 CanvasRenderer:
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f554e18dd0e08141b4bc3440c3c8e39, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c646a26752754b489fd4ea795bd29e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -388,4 +388,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fol
+  m_Text: Fronkey
