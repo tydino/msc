@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aada3e216bee7ee44839619adcd037e6
+guid: b49d1987df134fe408c6d1141f697b24
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,49 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: 2_A_dormantSprite
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 399
-        width: 38
-        height: 39
-      alignment: 9
-      pivot: {x: 0.49221545, y: 0.563223}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f51dbeb07f8f9444cb45ae1df4379bf8
-      internalID: 1863959175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2_B_dormantSprite
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 388
-        width: 62
-        height: 60
-      alignment: 9
-      pivot: {x: 0.4201089, y: 0.61126864}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53659012090ff3944a64d831f9c27b3e
-      internalID: -1254478742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -156,12 +114,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      2_A_dormantSprite: 1863959175
-      2_B_dormantSprite: -1254478742
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
