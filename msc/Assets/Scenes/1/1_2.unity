@@ -678,9 +678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4d09da6778c584cba4b8dfa4efdd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topLeftBound: {x: -8, y: 6.5, z: 0}
-  bottomRightBound: {x: 8, y: -5, z: 0}
-  testTransform: {x: 0, y: 0, z: 0}
+  topLeftBound: {x: -9.8, y: 14, z: 0}
+  bottomRightBound: {x: 8, y: -4, z: 0}
+  testTransform: {x: -9.8, y: -4, z: -10}
   smoothTime: 1
 --- !u!114 &745674555
 MonoBehaviour:

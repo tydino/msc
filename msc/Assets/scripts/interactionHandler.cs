@@ -47,6 +47,8 @@ public class interactionHandler : MonoBehaviour
     [Header("shop")]
     public GameObject shopUI;
     public GameObject ShopObj;
+    [Header("maps")]
+    public GameObject mapUI;
 
     void Awake()
     {
@@ -336,6 +338,12 @@ public class interactionHandler : MonoBehaviour
                     shopInside.current.Open();
                 }
             }
+        }
+        #endregion
+        #region map
+        if(OC.ThisObjectType == objectControler.ObjectTypes.Maps)
+        {
+            mapUI.SetActive(true);
         }
         #endregion
         #region ElementalCombiner
