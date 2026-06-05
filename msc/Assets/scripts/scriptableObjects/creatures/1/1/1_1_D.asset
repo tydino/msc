@@ -15,7 +15,7 @@ MonoBehaviour:
   creatureName: ryelapses
   creatureInIslandID: 8
   psd: {fileID: 21300000, guid: f9427c2fd1f821e44bf2fa05e94d000c, type: 3}
-  PrefabObj: {fileID: 0}
+  PrefabObj: {fileID: 2070381479157367214, guid: 8c0fc4ee31f540e4385864fb4d59d98f, type: 3}
   StoreFront: {fileID: 6888901894457015782, guid: 323bdeb3afaa461469332f1673defea0, type: 3}
   worthInCoins: 750
   coins: 1
@@ -23,7 +23,7 @@ MonoBehaviour:
   diamonds: 0
   element:
   - D
-  BreedScreen: {fileID: 0}
+  BreedScreen: {fileID: 6888901894457015782, guid: 924cc5cc71045fd4a9589874aee82a9d, type: 3}
   egg: {fileID: -1111867924, guid: f53626afc147d694085c3b672a05789d, type: 3}
   timeInDays: 0
   timeInHours: 0
