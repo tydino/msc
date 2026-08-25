@@ -11,6 +11,11 @@ public class Building : MonoBehaviour
     public int ID;
     public BoundsInt area;
     public Vector3 prevPOS;
+    [Header("Info Screen")]
+    public string Description;
+    public string NameOfObject;
+    public Sprite ImageOfObject;
+
     void Start()
     {
         prevPOS = transform.position;

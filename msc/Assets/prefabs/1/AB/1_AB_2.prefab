@@ -675,16 +675,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 11400000, guid: 6aa4f4442685e26488dafe005faaee27, type: 2}
-  HowMuchThisCreatureMakes: 15
-  random: 0
-  coins: 1
-  diamonds: 0
-  food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 5
+  currencyControl:
+    HowMuchThisCreatureMakes: 0
+    currencyIdentifier: 0
+    howLongInSecondsTillMoneyAddedToTotal: 0
   TimeInGame: 0
   playWhere: 0100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000000000000
   animator: {fileID: 1589120484817687253}
-  Tempo: 75
   samples: 60
   sleep: 0
   AS: {fileID: 1696422141240537619}
@@ -728,12 +725,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDestroyed: 1
+  hasUI: 0
+  creature: 1
   Placed: 0
   ID: 3
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: 
+  NameOfObject: Virteghoul
+  ImageOfObject: {fileID: 21300000, guid: 0755a2d7dcd507842994b942634d499d, type: 3}
 --- !u!82 &1696422141240537619
 AudioSource:
   m_ObjectHideFlags: 0

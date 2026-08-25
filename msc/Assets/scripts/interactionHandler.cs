@@ -13,6 +13,7 @@ public class interactionHandler : MonoBehaviour
     public GameObject placement;
     public GameObject sell;
     public GameObject HasUIButton;
+    public GameObject HasInfoButton;
     public bool moved;
     public TilemapRenderer tempRend;
     public TilemapRenderer mainRend;
@@ -49,6 +50,11 @@ public class interactionHandler : MonoBehaviour
     public GameObject ShopObj;
     [Header("maps")]
     public GameObject mapUI;
+    [Header("info")]
+    public GameObject InfoUI;
+    public Text InfoText;
+    public Text InfoName;
+    public Image InfoImage;
 
     void Awake()
     {
@@ -360,6 +366,28 @@ public class interactionHandler : MonoBehaviour
             SetUpMrsIncubatorUI();
         }
         #endregion
+    }
+
+    public void InfoOpen()
+    {
+        Building clickedBuilding = Clicked.GetComponent<Building>();
+        InfoUI.SetActive(true);
+        if (clickedBuilding.Description != "")
+        {
+            InfoText.text = clickedBuilding.Description;
+        }
+        else {
+            InfoText.text = "This creature doesn't have a story put in yet, please let Tydino know so it can be fixed.";
+        }
+        if (clickedBuilding.NameOfObject != "")
+        {
+            InfoName.text = clickedBuilding.NameOfObject;
+        }
+        else
+        {
+            InfoName.text = "This creature doesn't have it's name in properly, please let Tydino know so it can be fixed.";
+        }
+        InfoImage.sprite = clickedBuilding.ImageOfObject;
     }
     #endregion
 }

@@ -309,6 +309,9 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: 
+  NameOfObject: Lof
+  ImageOfObject: {fileID: 21300000, guid: 6f554e18dd0e08141b4bc3440c3c8e39, type: 3}
 --- !u!82 &164067193524316765
 AudioSource:
   m_ObjectHideFlags: 0

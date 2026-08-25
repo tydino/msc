@@ -121,6 +121,10 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: His only purpose in life is to make the dormant creatures out of jewels
+    or coins.
+  NameOfObject: Market
+  ImageOfObject: {fileID: 0}
 --- !u!114 &6531956242923660286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,3 +140,4 @@ MonoBehaviour:
   ThisObject: {fileID: 0}
   ThisObjectType: 2
   ElementalCombinerWidget: {fileID: 0}
+  MrsIncubatorWidget: {fileID: 0}

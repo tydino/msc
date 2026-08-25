@@ -2301,16 +2301,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 11400000, guid: 4f74f8eab23351040a071ba9735d443e, type: 2}
-  HowMuchThisCreatureMakes: 5
-  random: 0
-  coins: 1
-  diamonds: 0
-  food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 10
+  currencyControl:
+    HowMuchThisCreatureMakes: 0
+    currencyIdentifier: 0
+    howLongInSecondsTillMoneyAddedToTotal: 0
   TimeInGame: 0
   playWhere: 000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
   animator: {fileID: 5148658421415350682}
-  Tempo: 100
   samples: 60
   sleep: 0
   AS: {fileID: 3164427593404350399}
@@ -2424,12 +2421,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDestroyed: 1
+  hasUI: 0
+  creature: 1
   Placed: 0
   ID: 1
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 1, y: 1, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: 
+  NameOfObject: Fantanill
+  ImageOfObject: {fileID: 21300000, guid: 271971dc45b01e44ebb2c99d59d68ad9, type: 3}
 --- !u!61 &747318750471288428
 BoxCollider2D:
   m_ObjectHideFlags: 0

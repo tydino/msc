@@ -2885,16 +2885,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 11400000, guid: d2181d751cbc91d408a2a418f4917292, type: 2}
-  HowMuchThisCreatureMakes: 20
-  random: 0
-  coins: 1
-  diamonds: 0
-  food: 0
-  howLongInSecondsTillMoneyAddedToTotal: 5
+  currencyControl:
+    HowMuchThisCreatureMakes: 0
+    currencyIdentifier: 0
+    howLongInSecondsTillMoneyAddedToTotal: 0
   TimeInGame: 0
   playWhere: 0000000000000000000000000000000001000000010000000100000001000000000000000000000000000000000000000100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000000000000
   animator: {fileID: 1690110120556800697}
-  Tempo: 75
   samples: 60
   sleep: 0
   AS: {fileID: 8152869666028227673}
@@ -3034,12 +3031,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e09aa7780c97c43b119a4f90371f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDestroyed: 1
+  hasUI: 0
+  creature: 1
   Placed: 0
   ID: 5
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: 
+  NameOfObject: Ezpungella
+  ImageOfObject: {fileID: 21300000, guid: 936149703fb1e6c4d920e33de87ad782, type: 3}
 --- !u!95 &1690110120556800697
 Animator:
   serializedVersion: 5

@@ -3325,6 +3325,9 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: 
+  NameOfObject: Jchukoudayt Drayphall
+  ImageOfObject: {fileID: 21300000, guid: 5966c01512430a94187891e85e7babe2, type: 3}
 --- !u!1 &8770386077913153684
 GameObject:
   m_ObjectHideFlags: 0

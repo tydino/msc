@@ -134,6 +134,10 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: He is only here because Mrs. Incubator is stringing him along for
+    they need the maps he provides in their journey.
+  NameOfObject: Maps
+  ImageOfObject: {fileID: 0}
 --- !u!114 &8659456484796347284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +153,4 @@ MonoBehaviour:
   ThisObject: {fileID: 0}
   ThisObjectType: 3
   ElementalCombinerWidget: {fileID: 0}
+  MrsIncubatorWidget: {fileID: 0}

@@ -348,6 +348,12 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: With Mrs. Incubator at his side, they are going back in time to figure
+    out what happened amongst all the creatures they can. He has the ability to take
+    any 2 creatures dorman clones and can make a dormant clone for the elemental
+    combination of those 2 dormant clones.
+  NameOfObject: Elemental Combiner
+  ImageOfObject: {fileID: 21300000, guid: 4fb05b2d218bb654dbffb70b9ef927ec, type: 3}
 --- !u!114 &2002967920204129067
 MonoBehaviour:
   m_ObjectHideFlags: 0

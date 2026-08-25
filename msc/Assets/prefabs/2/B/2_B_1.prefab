@@ -887,6 +887,9 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: 
+  NameOfObject: Fronkey
+  ImageOfObject: {fileID: 21300000, guid: 1c646a26752754b489fd4ea795bd29e0, type: 3}
 --- !u!1 &1270503138792463732
 GameObject:
   m_ObjectHideFlags: 0

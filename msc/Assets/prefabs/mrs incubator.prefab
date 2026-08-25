@@ -180,6 +180,12 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
+  Description: With Elemental Combiner at her side, they are going back in time to
+    figure out what happened amongst all the creatures they can. She takes the dormant
+    clones of the creatures and nurtures them till they can be brought into the world
+    at their own time to tell the tail that lays within their body for this place.
+  NameOfObject: Mrs. Incubator
+  ImageOfObject: {fileID: 21300000, guid: 2921ad84a89cdaa4899571dba2955999, type: 3}
 --- !u!114 &6889907131418920859
 MonoBehaviour:
   m_ObjectHideFlags: 0
