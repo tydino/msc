@@ -115,6 +115,7 @@ public class sd_CreatureHandler
     public float XScl;
     public int CreatureID;
     public bool asleep;
+    //public string Data; Properly implement when making extincts or coin production.
 }
 
 [System.Serializable]
