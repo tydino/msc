@@ -12803,7 +12803,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/neck base/neck middle
+    path: root/bone_1/neck base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12813,7 +12813,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/neck base/neck middle
+    path: root/bone_1/neck base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12823,7 +12823,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/neck base/neck middle
+    path: root/bone_1/neck base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12834,7 +12834,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_34
+      tip_33
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12845,7 +12845,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
     path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_34
+      tip_33
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12856,7 +12856,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_34
+      tip_33
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12896,7 +12896,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/right stalk base
+    path: root/bone_1/neck base/neck middle/neck tip/head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12906,7 +12906,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/right stalk base
+    path: root/bone_1/neck base/neck middle/neck tip/head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12916,7 +12916,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/right stalk base
+    path: root/bone_1/neck base/neck middle/neck tip/head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12926,7 +12926,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/neck base
+    path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
+      tip_35
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12936,7 +12937,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/neck base
+    path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
+      tip_35
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12946,7 +12948,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/neck base
+    path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
+      tip_35
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12989,7 +12992,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/left stalk base
+    path: root/bone_1/right stalk base/right stalk middle/right stalk tip/right stalk
+      tip_38
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12999,7 +13003,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/left stalk base
+    path: root/bone_1/right stalk base/right stalk middle/right stalk tip/right stalk
+      tip_38
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13009,7 +13014,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/left stalk base
+    path: root/bone_1/right stalk base/right stalk middle/right stalk tip/right stalk
+      tip_38
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13080,7 +13086,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_35
+      tip_34
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13091,7 +13097,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
     path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_35
+      tip_34
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13102,7 +13108,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_35
+      tip_34
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13112,7 +13118,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/left stalk base/left stalk middle/left stalk tip
+    path: root/bone_1/left stalk base/left stalk middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13122,7 +13128,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/left stalk base/left stalk middle/left stalk tip
+    path: root/bone_1/left stalk base/left stalk middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13132,7 +13138,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/left stalk base/left stalk middle/left stalk tip
+    path: root/bone_1/left stalk base/left stalk middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13172,8 +13178,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_33
+    path: root/bone_1/left stalk base/left stalk middle/left stalk tip
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13183,8 +13188,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_33
+    path: root/bone_1/left stalk base/left stalk middle/left stalk tip
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13194,8 +13198,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/left stalk base/left stalk middle/left stalk tip/left stalk
-      tip_33
+    path: root/bone_1/left stalk base/left stalk middle/left stalk tip
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13205,7 +13208,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/neck base/neck middle/neck tip
+    path: root/bone_1/neck base/neck middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13215,7 +13218,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/neck base/neck middle/neck tip
+    path: root/bone_1/neck base/neck middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13225,7 +13228,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/neck base/neck middle/neck tip
+    path: root/bone_1/neck base/neck middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13235,7 +13238,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/right stalk base/right stalk middle
+    path: root/bone_1/right stalk base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13245,7 +13248,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/right stalk base/right stalk middle
+    path: root/bone_1/right stalk base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13255,7 +13258,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/right stalk base/right stalk middle
+    path: root/bone_1/right stalk base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13418,7 +13421,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/neck base/neck middle/neck tip/head
+    path: root/bone_1/neck base/neck middle/neck tip
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13428,7 +13431,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/neck base/neck middle/neck tip/head
+    path: root/bone_1/neck base/neck middle/neck tip
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13438,7 +13441,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/neck base/neck middle/neck tip/head
+    path: root/bone_1/neck base/neck middle/neck tip
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13448,7 +13451,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/left stalk base/left stalk middle
+    path: root/bone_1/left stalk base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13458,7 +13461,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/left stalk base/left stalk middle
+    path: root/bone_1/left stalk base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13468,7 +13471,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/left stalk base/left stalk middle
+    path: root/bone_1/left stalk base
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13478,8 +13481,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/bone_1/right stalk base/right stalk middle/right stalk tip/right stalk
-      tip_38
+    path: root/bone_1/right stalk base/right stalk middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13489,8 +13491,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/bone_1/right stalk base/right stalk middle/right stalk tip/right stalk
-      tip_38
+    path: root/bone_1/right stalk base/right stalk middle
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -13500,8 +13501,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/bone_1/right stalk base/right stalk middle/right stalk tip/right stalk
-      tip_38
+    path: root/bone_1/right stalk base/right stalk middle
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

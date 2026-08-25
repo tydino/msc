@@ -121,8 +121,8 @@ MonoBehaviour:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 3, y: 3, z: 1}
   prevPOS: {x: 0, y: 0, z: 0}
-  Description: His only purpose in life is to make the dormant creatures out of jewels
-    or coins.
+  Description: He is only being stringed along to every place simply because he can
+    provide some things using coins and jewels from all across the worlds.
   NameOfObject: Market
   ImageOfObject: {fileID: 0}
 --- !u!114 &6531956242923660286
