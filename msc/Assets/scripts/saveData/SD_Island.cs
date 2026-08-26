@@ -15,7 +15,7 @@ public class SD_Island : MonoBehaviour
     public void SaveToJson()
     {
         creatureHandler.current.compileCreatures();
-        string filePath = SaveData.current.path + "/islands";
+        string filePath = SaveData.current.path + "/places";
         //checks file directory/folder
         if (!System.IO.Directory.Exists(filePath))
         {
@@ -36,7 +36,7 @@ public class SD_Island : MonoBehaviour
 
     public void LoadFromJson()
     {
-        if (System.IO.File.Exists(SaveData.current.path + "/islands/" + SaveData.current.islandString + ".json"))
+        if (System.IO.File.Exists(SaveData.current.path + "/places/" + SaveData.current.islandString + ".json"))
         {
             ///     CREATURES   ///
             creatureHandler.current.creatureInformation.Clear();
@@ -45,7 +45,7 @@ public class SD_Island : MonoBehaviour
             {
                Destroy(creatureToDestroy);
             }
-            string filePath = SaveData.current.path + "/islands/" + SaveData.current.islandString + ".json";
+            string filePath = SaveData.current.path + "/places/" + SaveData.current.islandString + ".json";
             string islandData = System.IO.File.ReadAllText(filePath);
 
             island = JsonUtility.FromJson<sd_Island>(islandData);
@@ -59,6 +59,8 @@ public class SD_Island : MonoBehaviour
                 clone.transform.position = pos;
                 clone.transform.localScale = scale;
                 clone.GetComponent<Building>().Placed = true;
+                clone.GetComponent<creatureControler>().Currency.Amount = sdch.Currency;
+                clone.GetComponent<creatureControler>().DecompileCurrency(sdch.LastTimeCollected);
                 creatureHandler.current.creatureInformation.Add(sdch);
             }
             ///     OBJECTS     ///
@@ -115,7 +117,11 @@ public class sd_CreatureHandler
     public float XScl;
     public int CreatureID;
     public bool asleep;
-    //public string Data; Properly implement when making extincts or coin production.
+    public int Currency;
+    public string LastTimeCollected;
+    public bool InventoryComplete;//not properly implemented yet
+    public string Inventory;//not properly implemented yet
+    public string TimeLeftToWakeup;//not properly implemented yet
 }
 
 [System.Serializable]

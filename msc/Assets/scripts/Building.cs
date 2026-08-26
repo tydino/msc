@@ -75,6 +75,8 @@ public class Building : MonoBehaviour
             ch.XScl = gameObject.transform.localScale.x;
             ch.CreatureID = ID;
             ch.asleep = gameObject.GetComponent<creatureControler>().sleep;
+            ch.Currency = gameObject.GetComponent<creatureControler>().Currency.Amount;
+            ch.LastTimeCollected = gameObject.GetComponent<creatureControler>().CompileCurrency();
             creatureHandler.current.creatureInformation.Add(ch);
         }
         else

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class creatureControler : MonoBehaviour
 {
     public creatureData thisCreature;
-    public CurrencyControl currencyControl;
+    public CurrencyValues Currency;
     [Header("timestamps")]
     public int TimeInGame;
     public int[] playWhere;
@@ -51,44 +52,29 @@ public class creatureControler : MonoBehaviour
                 animator.SetBool("z", true);
             }
         }
-    }
-    void Start()
-    {
-        StartCoroutine(CurrencyUpdate());
-    }
-    public void currencyUpdate()
-    {
-        if (currencyControl.currencyIdentifier != CurrencyIdentifier.random)
-        {
-            if (currencyControl.currencyIdentifier == CurrencyIdentifier.coins) { Currency.coins = Currency.coins + currencyControl.HowMuchThisCreatureMakes; }
-            if (currencyControl.currencyIdentifier == CurrencyIdentifier.diamonds) { Currency.diamonds = Currency.diamonds + currencyControl.HowMuchThisCreatureMakes; }
-            if (currencyControl.currencyIdentifier == CurrencyIdentifier.food) { Currency.food = Currency.food + currencyControl.HowMuchThisCreatureMakes; }
-        }
-        else
-        {
-            ///TODO: randomize what currency will be used.
-        }
-    }
-    IEnumerator CurrencyUpdate()
-    {
-        if (currencyControl.howLongInSecondsTillMoneyAddedToTotal! < 1)
-        {
-            yield return new WaitForSeconds(currencyControl.howLongInSecondsTillMoneyAddedToTotal);
-            currencyUpdate();
-            StartCoroutine(CurrencyUpdate());
+
+        if (Currency.Amount >= Currency.CollectMin) {
+            interactionHandler.current.CurrencyReload(false, this.gameObject.transform);
         }
     }
 
-    public void soundPlay(int WhichOne){
+    public void soundPlay(int WhichOne)
+    {
         AS.PlayOneShot(Ac[WhichOne - 1]);
     }
 
     [System.Serializable]
-    public struct CurrencyControl
+    public struct CurrencyValues
     {
-        public int HowMuchThisCreatureMakes;
-        public CurrencyIdentifier currencyIdentifier;
-        public float howLongInSecondsTillMoneyAddedToTotal;
+        public CurrencyIdentifier WhatCurrency;
+        public int RatePerSecond;
+        public int RatePerMinute;
+        public int RatePerHour;
+        public int RatePerDay;
+        public int Amount;
+        public int Max;//amount of collectMins before you cannot collect anymore
+        public int CollectMin;
+        public DateTime LastCollectTime;
     }
 
     public enum CurrencyIdentifier{
@@ -96,5 +82,36 @@ public class creatureControler : MonoBehaviour
         diamonds,
         food,
         random
+    }
+
+    public void DecompileCurrency(string Data)
+    {
+        int index = 0;
+        int length;
+        string final = "";
+        int.TryParse(Data[index].ToString(), out length);
+        for (int i = 0; i < length; i++)
+        {
+            index++;
+            final = final + Data[index].ToString();
+        }
+
+        int.TryParse(final, out length);
+        final = "";
+        for (int i = 0; i < length; i++)
+        {
+            index++;
+            final = final + Data[index].ToString();
+        }
+        Currency.LastCollectTime = Convert.ToDateTime(final);
+
+    }
+    public string CompileCurrency()
+    {
+        string final;
+        final = Currency.LastCollectTime.ToString().Length.ToString().Length.ToString();
+        final = final + Currency.LastCollectTime.ToString().Length.ToString();
+        final = final + Currency.LastCollectTime.ToString();
+        return final;
     }
 }

@@ -18,12 +18,15 @@ public class interactionHandler : MonoBehaviour
     public TilemapRenderer tempRend;
     public TilemapRenderer mainRend;
     public GameObject movedObj;
+    public GameObject Collects;
+    public GameObject CollectPrefab;
     [Header("elemental combiner")]
     public GameObject ECInterface;
     public ECUIObjects ElementaclCombinerInterface;
     [Header("mrs incubator")]
     public GameObject MrsIncubatorUI;
     public MIUIObjects MrsIncubatorUIInterface;
+
     [System.Serializable]
     public struct MIUIObjects
     {
@@ -319,6 +322,15 @@ public class interactionHandler : MonoBehaviour
         EC_Universal.current.SendToMrsIncubator();
         ECClose();
     }
+    #endregion
+
+    #region CurrencyHandling
+
+    public void CurrencyReload(bool Start, Transform Pos)
+    {
+
+    }
+
     #endregion
 
     public void UIOpen()
