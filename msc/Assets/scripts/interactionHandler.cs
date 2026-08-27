@@ -20,6 +20,7 @@ public class interactionHandler : MonoBehaviour
     public GameObject movedObj;
     public GameObject Collects;
     public GameObject CollectPrefab;
+    int checkCurrencyCount = 0;
     [Header("elemental combiner")]
     public GameObject ECInterface;
     public ECUIObjects ElementaclCombinerInterface;
@@ -72,7 +73,30 @@ public class interactionHandler : MonoBehaviour
         this.gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
         CloseUI();
     }
-    
+
+    private void Update()
+    {
+        if(checkCurrencyCount < 1)
+        {
+            GameObject[] collects = GameObject.FindGameObjectsWithTag("collector");
+            foreach (GameObject collect in collects)
+            {
+                Destroy(collect);
+            }
+            GameObject[] creatureList = GameObject.FindGameObjectsWithTag("creature");
+            foreach (GameObject creature in creatureList)
+            {
+                CurrencyReload(creature);
+            }
+        }
+
+        checkCurrencyCount++;
+        if(checkCurrencyCount >= 512)
+        {
+            checkCurrencyCount = 0;
+        }
+    }
+
     public void moveUI()
     {
         Vector3 screenPos = Clicked.transform.position * 80;
@@ -326,9 +350,18 @@ public class interactionHandler : MonoBehaviour
 
     #region CurrencyHandling
 
-    public void CurrencyReload(bool Start, Transform Pos)
+    public void CurrencyReload(GameObject creature)
     {
-
+        creatureControler cc = creature.GetComponent<creatureControler>();
+        cc.currencyReload();
+        if(cc.Currency.Amount >= cc.Currency.CollectMin)
+        {
+            GameObject clone = Instantiate(CollectPrefab);
+            clone.transform.SetParent(Collects.transform, false);
+            Vector3 screenPos = creature.transform.position * 80;
+            clone.GetComponent<RectTransform>().anchoredPosition = new Vector2(screenPos.x, screenPos.y);
+            clone.GetComponent<CollectCurrency>().creature = creature;
+        }
     }
 
     #endregion

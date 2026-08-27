@@ -52,10 +52,6 @@ public class creatureControler : MonoBehaviour
                 animator.SetBool("z", true);
             }
         }
-
-        if (Currency.Amount >= Currency.CollectMin) {
-            interactionHandler.current.CurrencyReload(false, this.gameObject.transform);
-        }
     }
 
     public void soundPlay(int WhichOne)
@@ -113,5 +109,41 @@ public class creatureControler : MonoBehaviour
         final = final + Currency.LastCollectTime.ToString().Length.ToString();
         final = final + Currency.LastCollectTime.ToString();
         return final;
+    }
+
+    public void currencyReload()
+    {
+        DateTime now = DateTime.Now;
+        TimeSpan sinceLastCollect = Currency.LastCollectTime - now;
+        double SecondsSinceLastCollect = sinceLastCollect.TotalSeconds;
+        double MinutesSinceLastCollect = 0;
+        double HoursSinceLastCollect = 0;
+        double DaysSinceLastCollect = 0;
+        if (SecondsSinceLastCollect >= 60)
+        {
+            MinutesSinceLastCollect = Math.Floor(SecondsSinceLastCollect / 60);
+        }
+        if (MinutesSinceLastCollect >= 60)
+        {
+            HoursSinceLastCollect = Math.Floor(MinutesSinceLastCollect / 60);
+        }
+        if (HoursSinceLastCollect >= 24)
+        {
+            DaysSinceLastCollect = Math.Floor(HoursSinceLastCollect / 24);
+        }
+
+        double temp = (Currency.RatePerSecond * SecondsSinceLastCollect) + (Currency.RatePerMinute * MinutesSinceLastCollect) + (Currency.RatePerHour * HoursSinceLastCollect) + (Currency.RatePerDay * DaysSinceLastCollect);
+
+        Currency.Amount = (int)-Math.Floor(temp);
+
+        if (Currency.Amount > Currency.Max * Currency.CollectMin)
+        {
+            Currency.Amount = Currency.Max * Currency.CollectMin;
+        }
+
+        if(Currency.Amount < 0)
+        {
+            Currency.LastCollectTime = now;
+        }
     }
 }

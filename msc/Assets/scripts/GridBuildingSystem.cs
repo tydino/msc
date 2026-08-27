@@ -172,6 +172,10 @@ public class GridBuildingSystem : MonoBehaviour
     {
         startGame = false;
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        if(temp.TryGetComponent<creatureControler>(out creatureControler cc))
+        {
+            cc.Currency.LastCollectTime = DateTime.Now;
+        }
         temp.Started();
         interactionHandler.current.Clicked = temp.gameObject;
         interactionHandler.current.CheckMove();

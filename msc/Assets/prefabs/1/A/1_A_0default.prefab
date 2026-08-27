@@ -1661,10 +1661,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCreature: {fileID: 0}
-  currencyControl:
-    HowMuchThisCreatureMakes: 0
-    currencyIdentifier: 0
-    howLongInSecondsTillMoneyAddedToTotal: 0
+  Currency:
+    WhatCurrency: 0
+    RatePerSecond: 1
+    RatePerMinute: 0
+    RatePerHour: 0
+    RatePerDay: 0
+    Amount: 0
+    Max: 4
+    CollectMin: 50
   TimeInGame: 0
   playWhere: 
   animator: {fileID: 0}
