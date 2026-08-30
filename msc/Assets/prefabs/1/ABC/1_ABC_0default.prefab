@@ -601,9 +601,9 @@ MonoBehaviour:
   thisCreature: {fileID: 0}
   Currency:
     WhatCurrency: 0
-    RatePerSecond: 15
+    RatePerSecond: 0
     RatePerMinute: 0
-    RatePerHour: 0
+    RatePerHour: 15
     RatePerDay: 0
     Amount: 0
     Max: 4

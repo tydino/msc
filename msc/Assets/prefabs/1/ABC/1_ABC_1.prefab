@@ -1137,9 +1137,9 @@ MonoBehaviour:
   thisCreature: {fileID: 11400000, guid: 526cc679cf6e0ec41a79390c0daf5ccf, type: 2}
   Currency:
     WhatCurrency: 0
-    RatePerSecond: 15
+    RatePerSecond: 0
     RatePerMinute: 0
-    RatePerHour: 0
+    RatePerHour: 15
     RatePerDay: 0
     Amount: 0
     Max: 4
