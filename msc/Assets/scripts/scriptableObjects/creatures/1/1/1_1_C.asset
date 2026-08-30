@@ -27,5 +27,5 @@ MonoBehaviour:
   egg: {fileID: 1652681607, guid: f53626afc147d694085c3b672a05789d, type: 3}
   timeInDays: 0
   timeInHours: 0
-  timeInMinutes: 0
-  timeInSeconds: 45
+  timeInMinutes: 1
+  timeInSeconds: 0

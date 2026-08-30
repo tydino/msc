@@ -28,4 +28,4 @@ MonoBehaviour:
   timeInDays: 0
   timeInHours: 0
   timeInMinutes: 1
-  timeInSeconds: 0
+  timeInSeconds: 15
