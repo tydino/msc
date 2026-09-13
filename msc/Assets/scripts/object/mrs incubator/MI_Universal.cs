@@ -37,11 +37,19 @@ public class MI_Universal : MonoBehaviour
 
     public void Place()
     {
-        GridBuildingSystem.current.InitializeWithBuilding(creatureHandler.current.creatureObjects[tempMI.GetComponent<MI_Widget>().creatureDone].PrefabObj);
-        tempMI.GetComponent<MI_Widget>().status = ObjectTimersBase.Status.idle;
-        tempMI.GetComponent<MI_Widget>().creatureDone = 0;
-        tempMI.GetComponent<MI_Widget>().inProgress = false;
-        SaveData.current.save();
+        if (Hotel_universal.current.AvailableSpace(creatureHandler.current.creatureObjects[tempMI.GetComponent<MI_Widget>().creatureDone].bedsNeeded))
+        {
+            GridBuildingSystem.current.InitializeWithBuilding(creatureHandler.current.creatureObjects[tempMI.GetComponent<MI_Widget>().creatureDone].PrefabObj);
+            tempMI.GetComponent<MI_Widget>().status = ObjectTimersBase.Status.idle;
+            tempMI.GetComponent<MI_Widget>().creatureDone = 0;
+            tempMI.GetComponent<MI_Widget>().inProgress = false;
+            Hotel_universal.current.RemoveSpace(creatureHandler.current.creatureObjects[tempMI.GetComponent<MI_Widget>().creatureDone].bedsNeeded);
+            SaveData.current.save();
+        }
+        else
+        {
+            tempMI.GetComponent<MI_Widget>().PlaySound(MI_Widget.Sounds.patience);
+        }
     }
 
     public void Sell()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941b8368898ae574c9470f6f952d71ad, type: 3}
   m_Name: mrsIncubator
   m_EditorClassIdentifier: 
-  canBeBought: 1
+  canBeBought: 0
   objectName: mrs Incubator
   objectID: 3
   PrefabObj: {fileID: 6863300539684950816, guid: b2a1ce3826009ce4f894fd15287d266b, type: 3}

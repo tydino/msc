@@ -15,6 +15,9 @@ public class objectControler : MonoBehaviour
     //Mrs Incubator
     public MI_Widget MrsIncubatorWidget;
 
+    //Opum
+    public Hotel_widget HotelWidget;
+
     //Numster
 
     //Stan
@@ -22,12 +25,13 @@ public class objectControler : MonoBehaviour
     public enum ObjectTypes
     {
         ElementalCombiner,//Elemental combiner
-        MrsIncubator,//incubator INCOMPLETE
+        MrsIncubator,//incubator
+        Opum, //hotel INCOMPLETE
         Market,//shop INCOMPLETE
         Maps,//map INCOMPLETE
         Numster,//food INCOMPLETE
         Stan,//news INCOMPLETE
-        Decoration//No UI INCOMPLETE
+        Decoration//No UI
     }
 
     private void Start()
@@ -39,6 +43,13 @@ public class objectControler : MonoBehaviour
         }else if (ThisObjectType == ObjectTypes.MrsIncubator)
         {
             MI_Universal.current.MIs.Add(gameObject);
+        }else if(ThisObjectType == ObjectTypes.Opum)
+        {
+            Hotel_universal.current.Hotel = gameObject;
+            if(HotelWidget == null)
+            {
+                HotelWidget = gameObject.GetComponent<Hotel_widget>();
+            }
         }
     }
 
@@ -102,10 +113,19 @@ public class objectControler : MonoBehaviour
 
             return final;
         }
-        /*else if (ThisObjectType == ObjectTypes.Numster)
+        else if (ThisObjectType == ObjectTypes.Opum)
         {
-            //empty
-        }*/
+            if (gameObject.GetComponent<Hotel_widget>() != null)
+            {
+                string final = gameObject.GetComponent<Hotel_widget>().levelOfHotel.ToString();
+
+                final = final + gameObject.GetComponent<Hotel_widget>().bedsTaken.ToString().Length.ToString();
+                final = final + gameObject.GetComponent<Hotel_widget>().bedsTaken.ToString();
+
+                return final;
+            }
+            return null;
+        }
         else
         {
             return null;
@@ -114,7 +134,7 @@ public class objectControler : MonoBehaviour
 
     public void DecompileData(string Data)///   Load    ///
     {
-        if (Data != null || Data != "") 
+        if (Data != null || Data != "" || Data.Length > 0) 
         {
             if(ThisObjectType == ObjectTypes.MrsIncubator)
             {//save data for MI: InProgress Status creatureDone DateStart DateEnd
@@ -349,6 +369,32 @@ public class objectControler : MonoBehaviour
                     final = final + Data[index].ToString();
                 }
                 int.TryParse(final, out ElementalCombinerWidget.creature2_Egg);
+            }
+            if (ThisObjectType == ObjectTypes.Opum)
+            {
+                int index = 0;
+                string final = "";
+                int length;
+                if (index >= 0 && index < Data.Length)
+                {
+                    int.TryParse(Data[index].ToString(), out gameObject.GetComponent<Hotel_widget>().levelOfHotel);
+                    Debug.Log("level of hotel " + gameObject.GetComponent<Hotel_widget>().levelOfHotel);
+
+                    index++;
+
+                    final = "";
+                    int.TryParse(Data[index].ToString(), out length);
+                    for (int i = 0; i < length; i++)
+                    {
+                        index++;
+                        final = final + Data[index].ToString();
+                    }
+
+                    int.TryParse(final, out gameObject.GetComponent<Hotel_widget>().bedsTaken);
+                    Debug.Log("beds taken " + final);
+
+                    HotelWidget.setMaxBeds();
+                }
             }
         }
     }

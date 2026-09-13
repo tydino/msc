@@ -47,7 +47,12 @@ public class GridBuildingSystem : MonoBehaviour
         if (temp.canBeDestroyed)
         {
             StopCoroutine(pc);
-            //give back price of creature
+            if (temp.creature)
+            {
+                creatureControler cc = temp.gameObject.GetComponent<creatureControler>();
+                Currency.coins = Currency.coins+ cc.thisCreature.worthInCoins;
+                Hotel_universal.current.AddSpace(cc.thisCreature.bedsNeeded);
+            }
             ClearArea();
             Destroy(temp.gameObject);
         }

@@ -16,6 +16,7 @@ MonoBehaviour:
   creatureInIslandID: 6
   psd: {fileID: 21300000, guid: fabbd2e13804e2044a079e695374bc8c, type: 3}
   PrefabObj: {fileID: 2036564090451583199, guid: 273bfcefb633dfb4084d297febf7cebb, type: 3}
+  bedsNeeded: 2
   StoreFront: {fileID: 6888901894457015782, guid: dd67b60bde2330c47a1e56c3ca506121, type: 3}
   worthInCoins: 1250
   coins: 0

@@ -10,6 +10,7 @@ public class creatureData : ScriptableObject
     public int creatureInIslandID;
     public Sprite psd;
     public GameObject PrefabObj;
+    public int bedsNeeded;
     [Header("store based")]
     public GameObject StoreFront;
     public int worthInCoins;

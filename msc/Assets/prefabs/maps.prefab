@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisObject: {fileID: 0}
-  ThisObjectType: 3
+  ThisObjectType: 4
   ElementalCombinerWidget: {fileID: 0}
   MrsIncubatorWidget: {fileID: 0}
+  HotelWidget: {fileID: 0}

@@ -12379,8 +12379,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectObjects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: ef6661730ae070e4bbc63c51e3c5319a, type: 2}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[0].XPos
       value: 14
@@ -12430,6 +12438,18 @@ PrefabInstance:
       value: 11.25
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[4].XPos
+      value: -12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[4].XScl
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[4].YPos
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[1].ObjectID
       value: 1
       objectReference: {fileID: 0}
@@ -12440,6 +12460,10 @@ PrefabInstance:
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[3].ObjectID
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: objectStart.Array.data[4].ObjectID
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7169260606878322149, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: m_Name
