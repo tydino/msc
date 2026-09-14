@@ -202,6 +202,7 @@ MonoBehaviour:
   ThisObjectType: 1
   ElementalCombinerWidget: {fileID: 0}
   MrsIncubatorWidget: {fileID: 2783379607211327565}
+  HotelWidget: {fileID: 0}
 --- !u!114 &2783379607211327565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +225,7 @@ MonoBehaviour:
   A_MI_place: {fileID: 8300000, guid: 57d8ebd966d4117439fd2df756bf97e7, type: 3}
   A_MI_patience: {fileID: 8300000, guid: 2c2c3bee1d2627e4fb842b3271afaf0f, type: 3}
   A_MI_nothing: {fileID: 8300000, guid: cb0682650bf8ecc46b4f7c932de5cd88, type: 3}
+  nullEgg: {fileID: 21300000, guid: d7e14d69fbb0b144baa6588f1994c9d3, type: 3}
 --- !u!1 &8314674628809248881
 GameObject:
   m_ObjectHideFlags: 0

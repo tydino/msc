@@ -114,7 +114,7 @@ public class creatureControler : MonoBehaviour
     public void currencyReload()
     {
         DateTime now = DateTime.Now;
-        TimeSpan sinceLastCollect = Currency.LastCollectTime - now;
+        TimeSpan sinceLastCollect = -(Currency.LastCollectTime - now);
         double SecondsSinceLastCollect = sinceLastCollect.TotalSeconds;
         double MinutesSinceLastCollect = 0;
         double HoursSinceLastCollect = 0;
@@ -131,19 +131,13 @@ public class creatureControler : MonoBehaviour
         {
             DaysSinceLastCollect = Math.Floor(HoursSinceLastCollect / 24);
         }
-
         double temp = (Currency.RatePerSecond * SecondsSinceLastCollect) + (Currency.RatePerMinute * MinutesSinceLastCollect) + (Currency.RatePerHour * HoursSinceLastCollect) + (Currency.RatePerDay * DaysSinceLastCollect);
 
-        Currency.Amount = (int)-Math.Floor(temp);
+        Currency.Amount = (int)Math.Floor(temp);
 
         if (Currency.Amount > Currency.Max * Currency.CollectMin)
         {
             Currency.Amount = Currency.Max * Currency.CollectMin;
-        }
-
-        if(Currency.Amount < 0)
-        {
-            Currency.LastCollectTime = now;
         }
     }
 }

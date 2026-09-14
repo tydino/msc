@@ -10,6 +10,7 @@ public class EC_Widget : ObjectTimersBase
     public SpriteRenderer output;
     public Animator animator;
     public int samples;
+    public Sprite nullEgg;
 
     [Header("audio things")]
     public AudioSource AS;
@@ -50,8 +51,22 @@ public class EC_Widget : ObjectTimersBase
         {
             animator.SetBool("working", true);
             animator.SetBool("waiting", false);
-            inputOne.sprite = creatureHandler.current.creatureObjects[creature1_Egg].egg;
-            inputTwo.sprite = creatureHandler.current.creatureObjects[creature2_Egg].egg;
+            if (creatureHandler.current.creatureObjects[creature1_Egg].egg != null)
+            {
+                inputOne.sprite = creatureHandler.current.creatureObjects[creature1_Egg].egg;
+            }
+            else
+            {
+                inputOne.sprite = nullEgg;
+            }
+            if (creatureHandler.current.creatureObjects[creature2_Egg].egg != null)
+            {
+                inputTwo.sprite = creatureHandler.current.creatureObjects[creature2_Egg].egg;
+            }
+            else
+            {
+                inputTwo.sprite = nullEgg;
+            }
             output.sprite = null;
         }
         else if (status == Status.complete)
@@ -60,7 +75,14 @@ public class EC_Widget : ObjectTimersBase
             animator.SetBool("waiting", true);
             inputOne.sprite = null;
             inputTwo.sprite = null;
-            output.sprite = creatureHandler.current.creatureObjects[creatureDone-1].egg;
+            if (creatureHandler.current.creatureObjects[creatureDone - 1].egg != null)
+            {
+                output.sprite = creatureHandler.current.creatureObjects[creatureDone - 1].egg;
+            }
+            else
+            {
+                output.sprite = nullEgg;
+            }
         }
         SetUpTimer();
     }

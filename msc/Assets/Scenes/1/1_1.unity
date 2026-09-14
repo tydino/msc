@@ -12378,8 +12378,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 1284537607}
     m_Modifications:
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[0]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[1]
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[2]
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[3]
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[4]
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[5]
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectObjects.Array.size
@@ -12439,7 +12467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[4].XPos
-      value: -12.5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[4].XScl
@@ -12447,7 +12475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[4].YPos
-      value: -12
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[1].ObjectID

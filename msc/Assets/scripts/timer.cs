@@ -37,6 +37,10 @@ public class timer : MonoBehaviour
 
     public void Tick()
     {
+        if(Hotel_universal.current.Hotel.GetComponent<Hotel_widget>().maxBeds == 0)
+        {
+            Hotel_universal.current.Hotel.GetComponent<Hotel_widget>().setMaxBeds();
+        }
         Timer++;
         if (Timer > -1)
         {

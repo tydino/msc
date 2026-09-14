@@ -31,7 +31,7 @@ public class SD_Currency : MonoBehaviour
         }
         else
         {
-            Currency.coins = 500;
+            Currency.coins = 100;
             Currency.diamonds = 50;
         }
     }

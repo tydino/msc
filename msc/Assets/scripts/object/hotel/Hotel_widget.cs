@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hotel_widget : MonoBehaviour
-{//LEVELING UP THE HOTEL HAS NOT BEEN IMPLEMENTED
+{
     public int bedsTaken;
     public int maxBeds;
 
     public int levelOfHotel;
-
-    public void UpgradeHotel()
-    {
-        levelOfHotel++;
-        setMaxBeds();
-    }
 
     public void setMaxBeds()
     {

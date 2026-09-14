@@ -16,6 +16,7 @@ public class MI_Widget : ObjectTimersBase
     public AudioClip A_MI_place;
     public AudioClip A_MI_patience;
     public AudioClip A_MI_nothing;
+    public Sprite nullEgg;
     public enum Sounds { sell, place, patience, nothing}
 
     void Start()
@@ -36,13 +37,27 @@ public class MI_Widget : ObjectTimersBase
         {
             animator.SetBool("working", true);
             animator.SetBool("waiting", false);
-            input.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+            if (creatureHandler.current.creatureObjects[creatureDone].egg != null)
+            {
+                input.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+            }
+            else
+            {
+                input.sprite = nullEgg;
+            }
         }
         else if (status == Status.complete)
         {
             animator.SetBool("working", false);
             animator.SetBool("waiting", true);
-            input.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+            if (creatureHandler.current.creatureObjects[creatureDone].egg != null)
+            {
+                input.sprite = creatureHandler.current.creatureObjects[creatureDone].egg;
+            }
+            else
+            {
+                input.sprite = nullEgg;
+            }
         }
     }
 

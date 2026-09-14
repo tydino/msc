@@ -27,6 +27,8 @@ public class interactionHandler : MonoBehaviour
     [Header("mrs incubator")]
     public GameObject MrsIncubatorUI;
     public MIUIObjects MrsIncubatorUIInterface;
+    [Header("Opum")]
+    public GameObject OpumUI;
 
     [System.Serializable]
     public struct MIUIObjects
@@ -409,6 +411,26 @@ public class interactionHandler : MonoBehaviour
         {
             MI_Universal.current.tempMI = Clicked.gameObject;
             SetUpMrsIncubatorUI();
+        }
+        #endregion
+        #region opum
+        if(OC.ThisObjectType == objectControler.ObjectTypes.Opum)
+        {
+            OpumUI.SetActive(true);
+            Hotel_UI ui = OpumUI.GetComponent<Hotel_UI>();
+            Hotel_widget widget = Hotel_universal.current.Hotel.GetComponent<Hotel_widget>();
+            ui.abeds = widget.maxBeds;
+            ui.tbeds = widget.bedsTaken;
+            ui.level = widget.levelOfHotel;
+            if (widget.levelOfHotel < objectHandler.current.HotelCosts.Count)
+            {
+                ui.amountNeededToUpgrade = objectHandler.current.HotelCosts[widget.levelOfHotel];
+            }
+            else
+            {
+                ui.amountNeededToUpgrade = -3;
+            }
+            ui.reload();
         }
         #endregion
     }

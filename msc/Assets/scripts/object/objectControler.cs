@@ -378,7 +378,6 @@ public class objectControler : MonoBehaviour
                 if (index >= 0 && index < Data.Length)
                 {
                     int.TryParse(Data[index].ToString(), out gameObject.GetComponent<Hotel_widget>().levelOfHotel);
-                    Debug.Log("level of hotel " + gameObject.GetComponent<Hotel_widget>().levelOfHotel);
 
                     index++;
 
@@ -391,7 +390,6 @@ public class objectControler : MonoBehaviour
                     }
 
                     int.TryParse(final, out gameObject.GetComponent<Hotel_widget>().bedsTaken);
-                    Debug.Log("beds taken " + final);
 
                     HotelWidget.setMaxBeds();
                 }

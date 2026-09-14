@@ -291,8 +291,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 745674551}
     m_Modifications:
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[0]
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[1]
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[2]
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[3]
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[4]
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
+      propertyPath: HotelCosts.Array.data[5]
+      value: 300000
       objectReference: {fileID: 0}
     - target: {fileID: 813697050411716797, guid: a398c56e4c8e69c44a1dbd49b1d96c65, type: 3}
       propertyPath: objectStart.Array.data[0].XPos

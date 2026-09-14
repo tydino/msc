@@ -11,6 +11,8 @@ public class objectHandler : MonoBehaviour
     public List<sd_ObjectHandler> objectStart;
     [Header("this is what keeps track of every object")]
     public List<sd_ObjectHandler> objectInformation;
+    [Header("this is what handles the level of the hotel costs")]
+    public List<int> HotelCosts;
 
     void Awake()
     {
