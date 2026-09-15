@@ -105,6 +105,14 @@ public class EC_Universal : MonoBehaviour
         }
     }
 
+    public void SkipTimer()
+    {
+        tempEC.GetComponent<EC_Widget>().SkipTime();
+        interactionHandler.current.SetUpElementaclCombinerUI();
+        interactionHandler.current.canClick = true;
+        SaveData.current.save();
+    }
+
     public void Submit()
     {
         if (tempEC.GetComponent<EC_Widget>().Creature1 != null && tempEC.GetComponent<EC_Widget>().Creature2 != null)

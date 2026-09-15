@@ -35,11 +35,18 @@ public class MI_Universal : MonoBehaviour
         AvailableMI = null;
     }
 
+    public void SkipTimer()
+    {
+        tempMI.GetComponent<MI_Widget>().SkipTime();
+        interactionHandler.current.SetUpMrsIncubatorUI();
+    }
+
     public void Place()
     {
         if (Hotel_universal.current.AvailableSpace(creatureHandler.current.creatureObjects[tempMI.GetComponent<MI_Widget>().creatureDone].bedsNeeded))
         {
             GridBuildingSystem.current.InitializeWithBuilding(creatureHandler.current.creatureObjects[tempMI.GetComponent<MI_Widget>().creatureDone].PrefabObj);
+            GridBuildingSystem.current.temp.setClickedToThisObject();
             Hotel_universal.current.RemoveSpace(creatureHandler.current.creatureObjects[tempMI.GetComponent<MI_Widget>().creatureDone].bedsNeeded);
             tempMI.GetComponent<MI_Widget>().status = ObjectTimersBase.Status.idle;
             tempMI.GetComponent<MI_Widget>().creatureDone = 0;

@@ -97,9 +97,14 @@ public class Building : MonoBehaviour
     {
         if (interactionHandler.current.Clicked == null)
         {
-            interactionHandler.current.Clicked = this.gameObject;
-            interactionHandler.current.OpenUI(false, canBeDestroyed, hasUI);
+            setClickedToThisObject();
         }
+    }
+
+    public void setClickedToThisObject()
+    {
+        interactionHandler.current.Clicked = this.gameObject;
+        interactionHandler.current.OpenUI(false, canBeDestroyed, hasUI);
     }
     #endregion
 }

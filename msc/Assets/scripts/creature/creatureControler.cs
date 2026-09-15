@@ -114,7 +114,7 @@ public class creatureControler : MonoBehaviour
     public void currencyReload()
     {
         DateTime now = DateTime.Now;
-        TimeSpan sinceLastCollect = -(Currency.LastCollectTime - now);
+        TimeSpan sinceLastCollect =-(Currency.LastCollectTime - now);
         double SecondsSinceLastCollect = sinceLastCollect.TotalSeconds;
         double MinutesSinceLastCollect = 0;
         double HoursSinceLastCollect = 0;

@@ -39,6 +39,7 @@ public class interactionHandler : MonoBehaviour
         public Slider TimeLeftSlider;
         public Text CompletedCreatureName;
         public GameObject CompleteScreen;
+        public Text SkipText;
     }
 
     [System.Serializable]
@@ -49,6 +50,7 @@ public class interactionHandler : MonoBehaviour
         public Text TimeLeft;
         public Slider TimeLeftSlider;
         public GameObject CompleteScreen;
+        public Text SkipText;
     }
 
     [Header("shop")]
@@ -285,6 +287,7 @@ public class interactionHandler : MonoBehaviour
             MrsIncubatorUIInterface.NothingScreen.SetActive(false);
             MrsIncubatorUIInterface.PatienceScreen.SetActive(true);
             MrsIncubatorUIInterface.CompleteScreen.SetActive(false);
+            MrsIncubatorUIInterface.SkipText.text = temp.costToSkipTime().ToString();
             temp.PlaySound(MI_Widget.Sounds.patience);
         }
         if(temp.status == ObjectTimersBase.Status.complete)
@@ -329,6 +332,7 @@ public class interactionHandler : MonoBehaviour
             ElementaclCombinerInterface.NothingScreen.SetActive(false);
             ElementaclCombinerInterface.PatienceScreen.SetActive(true);
             ElementaclCombinerInterface.CompleteScreen.SetActive(false);
+            ElementaclCombinerInterface.SkipText.text = temp.costToSkipTime().ToString();
         }
         if (temp.status == ObjectTimersBase.Status.complete)
         {

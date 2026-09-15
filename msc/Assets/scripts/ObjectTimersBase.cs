@@ -41,6 +41,24 @@ public class ObjectTimersBase : MonoBehaviour
         lastTimer = StartCoroutine(Timer());
     }
 
+    public int costToSkipTime()
+    {
+        DateTime now = DateTime.Now;
+        TimeSpan SkipTime = TimerEnd - now;
+        double SkipTimeInHours = Math.Ceiling(SkipTime.TotalHours);
+        return (int)SkipTimeInHours;
+    }
+    public void SkipTime()
+    {
+        if (costToSkipTime() <= Currency.diamonds)
+        {
+            Currency.diamonds = Currency.diamonds - costToSkipTime();
+            TimerEnd = DateTime.Now;
+            inProgress = false;
+            status = Status.complete;
+        }
+    }
+
     #region iEnumerators
     public IEnumerator DisplayTime()
     {
