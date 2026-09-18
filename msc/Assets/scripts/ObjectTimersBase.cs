@@ -52,6 +52,8 @@ public class ObjectTimersBase : MonoBehaviour
     {
         if (costToSkipTime() <= Currency.diamonds)
         {
+            StopCoroutine(Timer());
+            StopCoroutine(DisplayTime());
             Currency.diamonds = Currency.diamonds - costToSkipTime();
             TimerEnd = DateTime.Now;
             inProgress = false;
