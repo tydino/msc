@@ -15,16 +15,16 @@ MonoBehaviour:
   creatureName: copercreals
   creatureInIslandID: 16
   psd: {fileID: 21300000, guid: d85a22b64accaab44bb2273403f47b29, type: 3}
-  PrefabObj: {fileID: 0}
+  PrefabObj: {fileID: 3973356661080464162, guid: 1819e15fbe84e96448ce8804451d1bb5, type: 3}
   bedsNeeded: 1
-  StoreFront: {fileID: 0}
+  StoreFront: {fileID: 6888901894457015782, guid: d615afd1e97aa97429eb63b59d04e050, type: 3}
   worthInCoins: 1000
   coins: 1
   worthInDiamonds: 0
   diamonds: 0
   element:
   - E
-  BreedScreen: {fileID: 0}
+  BreedScreen: {fileID: 6888901894457015782, guid: f466a9a1edb3bab4299f62d588cc65d9, type: 3}
   egg: {fileID: -31197876, guid: f53626afc147d694085c3b672a05789d, type: 3}
   timeInDays: 0
   timeInHours: 0
