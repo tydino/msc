@@ -59,8 +59,14 @@ public class SD_Island : MonoBehaviour
                 clone.transform.position = pos;
                 clone.transform.localScale = scale;
                 clone.GetComponent<Building>().Placed = true;
-                clone.GetComponent<creatureControler>().Currency.Amount = sdch.Currency;
-                clone.GetComponent<creatureControler>().DecompileCurrency(sdch.LastTimeCollected);
+                if (sdch.Currency != 0)
+                {
+                    clone.GetComponent<creatureControler>().Currency.Amount = sdch.Currency;
+                }
+                if (sdch.LastTimeCollected != null)
+                {
+                    clone.GetComponent<creatureControler>().DecompileCurrency(sdch.LastTimeCollected);
+                }
                 creatureHandler.current.creatureInformation.Add(sdch);
             }
             ///     OBJECTS     ///

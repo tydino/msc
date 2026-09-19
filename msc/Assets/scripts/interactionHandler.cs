@@ -187,7 +187,7 @@ public class interactionHandler : MonoBehaviour
     }
     public void p_cancel()
     {
-        Currency.coins = Currency.coins + (Clicked.GetComponent<creatureControler>().thisCreature.worthInCoins/4);
+        Currency.coins = Currency.coins + (Clicked.GetComponent<creatureControler>().thisCreature.worthInCoins/4);//if error pointing here check the creature controller is attatched to the creature data
         GridBuildingSystem.current.destroy();
         placement.SetActive(false);
         Cancel();
