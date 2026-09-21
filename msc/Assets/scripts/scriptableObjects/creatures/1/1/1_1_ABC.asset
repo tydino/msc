@@ -18,7 +18,7 @@ MonoBehaviour:
   PrefabObj: {fileID: 2964008757642785121, guid: bfda257eedf95c444ab9f072a9da01c1, type: 3}
   bedsNeeded: 3
   StoreFront: {fileID: 6888901894457015782, guid: 54944af77d7cb0b45ae56618f3c82337, type: 3}
-  worthInCoins: 0
+  worthInCoins: 2000
   coins: 0
   worthInDiamonds: 1000
   diamonds: 1
@@ -26,7 +26,6 @@ MonoBehaviour:
   - A
   - B
   - C
-  BreedScreen: {fileID: 6888901894457015782, guid: 551ae972578c41c41a5cd866c5745e81, type: 3}
   egg: {fileID: -881156020, guid: f53626afc147d694085c3b672a05789d, type: 3}
   timeInDays: 0
   timeInHours: 0

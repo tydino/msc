@@ -12,7 +12,6 @@ public class creatureData : ScriptableObject
     public GameObject PrefabObj;
     public int bedsNeeded;
     [Header("store based")]
-    public GameObject StoreFront;
     public int worthInCoins;
     public bool coins;
     public int worthInDiamonds;

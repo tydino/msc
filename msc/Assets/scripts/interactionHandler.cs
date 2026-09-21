@@ -22,6 +22,7 @@ public class interactionHandler : MonoBehaviour
     public GameObject Collects;
     public GameObject CollectPrefab;
     int checkCurrencyCount = 0;
+    public GameObject StoreFront;
     [Header("elemental combiner")]
     public GameObject ECInterface;
     public ECUIObjects ElementaclCombinerInterface;
@@ -388,10 +389,11 @@ public class interactionHandler : MonoBehaviour
 
             foreach (creatureData cd in creatureHandler.current.creatureObjects)
             {
-                if (cd.creatureInIslandID != -1)
+                if (cd.creatureInIslandID != -1)//-1 is used by the null creature!
                 {
-                    GameObject temp = Instantiate(cd.StoreFront);
+                    GameObject temp = Instantiate(StoreFront);
                     temp.transform.SetParent(ShopObj.transform, false);
+                    temp.GetComponent<CreatureButtonStore>().SetupButton(cd);
                     shopInside.current.Icons.Add(temp);
                     shopInside.current.Open();
                 }

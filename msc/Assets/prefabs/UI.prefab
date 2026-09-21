@@ -7086,6 +7086,7 @@ MonoBehaviour:
   movedObj: {fileID: 0}
   Collects: {fileID: 4794301799717569383}
   CollectPrefab: {fileID: 1593092614543559085, guid: 39055af13df81ad42ac3f1f57b39a619, type: 3}
+  StoreFront: {fileID: 6888901894457015782, guid: d362830219b908248926d593769f620c, type: 3}
   ECInterface: {fileID: 3485846777728531682}
   ElementaclCombinerInterface:
     NothingScreen: {fileID: 995738587234351262}

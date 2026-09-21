@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1963395880ddf84e90f828a268fd7ed, type: 3}
   m_Name: _null_creatureData
   m_EditorClassIdentifier: 
+  creatureName: null
   creatureInIslandID: -1
+  psd: {fileID: 0}
   PrefabObj: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
+  bedsNeeded: 0
   StoreFront: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
   worthInCoins: 0
   coins: 0
@@ -22,7 +25,6 @@ MonoBehaviour:
   element:
   - this is a null creature data. when a place needs something to take its place
     this will be there.
-  BreedScreen: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
   egg: {fileID: 712119290221390873, guid: 076b314d1736a924d9e7ea7c07a7522b, type: 3}
   timeInDays: 0
   timeInHours: 0
