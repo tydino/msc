@@ -7072,6 +7072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7360d5a5fd621c479ebf4226501623a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emptySprite: {fileID: -174707748, guid: 775faa2f9c77a334eaddfa1fff618484, type: 3}
   canClick: 0
   Clicked: {fileID: 0}
   main: {fileID: 6363943815016514111}
@@ -7124,6 +7125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ECs: []
   IH: {fileID: 3904327768843488276}
+  AvailableElements: []
+  ECButtonPrefab: {fileID: 6888901894457015782, guid: 9e8e30f7ce95d354c9c4cfa847828976, type: 3}
   tempEC: {fileID: 0}
   Icons1: []
   Icons2: []

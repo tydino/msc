@@ -20,7 +20,6 @@ public class creatureData : ScriptableObject
     [Header("must be alphabetical order")]
     public string[] element;
     [Header("elemental combiner based things")]
-    public GameObject BreedScreen;
     public Sprite egg;
     public int timeInDays;
     public int timeInHours;

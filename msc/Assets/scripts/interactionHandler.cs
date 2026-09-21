@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class interactionHandler : MonoBehaviour
 {
     public static interactionHandler current;
+    public Sprite emptySprite;
     public bool canClick;
     public GameObject Clicked;
     public GameObject main;

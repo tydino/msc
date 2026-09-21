@@ -12308,6 +12308,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[0].element
+      value: A
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[1].element
+      value: B
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[2].element
+      value: C
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[3].element
+      value: D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[0].elementSprite
+      value: 
+      objectReference: {fileID: -1006114494, guid: 775faa2f9c77a334eaddfa1fff618484, type: 3}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[1].elementSprite
+      value: 
+      objectReference: {fileID: 607988919, guid: 775faa2f9c77a334eaddfa1fff618484, type: 3}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[2].elementSprite
+      value: 
+      objectReference: {fileID: 1911281216, guid: 775faa2f9c77a334eaddfa1fff618484, type: 3}
+    - target: {fileID: 2385844076823938139, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
+      propertyPath: AvailableElements.Array.data[3].elementSprite
+      value: 
+      objectReference: {fileID: -491736119, guid: 775faa2f9c77a334eaddfa1fff618484, type: 3}
     - target: {fileID: 3485846775858126730, guid: 8fd71c64c9f8a0f43924e6286bd0c28b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

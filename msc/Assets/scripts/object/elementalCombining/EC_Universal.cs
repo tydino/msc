@@ -10,6 +10,15 @@ public class EC_Universal : MonoBehaviour
 
     [Header("Outward Things")]
     public interactionHandler IH;
+    public List<ECAvailableElements> AvailableElements;//is CAPS sensitive, must be uppercase
+    public GameObject ECButtonPrefab;
+
+    [Serializable]
+    public struct ECAvailableElements
+    {
+        public string element;
+        public Sprite elementSprite;
+    }
 
     [Header("Do not touch directly")]
     public GameObject tempEC;
@@ -80,14 +89,16 @@ public class EC_Universal : MonoBehaviour
         GameObject[] creatureList = GameObject.FindGameObjectsWithTag("creature");
         foreach (GameObject creature in creatureList)
         {
-            GameObject temp = Instantiate(creature.GetComponent<creatureControler>().thisCreature.BreedScreen);
-            temp.transform.SetParent(IconSet1.transform, false);
-            temp.GetComponent<EC_button>().OneOrTwo = 1;
-            Icons1.Add(temp);
-            temp = Instantiate(creature.GetComponent<creatureControler>().thisCreature.BreedScreen);
-            temp.transform.SetParent(IconSet2.transform, false);
-            temp.GetComponent<EC_button>().OneOrTwo = 2;
-            Icons2.Add(temp);
+            GameObject clone = Instantiate(ECButtonPrefab);
+            clone.transform.SetParent(IconSet1.transform, false);
+            clone.GetComponent<EC_button>().OneOrTwo = 1;
+            clone.GetComponent<EC_button>().SetupButton(creature.GetComponent<creatureControler>().thisCreature);
+            Icons1.Add(clone);
+            clone = Instantiate(ECButtonPrefab);
+            clone.transform.SetParent(IconSet2.transform, false);
+            clone.GetComponent<EC_button>().OneOrTwo = 2;
+            clone.GetComponent<EC_button>().SetupButton(creature.GetComponent<creatureControler>().thisCreature);
+            Icons2.Add(clone);
         }
     }
 
