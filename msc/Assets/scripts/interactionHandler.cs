@@ -221,17 +221,19 @@ public class interactionHandler : MonoBehaviour
     }
     public void Sleep()
     {
-        bool _sleep = Clicked.GetComponent<creatureControler>().sleep;
-        if (_sleep)
-        {
-            Clicked.GetComponent<creatureControler>().sleep = false;
+        if (Clicked.GetComponent<Building>().creature) {
+            bool _sleep = Clicked.GetComponent<creatureControler>().sleep;
+            if (_sleep)
+            {
+                Clicked.GetComponent<creatureControler>().sleep = false;
+            }
+            else
+            {
+                Clicked.GetComponent<creatureControler>().sleep = true;
+                GridBuildingSystem.current.sleep();
+            }
+            SaveData.current.save();
         }
-        else
-        {
-            Clicked.GetComponent<creatureControler>().sleep = true;
-            GridBuildingSystem.current.sleep();
-        }
-        SaveData.current.save();
     }
     #endregion
 
