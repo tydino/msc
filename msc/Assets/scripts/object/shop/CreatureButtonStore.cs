@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CreatureButtonStore : MonoBehaviour
 {
     public creatureData ThisCreature;
+    public int creatureIDOnPlace;
 
     public Text creatureName;
     public Image creatureImage;
@@ -26,13 +27,13 @@ public class CreatureButtonStore : MonoBehaviour
             if (ThisCreature.worthInCoins <= Currency.coins && ThisCreature.coins == true)
             {
                 Currency.coins = Currency.coins - ThisCreature.worthInCoins;
-                MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                MI_Universal.current.StartTimer(creatureIDOnPlace - 1);
 
             }
             else if (ThisCreature.worthInDiamonds <= Currency.diamonds && ThisCreature.diamonds == true)
             {
                 Currency.diamonds = Currency.diamonds - ThisCreature.worthInDiamonds;
-                MI_Universal.current.StartTimer(ThisCreature.creatureInIslandID - 1);
+                MI_Universal.current.StartTimer(creatureIDOnPlace - 1);
             }
         }
     }
@@ -40,6 +41,7 @@ public class CreatureButtonStore : MonoBehaviour
     public void SetupButton(creatureData CreatureData)
     {
         ThisCreature = CreatureData;
+        creatureIDOnPlace = CreatureData.creatureInIslandID;
 
         creatureName.text = ThisCreature.creatureName;
         creatureImage.sprite = ThisCreature.psd;
